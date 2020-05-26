@@ -1,4 +1,4 @@
-var url = "https://zelda64.dev/reports/progress.json";
+var url = "reports/progress.json";
 
 function getJSON(file, callback) {
     var req = new XMLHttpRequest();
