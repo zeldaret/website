@@ -24,9 +24,8 @@ function setText(classname, value)
 
 window.onload = function() {
 
-    getJSON(url, function(text){
-        var json = JSON.parse(text);
-        var progress = JSON.parse(json);
+    getJSON(url, function(text) {
+        var progress = JSON.parse(text);
         var timestamp = Object.keys(progress.reports)[0];
         var date = new Date(timestamp.split(".")[0] *1000);
         setText("last_change", date);
