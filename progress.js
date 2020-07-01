@@ -69,6 +69,7 @@ function parseCsv(csv)
 
     }
 
+    objs.sort(function(a, b){return b.timestamp-a.timestamp});
     return objs;
 }
 
@@ -80,8 +81,7 @@ function getPercent(progress, total)
 function updateProgress()
 {
     getResponse(matching? urlMatching : url, function(text) {
-        var arr = parseCsv(text);
-        progress = arr[arr.length-1];
+        var progress = parseCsv(text)[0];
 
         var date = new Date(progress.timestamp *1000);
         setText("last_change", date.toLocaleDateString() + " " + date.toLocaleTimeString());
