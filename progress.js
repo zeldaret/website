@@ -2,13 +2,12 @@ var matching = false;
 var url = "reports/progress.csv";
 var urlMatching = "reports/progress_matching.csv";
 var currentVersion = 1;
-var decimalPlaces = 4;
 
 function toggleMatching()
 {
     matching = !matching;
     var html = '<span style="color:' + (matching? "green" : "red") + '">' + (matching? "Yes" : "No") + "</span>";
-    document.getElementById("toggle_matching").innerHTML = "Match: " + html;
+    document.getElementById("toggle_matching").innerHTML = "Matching: " + html;
     updateProgress();
 }
 
@@ -48,11 +47,14 @@ function parseCsv(csv)
         nonMatchingCount: 0,
     };
     
-    var lines = csv.split("\r\n");
+    var lines = csv.split("\n");
     var objs = [[]]
     for (var i = 0; i < lines.length; i++)
     {
         var values = lines[i].split(",");
+
+        if (values.length != 12)
+            continue;
 
         if (values[0] != currentVersion)
         {
@@ -78,7 +80,8 @@ function getPercent(progress, total)
 function updateProgress()
 {
     getResponse(matching? urlMatching : url, function(text) {
-        var progress = parseCsv(text)[0];
+        var arr = parseCsv(text);
+        progress = arr[arr.length-1];
 
         var date = new Date(progress.timestamp *1000);
         setText("last_change", date.toLocaleDateString() + " " + date.toLocaleTimeString());
@@ -87,11 +90,6 @@ function updateProgress()
         setText("boot_percent", getPercent(progress.boot, progress.bootSize));
         setText("code_percent", getPercent(progress.code, progress.codeSize));
         setText("overlay_percent", getPercent(progress.ovl, progress.ovlSize));
-
-        var keys = Object.keys(progress.reports[timestamp]);
-        keys.forEach(e => {
-            setText(e, progress.reports[timestamp][e] + "%");
-        });
     });
 }
 
