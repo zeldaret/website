@@ -2,7 +2,6 @@ var matching = false;
 var url = "reports/progress.csv";
 var urlMatching = "reports/progress_matching.csv";
 var currentVersion = 1;
-var decimalPlaces = 4;
 
 function toggleMatching()
 {
@@ -87,11 +86,6 @@ function updateProgress()
         setText("boot_percent", getPercent(progress.boot, progress.bootSize));
         setText("code_percent", getPercent(progress.code, progress.codeSize));
         setText("overlay_percent", getPercent(progress.ovl, progress.ovlSize));
-
-        var keys = Object.keys(progress.reports[timestamp]);
-        keys.forEach(e => {
-            setText(e, progress.reports[timestamp][e] + "%");
-        });
     });
 }
 
