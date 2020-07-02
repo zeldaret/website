@@ -22,7 +22,8 @@
     --zelda-border-light: #4f77cd;
     --zelda-border-dark: #1c2a49;
     --zelda-bg: #2f487c;
-    --zelda-button-width: calc(145px*var(--scaling-factor));
+    --zelda-file-button-width: calc(145px*var(--scaling-factor));
+    --zelda-button-width: calc(174px*var(--scaling-factor));
     --zelda-button-font-size: calc(22px*var(--scaling-factor));
     --zelda-content-font-size: calc(18px*var(--scaling-factor));
 }
@@ -73,6 +74,7 @@ a:hover
     font-size: var(--zelda-button-font-size);
     padding-top: calc(10px*var(--scaling-factor));
     width: var(--zelda-button-width);
+    text-align: center;
 }
 
 
@@ -84,7 +86,7 @@ a:hover
 
 .zelda-file-box-slot {
     color: black;
-    width: var(--zelda-button-width);
+    width: var(--zelda-file-button-width);
     float: left;
     text-align: center;
     text-shadow: 0px 0px calc(4px*var(--scaling-factor));;
@@ -99,12 +101,12 @@ a:hover
     border-bottom-style: none;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    margin-left: var(--zelda-button-width);
+    margin-left: var(--zelda-file-button-width);
 }
 
 .zelda-file-box-hack_left {
     padding: 0;
-    width: var(--zelda-button-width);
+    width: var(--zelda-file-button-width);
     height: 0px;
     border-right-style: none;
     border-bottom-style: none;
@@ -120,7 +122,7 @@ a:hover
     border-top-style: none;
     border-bottom-style: none;
     border-radius: 0;
-    margin-left: var(--zelda-button-width);
+    margin-left: var(--zelda-file-button-width);
     position: relative;
 }
 
