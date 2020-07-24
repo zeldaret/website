@@ -8,13 +8,13 @@ function getDecompAdjective(progress, total) {
 
 function getDataUrl() {
 	// Matching is a variable defined by progress.js
-	/*return matching ? 'https://zelda64.dev/reports/progress_matching.csv' :
-					  'https://zelda64.dev/reports/progress.csv';*/
+	return matching ? 'https://zelda64.dev/reports/progress_matching.csv' :
+					  'https://zelda64.dev/reports/progress.csv';
 					  
-	console.log("getDataUrl, matching: " + matching);
+	/*console.log("getDataUrl, matching: " + matching);
 					  
 	return matching ? 'http://localhost/reports/progress_matching.csv' :
-					  'http://localhost/reports/progress.csv';
+					  'http://localhost/reports/progress.csv';*/
 }
 
 function formatPercent(num, decimals = 3) {
