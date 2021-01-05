@@ -15,7 +15,7 @@ bgImg.onload = function()
     document.getElementsByTagName('head')[0].appendChild(style);
 
     var bodyStyle = document.getElementsByTagName("body")[0].style;
-    bodyStyle.animationDuration = (1000*(factor)) + "s"
+    bodyStyle.animationDuration = (5000*(factor)) + "s"
     bodyStyle.backgroundImage = "url(" + imgSrc + ")";
     bodyStyle.backgroundRepeat = "repeat-x";
     bodyStyle.backgroundAttachment = "fixed";
