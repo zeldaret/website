@@ -8,14 +8,9 @@ bgImg.onload = function()
     var factor = (window.innerHeight/this.height);
     var style = document.createElement('style');
     style.type = 'text/css';
-    style.innerHTML = '@keyframes bg_anim {\
-        from {background-position-x:0%;} \
-        to {background-position-x:-' + (this.width*(factor)) + '%;} \
-    }';
     document.getElementsByTagName('head')[0].appendChild(style);
 
     var bodyStyle = document.getElementsByTagName("body")[0].style;
-    bodyStyle.animationDuration = (5000*(factor)) + "s"
     bodyStyle.backgroundImage = "url(" + imgSrc + ")";
     bodyStyle.backgroundRepeat = "repeat-x";
     bodyStyle.backgroundAttachment = "fixed";
