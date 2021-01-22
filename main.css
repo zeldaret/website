@@ -19,9 +19,10 @@
 */
 
 :root {
-    --zelda-border-light: #4f77cd;
+    --zelda-border-light: #5f87dd;
     --zelda-border-dark: #1c2a49;
     --zelda-bg: #2f487c;
+    --zelda-bg-hilite: #3f67cd;
     --zelda-file-button-width: calc(145px*var(--scaling-factor));
     --zelda-button-width: calc(174px*var(--scaling-factor));
     --zelda-button-font-size: calc(22px*var(--scaling-factor));
@@ -58,7 +59,7 @@ a:hover
 
 .zelda-box {
     padding: calc(14px*var(--scaling-factor));
-    background: var(--zelda-bg);
+    /*background: var(--zelda-bg);*/
     border-style: solid;
     border-color: var(--zelda-border-light) var(--zelda-border-dark) var(--zelda-border-dark) var(--zelda-border-light);
     border-width: calc(6px*var(--scaling-factor));
@@ -75,6 +76,13 @@ a:hover
     padding-top: calc(10px*var(--scaling-factor));
     width: var(--zelda-button-width);
     text-align: center;
+    background: linear-gradient(
+        90deg,
+        var(--zelda-bg),
+        var(--zelda-bg-hilite) 30%,
+        var(--zelda-bg) 80%,
+        var(--zelda-bg-hilite)
+    );
 }
 
 
@@ -82,6 +90,15 @@ a:hover
     position: relative;
     font-family: Chiaro;
     color: white;
+    background: linear-gradient(
+        120deg,
+        var(--zelda-bg) 10%,
+        var(--zelda-bg-hilite) 30%,
+        var(--zelda-bg-hilite) 40%,
+        var(--zelda-bg) 60%,
+        var(--zelda-bg-hilite) 80%,
+        var(--zelda-bg)
+    );
 }
 
 .zelda-file-box-slot {
@@ -89,7 +106,7 @@ a:hover
     width: var(--zelda-file-button-width);
     float: left;
     text-align: center;
-    text-shadow: 0px 0px calc(4px*var(--scaling-factor));;
+    text-shadow: calc(2px*var(--scaling-factor)) calc(2px*var(--scaling-factor)) calc(2px*var(--scaling-factor)) var(--zelda-border-light);
     cursor: default;
 }
 
