@@ -18,8 +18,8 @@
 
 <body>
     <div>
-        <div class="container text-center">
-            <img src="img/logo.png" style="width: 200px; height: 200px" />
+        <div class="container text-center" style="margin-top: 50px;">
+            <img src="img/logo.png" style="width: 200px; height: 200px;" />
         </div>
 
         <br><br><br>
@@ -81,7 +81,7 @@
 
             <div>
 
-                <div class="zelda-file-box" id="mmProgressContainer">
+                <div class="zelda-file-box" id="mmProgressContainer" style="margin-top: 14px;">
                     <div width=100%>
                         <div class="zelda-box zelda-button zelda-file-box-slot" id="file-2">File 2</div>
                         <div class="zelda-box zelda-file-box-filename">Majora's Mask
@@ -141,21 +141,6 @@
                 <div class="zelda-box zelda-button"><a href="index.html">Main Page</a></div>
             </div>
         </div>
-
-        <script>
-            $(document).ready(function(){
-                $('#slidebox2').animate({ height: 'toggle' }, 0);
-            });
-            $("#file-1").click(function () {
-                $('#slidebox2').animate({ height: 'toggle' }, 500);
-                $('#slidebox1').animate({ height: 'toggle' }, 500);
-            });
-
-            $("#file-2").click(function () {
-                $('#slidebox2').animate({ height: 'toggle' }, 500);
-                $('#slidebox1').animate({ height: 'toggle' }, 500);
-            });
-        </script>
 </body>
 
 </html>

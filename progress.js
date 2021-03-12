@@ -1,3 +1,17 @@
+$(document).ready(function(){
+	$('#slidebox2').animate({ height: 'toggle' }, 0);
+
+	$("#file-1").click(function () {
+		$('#slidebox2').animate({ height: 'toggle' }, 500);
+		$('#slidebox1').animate({ height: 'toggle' }, 500);
+	});
+	
+	$("#file-2").click(function () {
+		$('#slidebox2').animate({ height: 'toggle' }, 500);
+		$('#slidebox1').animate({ height: 'toggle' }, 500);
+	});
+});
+
 function formatPercent(num, decimals = 3) {
 	let percent = num * 100;
 	return percent.toFixed(decimals) +'%';
