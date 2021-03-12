@@ -1,12 +1,12 @@
 $(document).ready(function(){
 	$('#slidebox2').animate({ height: 'toggle' }, 0);
 
-	$("#file-1").click(function () {
+	$("#file1Header").click(function () {
 		$('#slidebox2').animate({ height: 'toggle' }, 500);
 		$('#slidebox1').animate({ height: 'toggle' }, 500);
 	});
 	
-	$("#file-2").click(function () {
+	$("#file2Header").click(function () {
 		$('#slidebox2').animate({ height: 'toggle' }, 500);
 		$('#slidebox1').animate({ height: 'toggle' }, 500);
 	});
