@@ -24,7 +24,7 @@
     --zelda-bg: #2f487c;
     --zelda-bg-hilite: #3f67cd;
     --zelda-file-button-width: calc(145px*var(--scaling-factor));
-    --zelda-button-width: calc(174px*var(--scaling-factor));
+    --zelda-button-width: calc(200px*var(--scaling-factor));
     --zelda-button-font-size: calc(22px*var(--scaling-factor));
     --zelda-content-font-size: calc(18px*var(--scaling-factor));
 }
