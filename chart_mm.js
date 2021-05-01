@@ -55,7 +55,7 @@ window.addEventListener('load', (event) => {
 					// Decompilable bytes
 					row.total = row.asm + row.src;
 					row.totalPercent = row.src / row.total;
-					row.asmPercent = row.asm / row.total);
+					row.asmPercent = row.asm / row.total;
 					row.codePercent = row.code / row.codeSize;
 					row.bootPercent = row.boot / row.bootSize;
 					row.ovlPercent = row.ovl / row.ovlSize;
