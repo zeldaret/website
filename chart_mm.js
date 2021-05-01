@@ -31,6 +31,16 @@ window.addEventListener('load', (event) => {
 			src: 9,
 			asm: 10,
 			nonMatchingCount: 11,
+			audio: 12,
+			audioSize: 13,
+			misc: 14,
+			miscSize: 15,
+			object: 16,
+			objectSize: 17,
+			scene: 18,
+			sceneSize: 19,
+			texture: 20,
+			textureSize: 21
 		}],
 		// Chart Post-process Function
 		function(e) {
@@ -41,12 +51,21 @@ window.addEventListener('load', (event) => {
 				rows.forEach(function(row, rowIndex) {
 					// JS timestamps are in milliseconds, but are provided in seconds from csv.
 					row.timestamp *= 1000
+					
+					// Decompilable bytes
 					row.total = row.asm + row.src;
-					row.totalPercent = row.src / (row.total);
-					row.asmPercent = row.asm / (row.total);
+					row.totalPercent = row.src / row.total;
+					row.asmPercent = row.asm / row.total);
 					row.codePercent = row.code / row.codeSize;
 					row.bootPercent = row.boot / row.bootSize;
 					row.ovlPercent = row.ovl / row.ovlSize;
+					
+					// Non-decompilable bytes
+					row.audioPercent = row.audio / row.audioSize;
+					row.miscPercent = row.misc / row.miscSize;
+					row.objectPercent = row.object / row.objectSize;
+					row.scenePercent = row.scene / row.sceneSize;
+					row.texturePercent = row.texture / row.textureSize;
 
 					let bytesPerMask = row.total / mmNumMasks;
 					row.masks = Math.floor(row.src / bytesPerMask);
@@ -74,6 +93,11 @@ window.addEventListener('load', (event) => {
 			let codePercent = formatPercent(point.codePercent);
 			let bootPercent = formatPercent(point.bootPercent);
 			let ovlPercent = formatPercent(point.ovlPercent);
+			let audioPercent = formatPercent(point.audioPercent);
+			let miscPercent = formatPercent(point.miscPercent);
+			let objectPercent = formatPercent(point.objectPercent);
+			let scenePercent = formatPercent(point.scenePercent);
+			let texturePercent = formatPercent(point.texturePercent);
 			let date = new Date(point.timestamp).toLocaleString("en-US");
 			let adjective = tooltip.chart.owner.getDecompAdjective();
 			
@@ -85,6 +109,11 @@ window.addEventListener('load', (event) => {
 					${point.boot}/${point.bootSize} bytes ${adjective} in boot ${bootPercent}<br />
 					${point.code}/${point.codeSize} bytes ${adjective} in code ${codePercent}<br />
 					${point.ovl}/${point.ovlSize} bytes ${adjective} in overlays ${ovlPercent}<br />
+					${point.audio}/${point.audioSize} bytes reconstructed in audio ${audioPercent}<br />
+					${point.misc}/${point.miscSize} bytes reconstructed in misc ${miscPercent}<br />
+					${point.object}/${point.objectSize} bytes reconstructed in object ${objectPercent}<br />
+					${point.scene}/${point.sceneSize} bytes reconstructed in scene ${scenePercent}<br />
+					${point.texture}/${point.textureSize} bytes reconstructed in texture ${texturePercent}<br />
 					------------------------------------<br />
 					You have ${point.masks}/${mmNumMasks} mask(s) and ${point.rupees}/${mmNumRupees} rupee(s).`;
 		}
