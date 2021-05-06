@@ -17,7 +17,7 @@ function formatPercent(num, decimals = 3) {
 	return percent.toFixed(decimals) +'%';
 };
 
-function ProgressChart(chartElementId, matchingToggleElementId, title, subtitle, nonMatchingUrl, matchingUrl, csvMapping, postProcessFunction, tooltipFormatter) {
+function ProgressChart(chartElementId, matchingToggleElementId, title, subtitle, nonMatchingUrl, matchingUrl, seriesConfiguration, csvMapping, postProcessFunction, tooltipFormatter) {
 	this.matching = false;
 	this.chartElementId = chartElementId;
 	this.matchingToggleElementId = matchingToggleElementId;
@@ -28,10 +28,16 @@ function ProgressChart(chartElementId, matchingToggleElementId, title, subtitle,
 	this.csvMapping = csvMapping;
 	this.postProcessFunction = postProcessFunction;
 	this.tooltipFormatter = tooltipFormatter;
+	this.seriesConfiguration = seriesConfiguration;
+	this.seriesCsvMapping = new Array();
+	
+	for (i = 0; i < seriesConfiguration.length; i++) {
+		this.seriesCsvMapping.push(this.csvMapping);
+	}
 	
 	this.toggleMatching = function() {
 		this.matching = !this.matching;
-		document.getElementById(this.matchingToggleElementId).innerHTML = "Matching: " + '<span style="color:' + (this.matching? "green" : "red") + '">' + (this.matching ? "Yes" : "No") + "</span>";
+		document.getElementById(this.matchingToggleElementId).innerHTML = 'Matching: <span style="color:' + (this.matching? "green" : "red") + '">' + (this.matching ? "Yes" : "No") + "</span>";
 		this.update();
 	};
 									   
@@ -64,9 +70,13 @@ function ProgressChart(chartElementId, matchingToggleElementId, title, subtitle,
 		subtitle: {
 			text: this.subtitle,
 		},
+		
+		series: this.seriesConfiguration,
 
 		tooltip: {
 			formatter: this.tooltipFormatter,
+			shared: true,
+			crosshairs: true
 		},
 
 		xAxis: {
@@ -78,7 +88,7 @@ function ProgressChart(chartElementId, matchingToggleElementId, title, subtitle,
 
 		yAxis: {
 			title: {
-				text: 'Total Completion (%)',
+				text: 'Completion (%)',
 			},
 			labels: {
 				formatter: function() {
@@ -88,16 +98,16 @@ function ProgressChart(chartElementId, matchingToggleElementId, title, subtitle,
 		},
 
 		legend: {
-			enabled: false,
+			enabled: this.seriesConfiguration.length > 1,
 		},
 		
 		data: {
 			csvURL: this.getDataUrl(),
+			seriesMapping: this.seriesCsvMapping,
+			complete: this.postProcessFunction,
 			enablePolling: true,
 			firstRowAsNames: false,
 			dataRefreshRate: 60,
-			seriesMapping: this.csvMapping,
-			complete: this.postProcessFunction,
 		},
 	};
 		

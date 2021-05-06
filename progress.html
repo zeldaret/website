@@ -78,6 +78,35 @@
                 </div>
 
             </div>
+			
+			<br />
+			
+            <div class="zelda-file-box" id="mmProgressContainer">
+                <div width=100%>
+                    <div class="zelda-box zelda-button zelda-file-box-slot">File 2</div>
+                    <div class="zelda-box zelda-file-box-filename">Majora's Mask
+                        <hr style="border-color: #1c2a49;margin-top: 14px;border-width: 3px;">
+                    </div>
+                </div>
+                <div>
+                    <div class="zelda-box zelda-file-box-hack_left"></div>
+                    <div class="zelda-box zelda-file-box-hack_right"></div>
+                </div>
+                <div class="zelda-file-box-main zelda-box">
+                    <div>
+                        <p style="float: left">Last Change:</p>
+                        <p id="mmLastChange" class="progress-value" style="color: cyan;" >Error</p>
+                    </div>
+                    <hr>
+                    <div>
+                        <p style="float: left">Total:</p>
+                        <p id="mmTotalPercent" class="progress-value">Error<p>
+                    </div>
+                    
+                    <div>
+                        <p style="float: left">Boot:</p>
+                        <p id="mmBootPercent" class="progress-value">Error</p>
+                    </div>
 
             <div>
 
@@ -131,6 +160,50 @@
                     </div>
 
                 </div>
+                <div class="zelda-file-box-main zelda-box">
+                    <div id="mmProgressChart"></div>
+                    <script type="text/javascript" src="chart_mm.js"></script>
+                </div>
+				
+				<div class="zelda-box zelda-button" id="mmToggleMatching">Matching: <span style="color:red">No</span></div>
+            </div>
+			
+			<br />
+			
+            <div class="zelda-file-box" id="tmcProgressContainer">
+                <div width=100%>
+                    <div class="zelda-box zelda-button zelda-file-box-slot">File 3</div>
+                    <div class="zelda-box zelda-file-box-filename">The Minish Cap
+                        <hr style="border-color: #1c2a49;margin-top: 14px;border-width: 3px;">
+                    </div>
+                </div>
+                <div>
+                    <div class="zelda-box zelda-file-box-hack_left"></div>
+                    <div class="zelda-box zelda-file-box-hack_right"></div>
+                </div>
+                <div class="zelda-file-box-main zelda-box">
+                    <div>
+                        <p style="float: left">Last Change:</p>
+                        <p id="tmcLastChange" class="progress-value" style="color: cyan;" >Error</p>
+                    </div>
+                    <hr>
+                    <div>
+                        <p style="float: left">Code Decompilation:</p>
+                        <p id="tmcCodePercent" class="progress-value">Error<p>
+                    </div>
+                    
+                    <div>
+                        <p style="float: left">Data Reconstruction:</p>
+                        <p id="tmcDataPercent" class="progress-value">Error</p>
+                    </div>
+                </div>
+                <div class="zelda-file-box-main zelda-box">
+                    <div id="tmcProgressChart"></div>
+                    <script type="text/javascript" src="chart_tmc.js"></script>
+                </div>
+				
+				<div class="zelda-box zelda-button" id="tmcToggleMatching">Matching: <span style="color:red">No</span></div>
+            </div>
 
                 <br><br><br><br>
                 <!--
