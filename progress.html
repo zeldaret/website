@@ -2,12 +2,14 @@
 <html lang=en>
 
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="progress.css" />
-	<script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
-	<script type="text/javascript" src="https://code.highcharts.com/modules/data.js"></script>
-	<script type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+    <script type="text/javascript" src="https://code.highcharts.com/modules/data.js"></script>
+    <script type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
     <script type="text/javascript" src="progress.js"></script>
     <script type="text/javascript" src="bg.js"></script>
     <script type="text/javascript" src="audio.js"></script>
@@ -15,39 +17,123 @@
 </head>
 
 <body>
+
     <div>
         <div class="container text-center">
             <img src="img/logo.png" style="width: 200px; height: 200px" />
         </div>
-        
+
         <br><br><br>
-        <h1 class="text-center">ZRET Decompilation Status</h1> 
+        <h1 class="text-center">ZRET Decompilation Status</h1>
         <br><br><br>
-        
+
         <div class="content-container">
-              
+            <!-- 
+            <div class="row">
+                <div class="col">
+                    <h2>Open <b>multiple</b></h2>
+                    <div class="tabs">
+                        <div class="tab">
+                            <input type="checkbox" id="chck1">
+                            <label class="tab-label" for="chck1">Item 1</label>
+                            <div class="tab-content">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                <div>
+                                    <div class="zelda-box zelda-file-box-hack_left"></div>
+                                    <div class="zelda-box zelda-file-box-hack_right"></div>
+                                </div>
+                                <div class="zelda-file-box-main zelda-box">
+                                    <div>
+                                        <p style="float: left">Last Change:</p>
+                                        <p id="ootLastChange" class="progress-value" style="color: cyan;">Error</p>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <p style="float: left">Total:</p>
+                                        <p id="ootTotalPercent" class="progress-value">Error
+                                        <p>
+                                    </div>
+
+                                    <div>
+                                        <p style="float: left">Boot:</p>
+                                        <p id="ootBootPercent" class="progress-value">Error</p>
+                                    </div>
+
+                                    <div>
+                                        <p style="float: left">Code:</p>
+                                        <p id="ootCodePercent" class="progress-value">Error</p>
+                                    </div>
+
+                                    <div>
+                                        <p style="float: left">Overlays:</p>
+                                        <p id="ootOverlayPercent" class="progress-value">Error</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab">
+                            <input type="checkbox" id="chck2">
+                            <label class="tab-label" for="chck2">Item 2</label>
+                            <div class="tab-content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h2>Open <b>one</b></h2>
+                    <div class="PCs">
+                        <div class="PC">
+                            <input type="radio" id="z1" name="zelda">
+                            <label class="PC-label" for="z1">Item 1</label>
+                            <div class="PC-content">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, facilis.
+                            </div>
+                        </div>
+                        <div class="PC">
+                            <input type="radio" id="z2" name="zelda">
+                            <label class="PC-label" for="z2">Item 2</label>
+                            <div class="PC-content">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, aut.
+                            </div>
+                        </div>
+                        <div class="PC">
+                            <input type="radio" id="z3" name="zelda">
+                            <label for="z3" class="PC-close">Close others &times;</label>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+          
+
             <div class="zelda-file-box" id="ootProgressContainer">
+                <details>
+<summary>
                 <div width=100%>
                     <div class="zelda-box zelda-button zelda-file-box-slot">File 1</div>
                     <div class="zelda-box zelda-file-box-filename">Oot Mq Debug
                         <hr style="border-color: #1c2a49;margin-top: 14px;border-width: 3px;">
                     </div>
                 </div>
-                <div>
-                    <div class="zelda-box zelda-file-box-hack_left"></div>
-                    <div class="zelda-box zelda-file-box-hack_right"></div>
-                </div>
-                <div class="zelda-file-box-main zelda-box">
+            </summary>
+            <div>
+                <div class="zelda-box zelda-file-box-hack_left"></div>
+                <div class="zelda-box zelda-file-box-hack_right"></div>
+            </div>
+                <div class="zelda-file-box-main zelda-box zelda-file-box-main-top">
                     <div>
                         <p style="float: left">Last Change:</p>
-                        <p id="ootLastChange" class="progress-value" style="color: cyan;" >Error</p>
+                        <p id="ootLastChange" class="progress-value" style="color: cyan;">Error</p>
                     </div>
                     <hr>
                     <div>
                         <p style="float: left">Total:</p>
-                        <p id="ootTotalPercent" class="progress-value">Error<p>
+                        <p id="ootTotalPercent" class="progress-value">Error</p>
                     </div>
-                    
+
                     <div>
                         <p style="float: left">Boot:</p>
                         <p id="ootBootPercent" class="progress-value">Error</p>
@@ -63,16 +149,18 @@
                         <p id="ootOverlayPercent" class="progress-value">Error</p>
                     </div>
                 </div>
-                <div class="zelda-file-box-main zelda-box">
+                <div class="zelda-file-box-main zelda-box zelda-file-box-main-bottom">
                     <div id="ootProgressChart"></div>
                     <script type="text/javascript" src="chart_oot.js"></script>
                 </div>
-				
-				<div class="zelda-box zelda-button" id="ootToggleMatching">Matching: <span style="color:red">No</span></div>
+
+                <div class="zelda-box zelda-button" id="ootToggleMatching">Matching: <span style="color:red">No</span>
+                </div>
+                </details>
             </div>
-			
-			<br />
-			
+
+            <br />
+
             <div class="zelda-file-box" id="mmProgressContainer">
                 <div width=100%>
                     <div class="zelda-box zelda-button zelda-file-box-slot">File 2</div>
@@ -87,14 +175,15 @@
                 <div class="zelda-file-box-main zelda-box">
                     <div>
                         <p style="float: left">Last Change:</p>
-                        <p id="mmLastChange" class="progress-value" style="color: cyan;" >Error</p>
+                        <p id="mmLastChange" class="progress-value" style="color: cyan;">Error</p>
                     </div>
                     <hr>
                     <div>
                         <p style="float: left">Total:</p>
-                        <p id="mmTotalPercent" class="progress-value">Error<p>
+                        <p id="mmTotalPercent" class="progress-value">Error
+                        <p>
                     </div>
-                    
+
                     <div>
                         <p style="float: left">Boot:</p>
                         <p id="mmBootPercent" class="progress-value">Error</p>
@@ -114,12 +203,13 @@
                     <div id="mmProgressChart"></div>
                     <script type="text/javascript" src="chart_mm.js"></script>
                 </div>
-				
-				<div class="zelda-box zelda-button" id="mmToggleMatching">Matching: <span style="color:red">No</span></div>
+
+                <div class="zelda-box zelda-button" id="mmToggleMatching">Matching: <span style="color:red">No</span>
+                </div>
             </div>
-			
-			<br />
-			
+
+            <br />
+
             <div class="zelda-file-box" id="tmcProgressContainer">
                 <div width=100%>
                     <div class="zelda-box zelda-button zelda-file-box-slot">File 3</div>
@@ -134,14 +224,15 @@
                 <div class="zelda-file-box-main zelda-box">
                     <div>
                         <p style="float: left">Last Change:</p>
-                        <p id="tmcLastChange" class="progress-value" style="color: cyan;" >Error</p>
+                        <p id="tmcLastChange" class="progress-value" style="color: cyan;">Error</p>
                     </div>
                     <hr>
                     <div>
                         <p style="float: left">Code Decompilation:</p>
-                        <p id="tmcCodePercent" class="progress-value">Error<p>
+                        <p id="tmcCodePercent" class="progress-value">Error
+                        <p>
                     </div>
-                    
+
                     <div>
                         <p style="float: left">Data Reconstruction:</p>
                         <p id="tmcDataPercent" class="progress-value">Error</p>
@@ -151,15 +242,152 @@
                     <div id="tmcProgressChart"></div>
                     <script type="text/javascript" src="chart_tmc.js"></script>
                 </div>
-				
-				<div class="zelda-box zelda-button" id="tmcToggleMatching">Matching: <span style="color:red">No</span></div>
+
+                <div class="zelda-box zelda-button" id="tmcToggleMatching">Matching: <span style="color:red">No</span>
+                </div>
             </div>
 
+<!-- 
+            <div class="zelda-file-box" id="ootProgressContainer">
+                <div width=100%>
+                    <div class="zelda-box zelda-button zelda-file-box-slot">File 1</div>
+                    <div class="zelda-box zelda-file-box-filename">Oot Mq Debug
+                        <hr style="border-color: #1c2a49;margin-top: 14px;border-width: 3px;">
+                    </div>
+                </div>
+                <div>
+                    <div class="zelda-box zelda-file-box-hack_left"></div>
+                    <div class="zelda-box zelda-file-box-hack_right"></div>
+                </div>
+                <div class="zelda-file-box-main zelda-box">
+                    <div>
+                        <p style="float: left">Last Change:</p>
+                        <p id="ootLastChange" class="progress-value" style="color: cyan;">Error</p>
+                    </div>
+                    <hr>
+                    <div>
+                        <p style="float: left">Total:</p>
+                        <p id="ootTotalPercent" class="progress-value">Error
+                        <p>
+                    </div>
+
+                    <div>
+                        <p style="float: left">Boot:</p>
+                        <p id="ootBootPercent" class="progress-value">Error</p>
+                    </div>
+
+                    <div>
+                        <p style="float: left">Code:</p>
+                        <p id="ootCodePercent" class="progress-value">Error</p>
+                    </div>
+
+                    <div>
+                        <p style="float: left">Overlays:</p>
+                        <p id="ootOverlayPercent" class="progress-value">Error</p>
+                    </div>
+                </div>
+                <div class="zelda-file-box-main zelda-box">
+                    <div id="ootProgressChart"></div>
+                    <script type="text/javascript" src="chart_oot.js"></script>
+                </div>
+
+                <div class="zelda-box zelda-button" id="ootToggleMatching">Matching: <span style="color:red">No</span>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="zelda-file-box" id="mmProgressContainer">
+                <div width=100%>
+                    <div class="zelda-box zelda-button zelda-file-box-slot">File 2</div>
+                    <div class="zelda-box zelda-file-box-filename">Majora's Mask
+                        <hr style="border-color: #1c2a49;margin-top: 14px;border-width: 3px;">
+                    </div>
+                </div>
+                <div>
+                    <div class="zelda-box zelda-file-box-hack_left"></div>
+                    <div class="zelda-box zelda-file-box-hack_right"></div>
+                </div>
+                <div class="zelda-file-box-main zelda-box">
+                    <div>
+                        <p style="float: left">Last Change:</p>
+                        <p id="mmLastChange" class="progress-value" style="color: cyan;">Error</p>
+                    </div>
+                    <hr>
+                    <div>
+                        <p style="float: left">Total:</p>
+                        <p id="mmTotalPercent" class="progress-value">Error
+                        <p>
+                    </div>
+
+                    <div>
+                        <p style="float: left">Boot:</p>
+                        <p id="mmBootPercent" class="progress-value">Error</p>
+                    </div>
+
+                    <div>
+                        <p style="float: left">Code:</p>
+                        <p id="mmCodePercent" class="progress-value">Error</p>
+                    </div>
+
+                    <div>
+                        <p style="float: left">Overlays:</p>
+                        <p id="mmOverlayPercent" class="progress-value">Error</p>
+                    </div>
+                </div>
+                <div class="zelda-file-box-main zelda-box">
+                    <div id="mmProgressChart"></div>
+                    <script type="text/javascript" src="chart_mm.js"></script>
+                </div>
+
+                <div class="zelda-box zelda-button" id="mmToggleMatching">Matching: <span style="color:red">No</span>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="zelda-file-box" id="tmcProgressContainer">
+                <div width=100%>
+                    <div class="zelda-box zelda-button zelda-file-box-slot">File 3</div>
+                    <div class="zelda-box zelda-file-box-filename">The Minish Cap
+                        <hr style="border-color: #1c2a49;margin-top: 14px;border-width: 3px;">
+                    </div>
+                </div>
+                <div>
+                    <div class="zelda-box zelda-file-box-hack_left"></div>
+                    <div class="zelda-box zelda-file-box-hack_right"></div>
+                </div>
+                <div class="zelda-file-box-main zelda-box">
+                    <div>
+                        <p style="float: left">Last Change:</p>
+                        <p id="tmcLastChange" class="progress-value" style="color: cyan;">Error</p>
+                    </div>
+                    <hr>
+                    <div>
+                        <p style="float: left">Code Decompilation:</p>
+                        <p id="tmcCodePercent" class="progress-value">Error
+                        <p>
+                    </div>
+
+                    <div>
+                        <p style="float: left">Data Reconstruction:</p>
+                        <p id="tmcDataPercent" class="progress-value">Error</p>
+                    </div>
+                </div>
+                <div class="zelda-file-box-main zelda-box">
+                    <div id="tmcProgressChart"></div>
+                    <script type="text/javascript" src="chart_tmc.js"></script>
+                </div>
+
+                <div class="zelda-box zelda-button" id="tmcToggleMatching">Matching: <span style="color:red">No</span>
+                </div>
+            </div>
+ -->
             <br><br><br><br>
             <!--
             <div class="zelda-box zelda-button" id="toggle_audio_mute" onclick="toggleMute()">Audio: <span style="color:red">Off</span></div>
             -->
-            
+
             <br>
             <div class="zelda-box zelda-button"><a href="index.html">Main Page</a></div>
         </div>

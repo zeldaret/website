@@ -4,3 +4,243 @@ div#progressChart {
     max-width: 800px;
     margin: 0 auto;
 }
+
+@charset "UTF-8";
+body {
+  color: #2c3e50;
+  background: #ecf0f1;
+  padding: 0 1em 1em;
+}
+
+h1 {
+  margin: 0;
+  line-height: 2;
+  text-align: center;
+}
+
+h2 {
+  margin: 0 0 0.5em;
+  font-weight: normal;
+}
+
+input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.row {
+  display: flex;
+}
+.row .col {
+  flex: 1;
+}
+
+/* Accordion styles */
+.tabs {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+}
+
+.tab {
+  width: 100%;
+  color: white;
+  overflow: hidden;
+}
+.tab-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background: #2c3e50;
+  font-weight: bold;
+  cursor: pointer;
+  /* Icon */
+}
+.tab-label:hover {
+  background: #1a252f;
+}
+.tab-label::after {
+  content: "❯";
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  transition: all 0.35s;
+}
+.tab-content {
+  max-height: 0;
+  padding: 0 1em;
+  color: #2c3e50;
+  background: white;
+  transition: all 0.35s;
+}
+.tab-close {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1em;
+  font-size: 0.75em;
+  background: #2c3e50;
+  cursor: pointer;
+}
+.tab-close:hover {
+  background: #1a252f;
+}
+
+input:checked + .tab-label {
+  background: #1a252f;
+}
+input:checked + .tab-label::after {
+  transform: rotate(90deg);
+}
+input:checked ~ .tab-content {
+  max-height: 100vh;
+  padding: 1em;
+}
+
+
+
+
+/* Zelda Accordion styles */
+.content-container {
+    /* border-radius: 8px; */
+    overflow: hidden;
+    /* box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5); */
+  }
+
+.zelda-file-box {
+    width: 100%;
+    /* color: white; */
+    overflow: hidden;
+}
+.PC-label {
+    display: block;
+    margin: 0;
+    /* justify-content: space-between; */
+    /* padding: 1em; */
+    /* background: #2c3e50; */
+    /* font-weight: bold; */
+    /* cursor: pointer; */
+    /* Icon */
+}
+
+.PC-label:hover {
+    background: #1a252f;
+}
+ /*  .PC-label::after {
+    content: "❯";
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    transition: all 0.35s;
+  } */
+.PC-content {
+    max-height: 0;
+    /* display: none; */
+    /* padding: 0;  */
+    /* 
+    color: #2c3e50;
+    background: white; */
+    transition: max-height 0.35s;
+}
+.PC-close {
+    /* display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    background: #2c3e50; */
+    cursor: pointer;
+}
+.PC-close:hover {
+    background: #1a252f;
+}
+  
+input:checked + .PC-label {
+    /* background: #1a252f; */
+}
+  /* input:checked + .PC-label::after {
+    transform: rotate(90deg);
+  } */
+input:checked ~ .PC-content {
+    max-height: 100vh;
+    display: block;
+    /* padding: 1em; */
+}
+
+
+.zelda-file-box-filename {
+    border-bottom-style: solid;
+    transition: all 0.35s;
+}
+
+input:checked ~ label ~ .zelda-file-box-filename {
+    border-bottom-style: none;
+}
+
+/* hr {
+    display: none;
+    transition: all 0s;
+} */
+
+input:checked ~ label ~ hr {
+    display: block !important;
+}
+
+ .zelda-file-box-main p {
+    /* max-height: 0; */
+    /* overflow: hidden; */
+    /* transition: max-height 0.35s; */
+    /* display: none; */
+}
+
+input:checked ~ div ~ div ~ div ~ p {
+    /* max-height: 80px; */
+    /* display: block !important; */
+} 
+
+details {
+    margin: 0;
+    padding: 0;
+    /* transition: all 1s ease; */
+}
+
+details > summary {
+    list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+    display: none;
+  }
+
+.zelda-file-box-main-top {
+  /* border-top-left-radius: 0; */
+  border-top-right-radius: 0;
+}
+
+.zelda-file-box-main-bottom {
+  border-top-left-radius: calc(4px*var(--scaling-factor));
+  border-top-style: solid;
+}
+
+details > summary:hover {
+  background: zelda-bg-hilite;
+}
+
+details:not([open]) hr {
+    opacity: 0;
+}
+
+details[open] .zelda-file-box-filename {
+    /* border-bottom-width: 0px; */
+    border-bottom-style: hidden;
+}
+
+details[open] summary ~ * {
+  animation: fade-in .5s ease-in-out;
+}
+
+@keyframes fade-in {
+  0%    {opacity: 0 }
+  100%  {opacity: 1 }
+}
+
+
