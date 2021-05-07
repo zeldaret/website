@@ -2,12 +2,14 @@
 <html lang=en>
 
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="progress.css" />
-	<script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
-	<script type="text/javascript" src="https://code.highcharts.com/modules/data.js"></script>
-	<script type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+    <script type="text/javascript" src="https://code.highcharts.com/modules/data.js"></script>
+    <script type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
     <script type="text/javascript" src="progress.js"></script>
     <script type="text/javascript" src="bg.js"></script>
     <script type="text/javascript" src="audio.js"></script>
@@ -16,150 +18,167 @@
 
 <body>
     <div>
-        <div class="container text-center">
-            <img src="img/logo.png" style="width: 200px; height: 200px" />
+        <div class="container text-center" style="margin-top: 50px;">
+            <img src="img/logo.png" style="width: 200px; height: 200px;" />
         </div>
-        
+
         <br><br><br>
-        <h1 class="text-center">ZRET Decompilation Status</h1> 
+        <h1 class="text-center">ZRET Decompilation Status</h1>
         <br><br><br>
-        
+
         <div class="content-container">
-              
+
             <div class="zelda-file-box" id="ootProgressContainer">
-                <div width=100%>
-                    <div class="zelda-box zelda-button zelda-file-box-slot">File 1</div>
-                    <div class="zelda-box zelda-file-box-filename">Oot Mq Debug
+                <div id="file1Header" width=100%>
+                    <div class="zelda-box zelda-button zelda-file-box-slot" id="file-1">File 1</div>
+                    <div class="zelda-box zelda-file-box-filename">Oot MQ Debug
                         <hr style="border-color: #1c2a49;margin-top: 14px;border-width: 3px;">
                     </div>
                 </div>
-                <div>
-                    <div class="zelda-box zelda-file-box-hack_left"></div>
-                    <div class="zelda-box zelda-file-box-hack_right"></div>
-                </div>
-                <div class="zelda-file-box-main zelda-box">
+                <div id="slidebox1">
                     <div>
-                        <p style="float: left">Last Change:</p>
-                        <p id="ootLastChange" class="progress-value" style="color: cyan;" >Error</p>
+                        <div class="zelda-box zelda-file-box-hack_left"></div>
+                        <div class="zelda-box zelda-file-box-hack_right"></div>
                     </div>
-                    <hr>
-                    <div>
-                        <p style="float: left">Total:</p>
-                        <p id="ootTotalPercent" class="progress-value">Error<p>
+                    <div class="zelda-file-box-main zelda-box">
+                        <div>
+                            <p style="float: left">Last Change:</p>
+                            <p id="ootLastChange" class="progress-value" style="color: cyan;">Error</p>
+                        </div>
+                        <hr>
+                        <div>
+                            <p style="float: left">Total:</p>
+                            <p id="ootTotalPercent" class="progress-value">Error
+                            <p>
+                        </div>
+
+                        <div>
+                            <p style="float: left">Boot:</p>
+                            <p id="ootBootPercent" class="progress-value">Error</p>
+                        </div>
+
+                        <div>
+                            <p style="float: left">Code:</p>
+                            <p id="ootCodePercent" class="progress-value">Error</p>
+                        </div>
+
+                        <div>
+                            <p style="float: left">Overlays:</p>
+                            <p id="ootOverlayPercent" class="progress-value">Error</p>
+                        </div>
                     </div>
-                    
-                    <div>
-                        <p style="float: left">Boot:</p>
-                        <p id="ootBootPercent" class="progress-value">Error</p>
+                    <div class="zelda-file-box-main zelda-box">
+                        <div id="ootProgressChart"></div>
+                        <script type="text/javascript" src="chart_oot.js"></script>
                     </div>
 
-                    <div>
-                        <p style="float: left">Code:</p>
-                        <p id="ootCodePercent" class="progress-value">Error</p>
+                    <div class="zelda-box zelda-button" id="ootToggleMatching">Matching: <span
+                            style="color:red">No</span>
                     </div>
+                </div>
 
-                    <div>
-                        <p style="float: left">Overlays:</p>
-                        <p id="ootOverlayPercent" class="progress-value">Error</p>
-                    </div>
-                </div>
-                <div class="zelda-file-box-main zelda-box">
-                    <div id="ootProgressChart"></div>
-                    <script type="text/javascript" src="chart_oot.js"></script>
-                </div>
-				
-				<div class="zelda-box zelda-button" id="ootToggleMatching">Matching: <span style="color:red">No</span></div>
             </div>
-			
-			<br />
-			
+
+            <br />
+
             <div class="zelda-file-box" id="mmProgressContainer">
-                <div width=100%>
-                    <div class="zelda-box zelda-button zelda-file-box-slot">File 2</div>
+                <div id="file2Header" width=100%>
+                    <div class="zelda-box zelda-button zelda-file-box-slot" id="file-2">File 2</div>
                     <div class="zelda-box zelda-file-box-filename">Majora's Mask
                         <hr style="border-color: #1c2a49;margin-top: 14px;border-width: 3px;">
                     </div>
                 </div>
-                <div>
-                    <div class="zelda-box zelda-file-box-hack_left"></div>
-                    <div class="zelda-box zelda-file-box-hack_right"></div>
-                </div>
-                <div class="zelda-file-box-main zelda-box">
+                <div id="slidebox2">
                     <div>
-                        <p style="float: left">Last Change:</p>
-                        <p id="mmLastChange" class="progress-value" style="color: cyan;" >Error</p>
+                        <div class="zelda-box zelda-file-box-hack_left"></div>
+                        <div class="zelda-box zelda-file-box-hack_right"></div>
                     </div>
-                    <hr>
-                    <div>
-                        <p style="float: left">Total:</p>
-                        <p id="mmTotalPercent" class="progress-value">Error<p>
+                    <div class="zelda-file-box-main zelda-box">
+                        <div>
+                            <p style="float: left">Last Change:</p>
+                            <p id="mmLastChange" class="progress-value" style="color: cyan;">Error</p>
+                        </div>
+                        <hr>
+                        <div>
+                            <p style="float: left">Total:</p>
+                            <p id="mmTotalPercent" class="progress-value">Error
+                            <p>
+                        </div>
+
+                        <div>
+                            <p style="float: left">Boot:</p>
+                            <p id="mmBootPercent" class="progress-value">Error</p>
+                        </div>
+
+                        <div>
+                            <p style="float: left">Code:</p>
+                            <p id="mmCodePercent" class="progress-value">Error</p>
+                        </div>
+
+                        <div>
+                            <p style="float: left">Overlays:</p>
+                            <p id="mmOverlayPercent" class="progress-value">Error</p>
+                        </div>
                     </div>
-                    
-                    <div>
-                        <p style="float: left">Boot:</p>
-                        <p id="mmBootPercent" class="progress-value">Error</p>
+                    <div class="zelda-file-box-main zelda-box">
+                        <div id="mmProgressChart"></div>
+                        <script type="text/javascript" src="chart_mm.js"></script>
                     </div>
 
-                    <div>
-                        <p style="float: left">Code:</p>
-                        <p id="mmCodePercent" class="progress-value">Error</p>
+                    <div class="zelda-box zelda-button" id="mmToggleMatching">Matching: <span
+                            style="color:red">No</span>
                     </div>
+                </div>
 
-                    <div>
-                        <p style="float: left">Overlays:</p>
-                        <p id="mmOverlayPercent" class="progress-value">Error</p>
-                    </div>
-                </div>
-                <div class="zelda-file-box-main zelda-box">
-                    <div id="mmProgressChart"></div>
-                    <script type="text/javascript" src="chart_mm.js"></script>
-                </div>
-				
-				<div class="zelda-box zelda-button" id="mmToggleMatching">Matching: <span style="color:red">No</span></div>
             </div>
-			
-			<br />
-			
+
+
+            <br />
+
             <div class="zelda-file-box" id="tmcProgressContainer">
-                <div width=100%>
-                    <div class="zelda-box zelda-button zelda-file-box-slot">File 3</div>
+                <div id="file3Header" width=100%>
+                    <div class="zelda-box zelda-button zelda-file-box-slot" id="file-3">File 3</div>
                     <div class="zelda-box zelda-file-box-filename">The Minish Cap
                         <hr style="border-color: #1c2a49;margin-top: 14px;border-width: 3px;">
                     </div>
                 </div>
-                <div>
-                    <div class="zelda-box zelda-file-box-hack_left"></div>
-                    <div class="zelda-box zelda-file-box-hack_right"></div>
-                </div>
-                <div class="zelda-file-box-main zelda-box">
+                <div id="slidebox3">
                     <div>
-                        <p style="float: left">Last Change:</p>
-                        <p id="tmcLastChange" class="progress-value" style="color: cyan;" >Error</p>
+                        <div class="zelda-box zelda-file-box-hack_left"></div>
+                        <div class="zelda-box zelda-file-box-hack_right"></div>
                     </div>
-                    <hr>
-                    <div>
-                        <p style="float: left">Code Decompilation:</p>
-                        <p id="tmcCodePercent" class="progress-value">Error<p>
+                    <div class="zelda-file-box-main zelda-box">
+                        <div>
+                            <p style="float: left">Last Change:</p>
+                            <p id="tmcLastChange" class="progress-value" style="color: cyan;">Error</p>
+                        </div>
+                        <hr>
+                        <div>
+                            <p style="float: left">Code Decompilation:</p>
+                            <p id="tmcCodePercent" class="progress-value">Error
+                            <p>
+                        </div>
+
+                        <div>
+                            <p style="float: left">Data Reconstruction:</p>
+                            <p id="tmcDataPercent" class="progress-value">Error</p>
+                        </div>
                     </div>
-                    
-                    <div>
-                        <p style="float: left">Data Reconstruction:</p>
-                        <p id="tmcDataPercent" class="progress-value">Error</p>
+                    <div class="zelda-file-box-main zelda-box">
+                        <div id="tmcProgressChart"></div>
+                        <script type="text/javascript" src="chart_tmc.js"></script>
                     </div>
+
+                    <div class="zelda-box zelda-button" id="tmcToggleMatching">Matching: <span
+                            style="color:red">No</span></div>
                 </div>
-                <div class="zelda-file-box-main zelda-box">
-                    <div id="tmcProgressChart"></div>
-                    <script type="text/javascript" src="chart_tmc.js"></script>
-                </div>
-				
-				<div class="zelda-box zelda-button" id="tmcToggleMatching">Matching: <span style="color:red">No</span></div>
             </div>
 
             <br><br><br><br>
             <!--
             <div class="zelda-box zelda-button" id="toggle_audio_mute" onclick="toggleMute()">Audio: <span style="color:red">Off</span></div>
             -->
-            
+
             <br>
             <div class="zelda-box zelda-button"><a href="index.html">Main Page</a></div>
         </div>
