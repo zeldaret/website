@@ -5,7 +5,7 @@ div#progressChart {
     margin: 0 auto;
 }
 
-@charset "UTF-8";
+/* @charset "UTF-8"; */
 body {
   color: #2c3e50;
   background: #ecf0f1;
@@ -108,9 +108,9 @@ input:checked ~ .tab-content {
   }
 
 .zelda-file-box {
-    width: 100%;
+    /* width: 100%; */
     /* color: white; */
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .PC-label {
     display: block;
@@ -176,27 +176,6 @@ input:checked ~ label ~ .zelda-file-box-filename {
     border-bottom-style: none;
 }
 
-/* hr {
-    display: none;
-    transition: all 0s;
-} */
-
-input:checked ~ label ~ hr {
-    display: block !important;
-}
-
- .zelda-file-box-main p {
-    /* max-height: 0; */
-    /* overflow: hidden; */
-    /* transition: max-height 0.35s; */
-    /* display: none; */
-}
-
-input:checked ~ div ~ div ~ div ~ p {
-    /* max-height: 80px; */
-    /* display: block !important; */
-} 
-
 details {
     margin: 0;
     padding: 0;
@@ -220,9 +199,46 @@ details > summary::-webkit-details-marker {
   border-top-left-radius: calc(4px*var(--scaling-factor));
   border-top-style: solid;
 }
+/* 
+.zelda-file-box-slot:hover {
+  background: rgba(0, 200, 0, 0.5);
+  filter:;
+} */
 
-details > summary:hover {
-  background: zelda-bg-hilite;
+summary .after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--zelda-file-button-width);
+  height: calc(47px*var(--scaling-factor));
+  border-radius: calc(4px*var(--scaling-factor));
+  display: none;
+}
+summary:hover .after {
+  display: block;
+  transition:all 0.2s ease;
+  background: rgba(200, 200, 200, 0.5);
+}
+
+/* details[open] .after {
+  display: block;
+  transition:all 0.2s ease;
+  background: rgba(200, 200, 200, 0.5);
+} */
+
+.over:hover {
+  content: "";
+  z-index: 2;
+  background: rgba(0,200,0,0.5);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  /* opacity: 0.5; */
+  /* background-color: rgba(255, 255, 255, 0.7) !important; */
+  /* filter: blur(1px); */
+  filter: opacity(0.5);
 }
 
 details:not([open]) hr {
