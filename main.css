@@ -70,6 +70,7 @@ a:hover
 }
 
 .zelda-button {
+    font-family: Chiaro;
     color: white;
     cursor: pointer;
     font-size: var(--zelda-button-font-size);
@@ -146,9 +147,16 @@ a:hover
 .zelda-file-box-main {
     line-height: calc(5px*var(--scaling-factor));
     width: 100%;
+    /* border-top-style: none; */
+    /* border-top-left-radius: 0; */
+    font-size: var(--zelda-content-font-size);
+}
+
+/* First of its type under the filename box */
+:not(.zelda-file-box-main) + .zelda-file-box-main {
     border-top-style: none;
     border-top-left-radius: 0;
-    font-size: var(--zelda-content-font-size);
+    border-top-right-radius: 0;
 }
 
 .progress-value {
