@@ -84,3 +84,77 @@ details[open] .chart {
     0%      {height: 0; width: 0;}
     100%    {height: auto; width: initial;}
 }
+
+
+/* Checkboxes version */
+
+label > .glow {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--zelda-file-button-width);
+    height: calc(47px*var(--scaling-factor));
+    border-radius: calc(4px*var(--scaling-factor));
+    display: none;
+  }
+  
+label:hover > .glow {
+    display: block;
+    transition:all 0.2s ease;
+    background: rgba(200, 200, 200, 0.5);
+    box-shadow: 0 0 20px rgba(200, 200, 200, .7);
+  }
+
+
+label::before {
+    content: "";
+  }
+
+input ~ label {
+    width: 100%;
+    margin: 0;
+}
+
+input ~ label ~ * {
+    /* display: none; */
+    /* padding: 0 !important;
+    border-style: none !important; */
+    /* height: 0;
+    overflow: hidden;
+    opacity: 0; */
+    /* transition: max-height 0.4s ease; */
+    transition: opacity 1s ease;
+}
+
+input:not(:checked) ~ label ~ * {
+    border-top-style: none;
+    border-bottom-style: none;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    /* transition: max-height 0.4s ease; */
+    /* transition: opacity 1s ease; */
+}
+
+input:checked ~ label ~ * {
+    opacity: 1;
+    height: auto;
+}
+
+input ~ label hr {
+    opacity: 0;
+}
+
+input:checked ~ label hr {
+    opacity: 1;
+}
+
+label .zelda-file-box-filename {
+    border-bottom-style: solid;
+}
+
+input:checked ~ label .zelda-file-box-filename {
+    border-bottom-style: hidden;
+}
