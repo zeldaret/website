@@ -102,4 +102,35 @@ function ProgressChart(chartElementId, matchingToggleElementId, title, subtitle,
 	
 	let progressChart = this;
 	document.getElementById(this.matchingToggleElementId).onclick = function () { progressChart.toggleMatching(); };
+	
+	// var element= document.getElementsByTagName('label');
+	// for(var i=0; i<element.length; i++){
+    // 	element[i].addEventListener('click', () => { progressChart.chart.reflow(); } );
+	// }; 
+
+// 	var boxes = document.querySelectorAll('input[type=checkbox]');
+
+// for (var box of boxes) {
+//   if (box.checked === true) { // checked?
+//     progressChart.chart.reflow();
+//   }
+// }
+
+// window.onload = progressChart.chart.reflow();
+// document.addEventListener("DOMContentLoaded", () => { progressChart.chart.reflow(); });
+
+// window.addEventListener('DOMContentLoaded', (event) => {
+//     console.log('DOM fully loaded and parsed');
+// });
+
+// addEvent(window, 'load', function(){ progressChart.chart.reflow(); });
+// // addEvent(window, 'load', function(){ some_methods_2() });
+
+// function addEvent(element, eventName, fn) {
+//     if (element.addEventListener)
+//         element.addEventListener(eventName, fn, false);
+//     else if (element.attachEvent)
+//         element.attachEvent('on' + eventName, fn);
+// }
+ 	
 }
