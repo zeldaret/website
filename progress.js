@@ -1,3 +1,29 @@
+$(document).ready(function(){
+	$('#slidebox1').animate({ height: 'hide' }, 0);
+	$('#slidebox2').animate({ height: 'hide' }, 0);
+	$('#slidebox3').animate({ height: 'hide' }, 0);
+
+	$('#slidebox1').animate({ height: 'show' }, 500);
+
+	$("#file1Header").click(function () {
+		$('#slidebox3').animate({ height: 'hide' }, 500);
+		$('#slidebox2').animate({ height: 'hide' }, 500);
+		$('#slidebox1').animate({ height: 'toggle' }, 500);
+	});
+
+	$("#file2Header").click(function () {
+		$('#slidebox3').animate({ height: 'hide' }, 500);
+		$('#slidebox2').animate({ height: 'toggle' }, 500);
+		$('#slidebox1').animate({ height: 'hide' }, 500);
+	});
+
+	$("#file3Header").click(function () {
+		$('#slidebox3').animate({ height: 'toggle' }, 500);
+		$('#slidebox2').animate({ height: 'hide' }, 500);
+		$('#slidebox1').animate({ height: 'hide' }, 500);
+	});
+});
+
 function formatPercent(num, decimals = 3) {
 	let percent = num * 100;
 	return percent.toFixed(decimals) +'%';
