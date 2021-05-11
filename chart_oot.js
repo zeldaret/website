@@ -69,6 +69,7 @@ window.addEventListener('load', (event) => {
 			if (typeof lastRow !== 'undefined') {
 				let date = new Date(lastRow.timestamp);
 				document.getElementById("ootLastChange").innerText = date.toLocaleDateString() + " " + date.toLocaleTimeString();
+				document.getElementById("ootTotalPercentFileName").innerText = formatPercent(lastRow.totalPercent);
 				document.getElementById("ootTotalPercent").innerText = formatPercent(lastRow.totalPercent);
 				document.getElementById("ootBootPercent").innerText = formatPercent(lastRow.bootPercent);
 				document.getElementById("ootCodePercent").innerText = formatPercent(lastRow.codePercent);

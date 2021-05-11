@@ -88,7 +88,9 @@ details[open] .chart {
 
 /* Checkboxes version */
 
-label > .glow {
+/* File slot glow */
+
+label .glow {
     z-index: 2;
     position: absolute;
     top: 0;
@@ -99,11 +101,11 @@ label > .glow {
     display: none;
   }
   
-label:hover > .glow {
+label:hover .glow {
     display: block;
     transition:all 0.2s ease;
     background: rgba(200, 200, 200, 0.5);
-    box-shadow: 0 0 20px rgba(200, 200, 200, .7);
+    box-shadow: 0 0 20px rgba(200, 200, 200, 0.7);
   }
 
 
@@ -111,12 +113,13 @@ label::before {
     content: "";
   }
 
-input ~ label {
+input + .zelda-file-box label {
     width: 100%;
     margin: 0;
+    cursor: pointer;
 }
 
-input ~ label ~ * {
+input + .zelda-file-box label ~ * {
     /* display: none; */
     /* padding: 0 !important;
     border-style: none !important; */
@@ -127,7 +130,7 @@ input ~ label ~ * {
     transition: opacity 1s ease;
 }
 
-input:not(:checked) ~ label ~ * {
+input:not(:checked) + .zelda-file-box label ~ * {
     border-top-style: none;
     border-bottom-style: none;
     padding: 0;
@@ -138,16 +141,16 @@ input:not(:checked) ~ label ~ * {
     /* transition: opacity 1s ease; */
 }
 
-input:checked ~ label ~ * {
+input:checked + .zelda-file-box label ~ * {
     opacity: 1;
     height: auto;
 }
 
-input ~ label hr {
+input + .zelda-file-box label hr {
     opacity: 0;
 }
 
-input:checked ~ label hr {
+input:checked + .zelda-file-box label hr {
     opacity: 1;
 }
 
@@ -155,6 +158,37 @@ label .zelda-file-box-filename {
     border-bottom-style: solid;
 }
 
-input:checked ~ label .zelda-file-box-filename {
+input:checked + .zelda-file-box label .zelda-file-box-filename {
     border-bottom-style: hidden;
+}
+
+
+.zelda-file-box-total {
+    height: calc(47px*var(--scaling-factor));
+    width: calc(165px*var(--scaling-factor));;
+    display: none;
+}
+
+input:checked + .zelda-file-box label .zelda-file-box-total {
+    opacity: 0;
+    width: 0;
+    padding: 0;
+    border-width: 0;
+}
+
+@media only screen and (min-width: 700px) {
+    .zelda-file-box-total {
+        display: initial;
+    }
+}
+
+input:checked + .zelda-file-box {
+    clip-path: polygon(
+        0 0, 
+        100% 0, 
+        100% calc(100% - 47px*var(--scaling-factor)), 
+        var(--zelda-button-width) calc(100% - 47px*var(--scaling-factor)), 
+        var(--zelda-button-width) 100%, 
+        0 100%
+      );
 }

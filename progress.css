@@ -4,208 +4,12 @@ div#progressChart {
     max-width: 800px;
     margin: 0 auto;
 }
+/* Checkboxes version */
 
-/* @charset "UTF-8"; */
-body {
-  color: #2c3e50;
-  background: #ecf0f1;
-  padding: 0 1em 1em;
-}
+/* File slot glow */
 
-h1 {
-  margin: 0;
-  line-height: 2;
-  text-align: center;
-}
-
-h2 {
-  margin: 0 0 0.5em;
-  font-weight: normal;
-}
-
-input {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-}
-
-.row {
-  display: flex;
-}
-.row .col {
-  flex: 1;
-}
-
-/* Accordion styles */
-.tabs {
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
-}
-
-.tab {
-  width: 100%;
-  color: white;
-  overflow: hidden;
-}
-.tab-label {
-  display: flex;
-  justify-content: space-between;
-  padding: 1em;
-  background: #2c3e50;
-  font-weight: bold;
-  cursor: pointer;
-  /* Icon */
-}
-.tab-label:hover {
-  background: #1a252f;
-}
-.tab-label::after {
-  content: "❯";
-  width: 1em;
-  height: 1em;
-  text-align: center;
-  transition: all 0.35s;
-}
-.tab-content {
-  max-height: 0;
-  padding: 0 1em;
-  color: #2c3e50;
-  background: white;
-  transition: all 0.35s;
-}
-.tab-close {
-  display: flex;
-  justify-content: flex-end;
-  padding: 1em;
-  font-size: 0.75em;
-  background: #2c3e50;
-  cursor: pointer;
-}
-.tab-close:hover {
-  background: #1a252f;
-}
-
-input:checked + .tab-label {
-  background: #1a252f;
-}
-input:checked + .tab-label::after {
-  transform: rotate(90deg);
-}
-input:checked ~ .tab-content {
-  max-height: 100vh;
-  padding: 1em;
-}
-
-
-
-
-/* Zelda Accordion styles */
-.content-container {
-    /* border-radius: 8px; */
-    overflow: hidden;
-    /* box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5); */
-  }
-
-.zelda-file-box {
-    /* width: 100%; */
-    /* color: white; */
-    /* overflow: hidden; */
-}
-.PC-label {
-    display: block;
-    margin: 0;
-    /* justify-content: space-between; */
-    /* padding: 1em; */
-    /* background: #2c3e50; */
-    /* font-weight: bold; */
-    /* cursor: pointer; */
-    /* Icon */
-}
-
-.PC-label:hover {
-    background: #1a252f;
-}
- /*  .PC-label::after {
-    content: "❯";
-    width: 1em;
-    height: 1em;
-    text-align: center;
-    transition: all 0.35s;
-  } */
-.PC-content {
-    max-height: 0;
-    /* display: none; */
-    /* padding: 0;  */
-    /* 
-    color: #2c3e50;
-    background: white; */
-    transition: max-height 0.35s;
-}
-.PC-close {
-    /* display: flex;
-    justify-content: flex-end;
-    padding: 1em;
-    font-size: 0.75em;
-    background: #2c3e50; */
-    cursor: pointer;
-}
-.PC-close:hover {
-    background: #1a252f;
-}
-  
-input:checked + .PC-label {
-    /* background: #1a252f; */
-}
-  /* input:checked + .PC-label::after {
-    transform: rotate(90deg);
-  } */
-input:checked ~ .PC-content {
-    max-height: 100vh;
-    display: block;
-    /* padding: 1em; */
-}
-
-
-.zelda-file-box-filename {
-    border-bottom-style: solid;
-    transition: all 0.35s;
-}
-
-input:checked ~ label ~ .zelda-file-box-filename {
-    border-bottom-style: none;
-}
-
-details {
-    margin: 0;
-    padding: 0;
-    /* transition: all 1s ease; */
-}
-
-details > summary {
-    list-style: none;
-}
-
-details > summary::-webkit-details-marker {
-    display: none;
-  }
-
-.zelda-file-box-main-top {
-  /* border-top-left-radius: 0; */
-  border-top-right-radius: 0;
-}
-
-.zelda-file-box-main-bottom {
-  border-top-left-radius: calc(4px*var(--scaling-factor));
-  border-top-style: solid;
-}
-/* 
-.zelda-file-box-slot:hover {
-  background: rgba(0, 200, 0, 0.5);
-  filter:;
-} */
-
-summary .after {
+label .glow {
+  z-index: 2;
   position: absolute;
   top: 0;
   left: 0;
@@ -214,49 +18,95 @@ summary .after {
   border-radius: calc(4px*var(--scaling-factor));
   display: none;
 }
-summary:hover .after {
+
+label:hover .glow {
   display: block;
   transition:all 0.2s ease;
   background: rgba(200, 200, 200, 0.5);
+  box-shadow: 0 0 20px rgba(200, 200, 200, 0.7);
 }
 
-/* details[open] .after {
-  display: block;
-  transition:all 0.2s ease;
-  background: rgba(200, 200, 200, 0.5);
-} */
 
-.over:hover {
+label::before {
   content: "";
-  z-index: 2;
-  background: rgba(0,200,0,0.5);
-  position: absolute;
-  height: 100%;
+}
+
+input + .zelda-file-box label {
   width: 100%;
-  top: 0;
-  left: 0;
-  /* opacity: 0.5; */
-  /* background-color: rgba(255, 255, 255, 0.7) !important; */
-  /* filter: blur(1px); */
-  filter: opacity(0.5);
+  margin: 0;
+  cursor: pointer;
 }
 
-details:not([open]) hr {
-    opacity: 0;
+input + .zelda-file-box label ~ * {
+  /* display: none; */
+  /* padding: 0 !important;
+  border-style: none !important; */
+  /* height: 0;
+  overflow: hidden;
+  opacity: 0; */
+  /* transition: max-height 0.4s ease; */
+  transition: opacity 1s ease;
 }
 
-details[open] .zelda-file-box-filename {
-    /* border-bottom-width: 0px; */
-    border-bottom-style: hidden;
+input:not(:checked) + .zelda-file-box label ~ * {
+  border-top-style: none;
+  border-bottom-style: none;
+  padding: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  /* transition: max-height 0.4s ease; */
+  /* transition: opacity 1s ease; */
 }
 
-details[open] summary ~ * {
-  animation: fade-in .5s ease-in-out;
+input:checked + .zelda-file-box label ~ * {
+  opacity: 1;
+  height: auto;
 }
 
-@keyframes fade-in {
-  0%    {opacity: 0 }
-  100%  {opacity: 1 }
+input + .zelda-file-box label hr {
+  opacity: 0;
+}
+
+input:checked + .zelda-file-box label hr {
+  opacity: 1;
+}
+
+label .zelda-file-box-filename {
+  border-bottom-style: solid;
+}
+
+input:checked + .zelda-file-box label .zelda-file-box-filename {
+  border-bottom-style: hidden;
 }
 
 
+.zelda-file-box-total {
+  height: calc(47px*var(--scaling-factor));
+  width: calc(165px*var(--scaling-factor));;
+  display: none;
+}
+
+input:checked + .zelda-file-box label .zelda-file-box-total {
+  opacity: 0;
+  width: 0;
+  padding: 0;
+  border-width: 0;
+}
+
+@media only screen and (min-width: 700px) {
+  .zelda-file-box-total {
+      display: initial;
+  }
+}
+
+input:checked + .zelda-file-box {
+  clip-path: polygon(
+      0 0, 
+      100% 0, 
+      100% calc(100% - 47px*var(--scaling-factor)), 
+      var(--zelda-button-width) calc(100% - 47px*var(--scaling-factor)), 
+      var(--zelda-button-width) 100%, 
+      0 100%
+    );
+}
