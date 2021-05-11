@@ -38,13 +38,6 @@ input + .zelda-file-box label {
 }
 
 input + .zelda-file-box label ~ * {
-  /* display: none; */
-  /* padding: 0 !important;
-  border-style: none !important; */
-  /* height: 0;
-  overflow: hidden;
-  opacity: 0; */
-  /* transition: max-height 0.4s ease; */
   transition: opacity 1s ease;
 }
 
@@ -55,8 +48,6 @@ input:not(:checked) + .zelda-file-box label ~ * {
   height: 0;
   overflow: hidden;
   opacity: 0;
-  /* transition: max-height 0.4s ease; */
-  /* transition: opacity 1s ease; */
 }
 
 input:checked + .zelda-file-box label ~ * {

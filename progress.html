@@ -14,19 +14,6 @@
     <script type="text/javascript" src="bg.js"></script>
     <script type="text/javascript" src="audio.js"></script>
     <title>Z64</title>
-
-    <!-- This is a nasty hack to get the charts to reflow correctly -->
-    <script type="text/javascript">
-        window.addEventListener('DOMContentLoaded', async (event) => {
-
-            await new Promise(r => setTimeout(r, 100));
-
-            var boxes = document.getElementsByTagName('input');
-            for (var i = 1; i < boxes.length; i++) {
-                boxes[i].checked = false;
-            }
-        });
-    </script>
 </head>
 
 <body>
