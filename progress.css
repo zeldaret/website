@@ -44,7 +44,8 @@ input + .zelda-file-box label ~ * {
 input:not(:checked) + .zelda-file-box label ~ * {
   border-top-style: none;
   border-bottom-style: none;
-  padding: 0;
+  padding-top: 0;
+  padding-bottom: 0;
   height: 0;
   overflow: hidden;
   opacity: 0;

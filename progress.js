@@ -1,14 +1,3 @@
-// This is a nasty hack to get the charts to reflow correctly
-window.addEventListener('DOMContentLoaded', async (event) => {
-
-	await new Promise(r => setTimeout(r, 100));
-
-	var boxes = document.getElementsByTagName('input');
-	for (var i = 1; i < boxes.length; i++) {
-		boxes[i].checked = false;
-	}
-});
-
 function formatPercent(num, decimals = 3) {
 	let percent = num * 100;
 	return percent.toFixed(decimals) +'%';
