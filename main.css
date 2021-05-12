@@ -70,6 +70,7 @@ a:hover
 }
 
 .zelda-button {
+    font-family: Chiaro;
     color: white;
     cursor: pointer;
     font-size: var(--zelda-button-font-size);
@@ -85,6 +86,10 @@ a:hover
     );
 }
 
+.zelda-file-box-header {
+    width: 100%;
+    display: flex;
+}
 
 .zelda-file-box {
     position: relative;
@@ -104,7 +109,6 @@ a:hover
 .zelda-file-box-slot {
     color: black;
     width: var(--zelda-file-button-width);
-    float: left;
     text-align: center;
     text-shadow: calc(2px*var(--scaling-factor)) calc(2px*var(--scaling-factor)) calc(2px*var(--scaling-factor)) var(--zelda-border-light);
     cursor: default;
@@ -113,12 +117,11 @@ a:hover
 .zelda-file-box-filename {
     font-kerning: none;
     font-size: var(--zelda-button-font-size);
-    width: auto;
+    flex-grow: 1;
     height: calc(47px*var(--scaling-factor));
     border-bottom-style: none;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    margin-left: var(--zelda-file-button-width);
 }
 
 .zelda-file-box-hack_left {
@@ -146,9 +149,14 @@ a:hover
 .zelda-file-box-main {
     line-height: calc(5px*var(--scaling-factor));
     width: 100%;
+    font-size: var(--zelda-content-font-size);
+}
+
+/* First of its type under the filename box */
+:not(.zelda-file-box-main) + .zelda-file-box-main {
     border-top-style: none;
     border-top-left-radius: 0;
-    font-size: var(--zelda-content-font-size);
+    border-top-right-radius: 0;
 }
 
 .progress-value {

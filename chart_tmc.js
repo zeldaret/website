@@ -66,6 +66,7 @@ window.addEventListener('load', (event) => {
 			if (typeof lastRow !== 'undefined') {
 				let date = new Date(lastRow.timestamp);
 				document.getElementById("tmcLastChange").innerText = date.toLocaleDateString() + " " + date.toLocaleTimeString();
+				document.getElementById("tmcTotalPercentFileName").innerText = formatPercent(lastRow.srcPercent);
 				document.getElementById("tmcCodePercent").innerText = formatPercent(lastRow.srcPercent);
 				document.getElementById("tmcDataPercent").innerText = formatPercent(lastRow.srcDataPercent);
 			}
