@@ -137,7 +137,7 @@ ${point.code}/${point.codeSize} bytes ${adjective} in code (${codePercent})<br /
 <br />
 You have ${point.masks}/${mmNumMasks} mask(s) and ${point.rupees}/${mmNumRupees} rupee(s).<br />
 ------------------------------------<br />
-Total Asset Reconustruction: ${assetPercent}<br />
+Total Asset Reconstruction: ${assetPercent}<br />
 <br />
 ${point.asset}/${point.assetSize} total bytes of reconstructable assets (${assetPercent})<br />
 ${point.audio}/${point.audioSize} bytes reconstructed in audio (${audioPercent})<br />
