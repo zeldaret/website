@@ -134,6 +134,7 @@ Total Code Decompilation: ${totalPercent}<br />
 ${point.src}/${point.total} total bytes of decompilable code (${totalPercent})<br />
 ${point.boot}/${point.bootSize} bytes ${adjective} in boot (${bootPercent})<br />
 ${point.code}/${point.codeSize} bytes ${adjective} in code (${codePercent})<br />
+${point.ovl}/${point.ovlSize} bytes ${adjective} in code (${ovlPercent})<br />
 <br />
 You have ${point.masks}/${mmNumMasks} mask(s) and ${point.rupees}/${mmNumRupees} rupee(s).<br />
 ------------------------------------<br />
