@@ -34,7 +34,7 @@
     font-family: "Chiaro";
     src: url("FOT-ChiaroStd-B.otf");
 }
-  
+
 h1 {
     color:white;
     text-shadow: 0px 0px 0.1em;
@@ -55,6 +55,11 @@ a {
 a:hover
 {
     color: red;
+}
+
+
+.external-link-img {
+    line-height: 1.5em;
 }
 
 .zelda-box {
