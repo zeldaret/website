@@ -81,7 +81,7 @@ function ProgressChart(chartElementId, matchingToggleElementId, title, subtitle,
 					return formatPercent(this.value);
 				}
 			},
-			max: 100
+			max: 1
 		},
 
 		legend: {
