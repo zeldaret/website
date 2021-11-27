@@ -58,6 +58,24 @@ export interface IResource {
 }
 
 /**
+ * Contains information about a decomp project and how to process the associated CSV data.
+ */
+export interface IProject {
+  slugs: string[];
+  name: string;
+  matched: string;
+  unmatched: string;
+  columns: [
+    {
+      type: string,
+      index: number | number[];
+      name: string;
+      display: string
+    }
+  ]
+}
+
+/**
  * Functions to implement within "GamesService".
  */
 export interface IGamesService {
@@ -72,4 +90,15 @@ export interface IGamesService {
    */
   getResources(): Observable<IResource[]>;
 
+  /**
+   * Get all of the projects.
+   */
+  getProjects(): Observable<IProject[]>;
+
+  /**
+   * Get the CSV data for a project.
+   *
+   * @param filename The filename of the desired CSV.
+   */
+  getProjectCSV(filename: string): Observable<string>;
 }
