@@ -1,0 +1,35 @@
+$border-width: 6px;
+$brightness-factor: 1.25;
+$color-bg: #2f487c;
+$color-bg-hl: #3f67cd;
+$color-bd: #1c2a49;
+$color-bd-hl: #5f87dd;
+$size: 105px;
+
+button {
+  background: linear-gradient(90deg,
+    $color-bg,
+    $color-bg-hl 30%,
+    $color-bg 80%,
+    $color-bg-hl);
+  border-color: $color-bd-hl $color-bd $color-bd $color-bd-hl;
+  border-style: solid;
+  border-width: $border-width;
+  box-sizing: border-box;
+  color: black;
+  cursor: default;
+  font-size: 22px;
+  min-width: $size;
+  padding: 10px 14px 14px 14px;
+  text-align: center;
+  text-shadow: 2px 2px 2px $color-bd-hl;
+}
+
+button:hover, button:focus {
+  filter: brightness($brightness-factor);
+}
+
+button:active {
+  border-color: $color-bd $color-bd-hl $color-bd-hl $color-bd;
+  filter: brightness(1.0 / $brightness-factor);
+}

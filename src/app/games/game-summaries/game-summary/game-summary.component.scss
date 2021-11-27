@@ -1,0 +1,12 @@
+mat-card > a {
+  text-decoration: none;
+}
+
+img[mat-card-avatar] {
+  border-radius: 0;
+  object-fit: contain;
+}
+
+mat-card-actions {
+  text-align: center;
+}

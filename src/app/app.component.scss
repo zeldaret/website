@@ -1,0 +1,15 @@
+$footer-height: 125px;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+main {
+  /*background: url("/assets/img/background.png");
+  background-attachment: fixed;
+  background-size: cover;*/
+  flex: 1;
+  padding: 1em;
+}

@@ -1,0 +1,93 @@
+[
+  {
+    "header": "Decompilation Tools",
+    "subheader": "Decompilers",
+    "text": "mips_to_c",
+    "link": "https://github.com/matt-kempster/mips_to_c",
+    "slugs": ["oot", "mm"]
+  },
+  {
+    "header": "Decompilation Tools",
+    "subheader": "Decompilers",
+    "text": "mips_to_c (Online)",
+    "link": "https://simonsoftware.se/other/mips_to_c.py",
+    "slugs": ["oot", "mm"]
+  },
+  {
+    "header": "Decompilation Tools",
+    "subheader": "Decompilers",
+    "text": "Ghidra",
+    "link": "https://github.com/NationalSecurityAgency/ghidra",
+    "slugs": ["oot", "mm", "tmc"]
+  },
+  {
+    "header": "Decompilation Tools",
+    "subheader": "Decompilers",
+    "text": "Zelda64Loader",
+    "link": "https://github.com/Random06457/Zelda64Loader",
+    "description": "Loader for z64 ROM files",
+    "slugs": ["oot", "mm"]
+  },
+  {
+    "header": "Decompilation Documentation & Guides",
+    "text": "IDO O2 Decompilation Notes (IDO 5.3 & 7.1)",
+    "link": "https://hackmd.io/vPmcgdaFSlq4R2mfkq4bJg",
+    "slugs": ["oot", "mm"]
+  },
+  {
+    "header": "Decompilation Documentation & Guides",
+    "text": "N64 GFX Decompilation Guide (F3DEX & S2DEX)",
+    "link": "https://hackmd.io/m3E7g2YaSxiwUv9QKBLYyA",
+    "slugs": ["oot", "mm"]
+  },
+  {
+    "header": "Decompilation Documentation & Guides",
+    "text": "MIPS Calling Conventions",
+    "link": "https://courses.cs.washington.edu/courses/cse410/09sp/examples/MIPSCallingConventionsSummary.pdf",
+    "slugs": ["oot", "mm"]
+  },
+  {
+    "header": "Decompilation Documentation & Guides",
+    "text": "MIPS Instruction Set",
+    "link": "https://www.cs.cmu.edu/afs/cs/academic/class/15740-f97/public/doc/mips-isa.pdf",
+    "slugs": ["oot", "mm"]
+  },
+  {
+    "header": "Zelda Documentation",
+    "text": "TCRF #Zelda Sheets",
+    "link": "https://drive.google.com/drive/folders/0B2P7Sh4YYPZuSVRLV1pLSTRkbVk",
+    "slugs": ["oot", "mm"]
+  },
+  {
+    "header": "Zelda Documentation",
+    "text": "TMC Research",
+    "link": "https://drive.google.com/drive/folders/1hvEhcaUQvcJ1vUw5QWFTk7_La_ELKD87",
+    "slugs": ["tmc"]
+  },
+  {
+    "header": "Zelda Documentation",
+    "subheader": "CloudModding Wiki",
+    "text": "CloudModding (OOT)",
+    "link": "https://wiki.cloudmodding.com/oot/Main_Page",
+    "slugs": ["oot"]
+  },
+  {
+    "header": "Zelda Documentation",
+    "subheader": "CloudModding Wiki",
+    "text": "CloudModding (MM)",
+    "link": "https://wiki.cloudmodding.com/mm/Main_Page",
+    "slugs": ["mm"]
+  },
+  {
+    "header": "Project Resources",
+    "text": "Project Sheets",
+    "link": "https://drive.google.com/drive/folders/1ONmR0gzG3xCUufaNF6ATL2u5p90Cg6Kq",
+    "slugs": ["oot", "mm", "tmc"]
+  },
+  {
+    "header": "Project Resources",
+    "text": "OoT Debug Source Code Structure",
+    "link": "https://docs.google.com/spreadsheets/d/1hiP0JH_rEcq-s8vOnnoNPy2ooXhxl8qas4HItn30-Oc",
+    "slugs": ["oot"]
+  }
+]

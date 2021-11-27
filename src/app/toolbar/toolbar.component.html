@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <a routerLink="/"><img src="/assets/img/logo.png"/></a>
+  <span id="app-title">Zelda RET</span>
+  <button mat-button [matMenuTriggerFor]="menu">
+    Games
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item *ngFor="let game of games" [routerLink]="'/games/' + game.slug">
+      <span>{{ game.title }}</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
