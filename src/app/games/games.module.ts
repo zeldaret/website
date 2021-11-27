@@ -16,6 +16,7 @@ import { GameIntroComponent } from './game/game-intro/game-intro.component';
 import { GameProjectsComponent } from './game/game-projects/game-projects.component';
 import { GameResourcesComponent } from './game/game-resources/game-resources.component';
 import { GamesRoutingModule } from './games-routing.module';
+import { GameProjectComponent } from './game/game-projects/game-project/game-project.component';
 
 /**
  * Module for holding game related components and services.
@@ -28,7 +29,8 @@ import { GamesRoutingModule } from './games-routing.module';
     GameTabsComponent,
     GameIntroComponent,
     GameProjectsComponent,
-    GameResourcesComponent
+    GameResourcesComponent,
+    GameProjectComponent
   ],
   imports: [
     CommonModule,

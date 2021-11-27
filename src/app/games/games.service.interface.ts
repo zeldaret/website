@@ -61,18 +61,48 @@ export interface IResource {
  * Contains information about a decomp project and how to process the associated CSV data.
  */
 export interface IProject {
+  /**
+   * The games that this project relates to.
+   */
   slugs: string[];
+  /**
+   * The project name.
+   */
   name: string;
+  /**
+   * The name of the CSV file for matched project data.
+   */
   matched: string;
+  /**
+   * The name of the CSV file for unmatched project data.
+   */
   unmatched: string;
-  columns: [
-    {
-      type: string,
-      index: number | number[];
-      name: string;
-      display: string
-    }
-  ]
+  /**
+   * Column definitions for CSV parsing.
+   */
+  columns: ICSVColumnDef[];
+}
+
+/**
+ * Describes one or more columns and how to process their values.
+ */
+export interface ICSVColumnDef {
+  /**
+   * The type of column.
+   */
+  type: string,
+  /**
+   * The indexes that this definition refers to.
+   */
+  index: number | number[];
+  /**
+   * The name of the data that this refers to.
+   */
+  name: string;
+  /**
+   * A verbose display string.
+   */
+  display: string
 }
 
 /**

@@ -1,0 +1,10 @@
+<n64-box [index]="index+1" [heading]="project.name">
+  <strong style="float: left;">Total</strong>
+  <em style="float: right;">{{ (total * 100).toFixed(2) }}%</em>
+  <br/>
+  <ng-container *ngFor="let metric of metrics | keyvalue: originalOrder">
+    <strong style="float: left;">{{ metric.key }}</strong>
+    <em style="float: right;">{{ metric.value }}</em>
+    <br/>
+  </ng-container>
+</n64-box>

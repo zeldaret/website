@@ -1,0 +1,125 @@
+[
+  {
+    "slugs": ["oot"],
+    "name": "OoT MQ Debug",
+    "matched": "progress-oot",
+    "columns": [
+      {
+        "type": "percent_int",
+        "index": [3, 4],
+        "name": "Main",
+        "display": "{0} / {1} bytes of main code decompiled ({2}%)"
+      },
+      {
+        "type": "percent_int",
+        "index": [5, 6],
+        "name": "Boot",
+        "display": "{0} / {1} bytes of boot code decompiled ({2}%)"
+      },
+      {
+        "type": "percent_int",
+        "index": [7, 8],
+        "name": "Overlays",
+        "display": "{0} / {1} bytes of overlay code decompiled ({2}%)"
+      },
+      {
+        "type": "total",
+        "index": 9,
+        "name": "Total",
+        "display": "{0} / {1} bytes of total code decompiled ({2}%)"
+      },
+      {
+        "type": "int",
+        "index": 11,
+        "name": "Non matching functions",
+        "display": "{0} non-matching functions left"
+      }
+    ]
+  },
+  {
+    "slugs": ["mm"],
+    "name": "Majora's Mask",
+    "matched": "progress-mm",
+    "columns": [
+      {
+        "type": "percent_int",
+        "index": [3, 4],
+        "name": "Main",
+        "display": "{0} / {1} bytes of main code decompiled ({2}%)"
+      },
+      {
+        "type": "percent_int",
+        "index": [5, 6],
+        "name": "Boot",
+        "display": "{0} / {1} bytes of boot code decompiled ({2}%)"
+      },
+      {
+        "type": "percent_int",
+        "index": [7, 8],
+        "name": "Overlays",
+        "display": "{0} / {1} bytes of overlay code decompiled ({2}%)"
+      },
+      {
+        "type": "total",
+        "index": 9,
+        "name": "Total",
+        "display": "{0} / {1} bytes of total code decompiled ({2}%)"
+      },
+      {
+        "type": "int",
+        "index": 11,
+        "name": "Non matching functions",
+        "display": "{0} non-matching functions left"
+      },
+      {
+        "type": "percent_int",
+        "index": [12, 13],
+        "name": "Audio assets",
+        "display": "{0} / {1} bytes of audio assets decompiled ({2}%)"
+      },
+      {
+        "type": "percent_int",
+        "index": [14, 15],
+        "name": "Miscellaneous assets",
+        "display": "{0} / {1} bytes of misc. assets decompiled ({2}%)"
+      },
+      {
+        "type": "percent_int",
+        "index": [16, 17],
+        "name": "Object assets",
+        "display": "{0} / {1} bytes of object assets decompiled ({2}%)"
+      },
+      {
+        "type": "percent_int",
+        "index": [18, 19],
+        "name": "Scene assets",
+        "display": "{0} / {1} bytes of scene assets decompiled ({2}%)"
+      },
+      {
+        "type": "percent_int",
+        "index": [20, 21],
+        "name": "Textures",
+        "display": "{0} / {1} bytes of textures decompiled ({2}%)"
+      }
+    ]
+  },
+  {
+    "slugs": ["tmc"],
+    "name": "The Minish Cap",
+    "matched": "progress-tmc",
+    "columns": [
+      {
+        "type": "percent",
+        "index": 3,
+        "name": "Source code",
+        "display": "{0}% of source code decompiled"
+      },
+      {
+        "type": "percent",
+        "index": 5,
+        "name": "Data",
+        "display": "{0}% of data decompiled"
+      }
+    ]
+  }
+]

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IGamesService, IResource, ISummary } from './games.service.interface';
+import { IGamesService, IProject, IResource, ISummary } from './games.service.interface';
 
 /**
  * Obtains data for games.
@@ -26,6 +26,6 @@ export class GamesService implements IGamesService {
   }
 
   getProjectCSV(filename: string): Observable<string> {
-    return this.http.get<string>(`/assets/csv/${filename}.csv`);
+    return this.http.get(`/assets/csv/${filename}.csv`, { responseType: "text" });
   }
 }
