@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { GamesService } from '../../games.service';
 
 /**
@@ -9,24 +9,10 @@ import { GamesService } from '../../games.service';
   templateUrl: './game-tabs.component.html',
   styleUrls: ['./game-tabs.component.scss']
 })
-export class GameTabsComponent implements OnInit {
+export class GameTabsComponent {
 
-  constructor(private gamesService: GamesService) { }
+  constructor() { }
 
-  /**
-   * Determines whether the Intro tab is shown.
-   */
-  hasIntro: boolean = true;
-  /**
-   * Determines whether the Projects tab is shown.
-   */
-  hasProjects: boolean = true;
-  /**
-   * Determines whether the Resources tab is showing.
-   */
-  hasResources: boolean = true;
-
-  ngOnInit(): void {
-  }
+  @Input() slug: string;
 
 }

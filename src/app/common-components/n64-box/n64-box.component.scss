@@ -100,3 +100,7 @@ article {
   width: 100%;
   font-size: $font-size-content;
 }
+
+article:first-child {
+  border-top-style: solid !important;
+}

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ISummary } from '../../games.service.interface';
+import { IGame } from '../../games.service.interface';
 import { faGithub, faTrello } from '@fortawesome/free-brands-svg-icons';
 
 /**
@@ -15,9 +15,9 @@ export class GameSummaryComponent implements OnInit {
   constructor() { }
 
   /**
-   * The summary to use.
+   * The game data to use.
    */
-  @Input() data: ISummary;
+  @Input() data: IGame;
 
   /**
    * Icon definition.

@@ -1,9 +1,9 @@
 import { Observable } from "rxjs";
 
 /**
- * Basic game info to display on the front page.
+ * Game information to display and for project progress processing.
  */
-export interface ISummary {
+export interface IGame {
   /**
    * The string to use to identify the game.
    */
@@ -13,18 +13,17 @@ export interface ISummary {
    */
   title: string;
   /**
-   * An introduction string.
-   */
-  intro: string;
-  /**
-   * A percentage for general decompilation progress.
-   * TODO Calculate this on the fly, as opposed to a static number.
-   */
-  progress: number;
-  /**
    * Links to display as an icon. The key defines the icon, and the value is the link href.
    */
   links: {[type: string]: string};
+  /**
+   * The name of the CSV to read.
+   */
+  progress: string;
+  /**
+   * Column definitions for CSV parsing.
+   */
+   columns: ICSVColumnDef[];
 }
 
 /**
@@ -58,32 +57,6 @@ export interface IResource {
 }
 
 /**
- * Contains information about a decomp project and how to process the associated CSV data.
- */
-export interface IProject {
-  /**
-   * The games that this project relates to.
-   */
-  slugs: string[];
-  /**
-   * The project name.
-   */
-  name: string;
-  /**
-   * The name of the CSV file for matched project data.
-   */
-  matched: string;
-  /**
-   * The name of the CSV file for unmatched project data.
-   */
-  unmatched: string;
-  /**
-   * Column definitions for CSV parsing.
-   */
-  columns: ICSVColumnDef[];
-}
-
-/**
  * Describes one or more columns and how to process their values.
  */
 export interface ICSVColumnDef {
@@ -111,9 +84,9 @@ export interface ICSVColumnDef {
 export interface IGamesService {
 
   /**
-   * Get the summaries for all supported games.
+   * Get the information for all supported games.
    */
-  getSummaries(): Observable<ISummary[]>;
+  getGames(): Observable<IGame[]>;
 
   /**
    * Get all of the resources.
@@ -121,14 +94,9 @@ export interface IGamesService {
   getResources(): Observable<IResource[]>;
 
   /**
-   * Get all of the projects.
-   */
-  getProjects(): Observable<IProject[]>;
-
-  /**
-   * Get the CSV data for a project.
+   * Get the CSV data for a game.
    *
    * @param filename The filename of the desired CSV.
    */
-  getProjectCSV(filename: string): Observable<string>;
+  getGameCSV(filename: string): Observable<string>;
 }

@@ -1,8 +1,12 @@
 [
   {
-    "slugs": ["oot"],
-    "name": "OoT MQ Debug",
-    "matched": "progress-oot",
+    "slug": "oot",
+    "title": "Ocarina of Time",
+    "links": {
+      "github": "https://www.github.com/zeldaret/oot",
+      "trello": "https://trello.com/b/qUqnUkWY/ocarina-of-time-decompilation"
+    },
+    "progress": "progress-oot",
     "columns": [
       {
         "type": "percent_int",
@@ -37,9 +41,13 @@
     ]
   },
   {
-    "slugs": ["mm"],
-    "name": "Majora's Mask",
-    "matched": "progress-mm",
+    "slug": "mm",
+    "title": "Majora's Mask",
+    "links": {
+      "github": "https://www.github.com/zeldaret/mm",
+      "trello": "https://trello.com/b/ruxw9n6m/majoras-mask-decompilation"
+    },
+    "progress": "progress-mm",
     "columns": [
       {
         "type": "percent_int",
@@ -104,9 +112,12 @@
     ]
   },
   {
-    "slugs": ["tmc"],
-    "name": "The Minish Cap",
-    "matched": "progress-tmc",
+    "slug": "tmc",
+    "title": "The Minish Cap",
+    "links": {
+      "github": "https://www.github.com/zeldaret/tmc"
+    },
+    "progress": "progress-tmc",
     "columns": [
       {
         "type": "percent",

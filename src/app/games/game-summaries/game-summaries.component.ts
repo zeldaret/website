@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GamesService } from '../games.service';
-import { ISummary } from '../games.service.interface';
+import { IGame } from '../games.service.interface';
 
 /**
  * Container for all game summaries.
@@ -15,13 +15,13 @@ export class GameSummariesComponent implements OnInit {
   constructor(private gamesService: GamesService) { }
 
   /**
-   * List of summaries to use for "GameSummary" components.
+   * List of games to use for "GameSummary" components.
    */
-  summaries: ISummary[] = [];
+  games: IGame[] = [];
 
   ngOnInit(): void {
-    this.gamesService.getSummaries().subscribe(
-      res => this.summaries = res,
+    this.gamesService.getGames().subscribe(
+      res => this.games = res,
       err => console.error(err)
     )
   }

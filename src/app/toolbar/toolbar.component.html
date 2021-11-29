@@ -5,8 +5,8 @@
     Games
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item *ngFor="let summary of summaries" [routerLink]="'/games/' + summary.slug">
-      <span>{{ summary.title }}</span>
+    <button mat-menu-item *ngFor="let game of games" [routerLink]="'/games/' + game.slug">
+      <span>{{ game.title }}</span>
     </button>
   </mat-menu>
 </mat-toolbar>

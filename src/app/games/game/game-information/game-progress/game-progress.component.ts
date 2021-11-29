@@ -1,28 +1,25 @@
 import { KeyValue } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { GamesService } from 'src/app/games/games.service';
-import { IProject } from 'src/app/games/games.service.interface';
+import { IGame } from 'src/app/games/games.service.interface';
 
 /**
  * A single project displayed in a box, alongside a graph.
  */
 @Component({
-  selector: 'game-project',
-  templateUrl: './game-project.component.html',
-  styleUrls: ['./game-project.component.scss']
+  selector: 'game-progress',
+  templateUrl: './game-progress.component.html',
+  styleUrls: ['./game-progress.component.scss']
 })
-export class GameProjectComponent implements OnInit {
+export class GameProgressComponent implements OnChanges {
 
   constructor(private gamesService: GamesService) { }
 
   /**
-   * The index of the project. Used with n64-box.
+   * Game object which holds info on how to parse the CSV data.
    */
-  @Input() index: number = 0;
-  /**
-   * Project information.
-   */
-  @Input() project: IProject = null;
+  @Input() game: IGame = null;
+
   /**
    * The date time string for when this project was last updated
    */
@@ -36,8 +33,8 @@ export class GameProjectComponent implements OnInit {
    */
   metrics: {[key: string]: string | number} = {};
 
-  ngOnInit(): void {
-    this.gamesService.getProjectCSV(this.project.matched).subscribe(
+  ngOnChanges(): void {
+    this.gamesService.getGameCSV(this.game.progress).subscribe(
       res => {
         const points = res.split("\n");
         const latestPoint = points[points.length - 2];
@@ -47,7 +44,7 @@ export class GameProjectComponent implements OnInit {
         //const hash = column[2];
 
         let total: number = 0;
-        for (const columnDef of this.project.columns) {
+        for (const columnDef of this.game.columns) {
           switch(columnDef.type) {
             case "int":
             case "percent": {
@@ -93,7 +90,7 @@ export class GameProjectComponent implements OnInit {
         }
 
         if (this.total === null) {
-          this.total = +column[this.project.columns[0].index as number];
+          this.total = +column[this.game.columns[0].index as number];
         }
         if (this.total > 1) {
           this.total /= 100;

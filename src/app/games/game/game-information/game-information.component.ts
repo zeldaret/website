@@ -1,26 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Host, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { GamesService } from '../games.service';
-import { IGame } from '../games.service.interface';
+import { GamesService } from '../../games.service';
+import { IGame } from '../../games.service.interface';
 
 /**
- * Container component for the tabs and relevant content.
+ * Shows an introduction to the game as well as a progress chart.
  */
 @Component({
-  selector: 'game',
-  templateUrl: './game.component.html',
-  styleUrls: ['./game.component.scss']
+  selector: 'game-information',
+  templateUrl: './game-information.component.html',
+  styleUrls: ['./game-information.component.scss']
 })
-export class GameComponent implements OnInit {
+export class GameInformationComponent implements OnInit {
 
-  constructor(private gamesService: GamesService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private gamesService: GamesService, private router: Router, private route: ActivatedRoute) {}
 
   /**
-   * The summary to use to display basic game info.
+   * The game to display the intro/progress chart for.
    */
   game: IGame;
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.route.params.subscribe(
       res => {
         const slug: string = res.slug;

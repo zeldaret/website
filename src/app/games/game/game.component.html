@@ -1,6 +1,6 @@
-<h1>{{ summary.title }}</h1>
+<h1>{{ game.title }}</h1>
 <nav>
-  <game-tabs fxLayout="row wrap" fxLayoutAlign="center center"></game-tabs>
+  <game-tabs [slug]="game.slug" fxLayout="row wrap" fxLayoutAlign="center center"></game-tabs>
 </nav>
 <article>
   <router-outlet name="game"></router-outlet>

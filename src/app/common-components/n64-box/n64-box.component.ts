@@ -13,13 +13,18 @@ export class N64BoxComponent {
   constructor() { }
 
   /**
-   * The index to display in the top left.
+   * The number to display in the top left.
    */
-  @Input() index: number = 1;
+  @Input() number: number = 1;
 
   /**
    * The heading on the box.
    */
   @Input() heading: string;
+
+  /**
+   * Determine whether the button is displayed or not.
+   */
+  @Input() simple: boolean = false;
 
 }

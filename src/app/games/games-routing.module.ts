@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
-import { GameIntroComponent } from './game/game-intro/game-intro.component';
-import { GameProjectsComponent } from './game/game-projects/game-projects.component';
+import { GameInformationComponent } from './game/game-information/game-information.component';
 import { GameResourcesComponent } from './game/game-resources/game-resources.component';
 import { GameComponent } from './game/game.component';
 
@@ -12,23 +11,12 @@ const gameRoutes: Routes = [
     children: [
       {
         path: "",
-        component: GameIntroComponent,
+        component: GameInformationComponent,
         outlet: "game"
       },
       {
-        path: "intro",
+        path: "info",
         redirectTo: ""
-      }
-    ]
-  },
-  {
-    path: "games/:slug/projects",
-    component: GameComponent,
-    children: [
-      {
-        path: "",
-        component: GameProjectsComponent,
-        outlet: "game"
       }
     ]
   },
