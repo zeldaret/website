@@ -21,9 +21,9 @@ export interface IGame {
    */
   progress: string;
   /**
-   * Column definitions for CSV parsing.
+   * The charts to display for this game.
    */
-   columns: ICSVColumnDef[];
+  charts: IChart[];
 }
 
 /**
@@ -57,25 +57,40 @@ export interface IResource {
 }
 
 /**
- * Describes one or more columns and how to process their values.
+ * Describes a chart to display based on game CSV data.
  */
-export interface ICSVColumnDef {
+export interface IChart {
   /**
-   * The type of column.
+   * The chart title.
    */
-  type: string,
+  title: string;
   /**
-   * The indexes that this definition refers to.
+   * The chart subtitle.
    */
-  index: number | number[];
+  subtitle: string;
   /**
-   * The name of the data that this refers to.
+   * The index to start counting pairs from. If none provided, will assume 5.
    */
-  name: string;
+  index?: number;
   /**
-   * A verbose display string.
+   * The series to have for each chart.
    */
-  display: string
+  series: ISeries[];
+}
+
+/**
+ * Describes a singles series within a chart.
+ */
+export interface ISeries {
+  /**
+   * The name of the metric to display at the top.
+   */
+  metric: string;
+  /**
+   * The description to show in the tooltip.
+   * TODO do we want this?
+   */
+  description: string;
 }
 
 /**

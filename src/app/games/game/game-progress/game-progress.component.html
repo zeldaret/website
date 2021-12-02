@@ -1,0 +1,19 @@
+<n64-box [number]="2" heading="Project progress">
+  <strong style="float: left;">Last updated</strong>
+  <span style="float: right;">{{ lastUpdate }}</span>
+  <br/>
+  <ng-container *ngFor="let chart of metrics; let i = index">
+    <hr>
+    <strong style="float: left;">Total {{ (totals[i] | keyvalue)[0].key }}</strong>
+    <span style="float: right;">{{ (((totals[i] | keyvalue)[0].value) * 100).toFixed(2) }}%</span>
+    <br/>
+    <ng-container *ngFor="let metric of chart | keyvalue: originalOrder">
+      <strong style="float: left;">{{ metric.key }}</strong>
+      <span style="float: right;">{{ (metric.value * 100).toFixed(2) }}%</span>
+      <br/>
+    </ng-container>
+  </ng-container>
+</n64-box>
+<n64-box [simple]="true" *ngFor="let chart of game.charts">
+  <game-chart [data]="data" [metadata]="chart"></game-chart>
+</n64-box>

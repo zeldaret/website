@@ -1,7 +1,4 @@
 <h1>{{ game.title }}</h1>
-<nav>
-  <game-tabs [slug]="game.slug" fxLayout="row wrap" fxLayoutAlign="center center"></game-tabs>
-</nav>
 <article>
-  <router-outlet name="game"></router-outlet>
+  <game-progress [game]="game"></game-progress>
 </article>

@@ -10,11 +10,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { GameTabsComponent } from './game/game-tabs/game-tabs.component';
-import { GameResourcesComponent } from './game/game-resources/game-resources.component';
 import { GamesRoutingModule } from './games-routing.module';
-import { GameInformationComponent } from './game/game-information/game-information.component';
-import { GameProgressComponent } from './game/game-information/game-progress/game-progress.component';
+import { GameProgressComponent } from './game/game-progress/game-progress.component';
+import { GameChartComponent } from './game/game-progress/game-chart/game-chart.component';
+import { ChartModule } from 'angular-highcharts';
 
 /**
  * Module for holding game related components and services.
@@ -24,15 +23,14 @@ import { GameProgressComponent } from './game/game-information/game-progress/gam
     GameSummariesComponent,
     GameSummaryComponent,
     GameComponent,
-    GameTabsComponent,
-    GameResourcesComponent,
-    GameInformationComponent,
-    GameProgressComponent
+    GameProgressComponent,
+    GameChartComponent
   ],
   imports: [
     CommonModule,
     GamesRoutingModule,
     CommonComponentsModule,
+    ChartModule,
     MatButtonModule,
     MatCardModule,
     MatGridListModule,
