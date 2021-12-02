@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { IGame } from '../../games.service.interface';
 import { faGithub, faTrello } from '@fortawesome/free-brands-svg-icons';
+import { GamesService } from '../../games.service';
 
 /**
  * Displays a game's name, decomp progress, and links.
@@ -10,15 +11,18 @@ import { faGithub, faTrello } from '@fortawesome/free-brands-svg-icons';
   templateUrl: './game-summary.component.html',
   styleUrls: ['./game-summary.component.scss']
 })
-export class GameSummaryComponent implements OnInit {
+export class GameSummaryComponent implements OnChanges {
 
-  constructor() { }
+  constructor(private gamesService: GamesService) { }
 
   /**
    * The game data to use.
    */
   @Input() data: IGame;
-
+  /**
+   * The percentage to display for completion.
+   */
+  total: number;
   /**
    * Icon definition.
    */
@@ -28,7 +32,18 @@ export class GameSummaryComponent implements OnInit {
    */
   trello = faTrello;
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
+    this.gamesService.getGameCSV(this.data.progress).subscribe(
+      res => {
+        const points = res.split("\n").filter((line) => line != "");
+        const latestPoint = points[points.length - 1];
+        const column = latestPoint.split(",");
+
+        let i = this.data.charts[0].index;
+        this.total = +column[i] / +column[i + 1];
+      },
+      err => console.error(err)
+    );
   }
 
 }
