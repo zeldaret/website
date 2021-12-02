@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Chart } from 'angular-highcharts';
-import { Options } from 'highcharts';
+import { Options, PointOptionsObject } from 'highcharts';
 import { IChart } from 'src/app/games/games.service.interface';
 
 /**
@@ -16,9 +16,13 @@ export class GameChartComponent implements OnChanges {
   constructor() { }
 
   /**
-   * The CSV data to use for this chart.
+   * The matched CSV data to use for this chart.
    */
-  @Input() data: string = null;
+  @Input() matched: string = null;
+  /**
+   * The unmatched CSV data to use for this chart.
+   */
+  @Input() unmatched: string = null;
   /**
    * The chart metadata stored in the game settings.
    */
@@ -30,40 +34,14 @@ export class GameChartComponent implements OnChanges {
 
   ngOnChanges(): void {
     // don't do anything until all inputs are provided
-    if (typeof this.data !== "string" || typeof this.metadata !== "object") {
+    if (typeof this.matched !== "string" || typeof this.unmatched !== "string" || typeof this.metadata !== "object") {
       return;
     }
 
     // set up chart data
     const metadata = this.metadata;
-    let seriesData = [];
-    for (const line of this.data.split("\n").filter((line) => line != "")) {
-      const columns = line.split(",");
-
-      const x = +columns[1] * 1000; // timestamp
-      const commit = columns[2];
-
-      let i = this.metadata.index;
-      const y = +columns[i] / +columns[i + 1]; // total percentage
-      i += 2;
-
-      const metrics = [];
-      for (const _ in this.metadata.series.slice(1)) {
-        const numerator = +columns[i];
-        const denominator = +columns[i + 1];
-        const percent = numerator / denominator;
-
-        metrics.push([numerator, denominator, percent]); // params for the description string
-        i += 2;
-      }
-
-      seriesData.push({
-        x: x,
-        y: y,
-        commit: commit,
-        metrics: metrics
-      });
-    }
+    let matchedData = this.parseData(this.matched);
+    let unmatchedData = this.parseData(this.unmatched);
 
     const options: Options = {
       chart: { type: "line" },
@@ -101,9 +79,14 @@ export class GameChartComponent implements OnChanges {
       },
       series: [
         {
-          showInLegend: false,
           type: "line",
-          data: seriesData,
+          name: "Matched",
+          data: matchedData,
+        },
+        {
+          type: "line",
+          name: "Non-matched",
+          data: unmatchedData,
         }
       ],
     };
@@ -114,6 +97,40 @@ export class GameChartComponent implements OnChanges {
     else {
       this.chart.ref.update(options, true);
     }
+  }
+
+  private parseData(data: string): PointOptionsObject[] {
+    const seriesData = [];
+
+    for (const line of data.split("\n").filter((line) => line != "")) {
+      const columns = line.split(",");
+
+      const x = +columns[1] * 1000; // timestamp
+      const commit = columns[2];
+
+      let i = this.metadata.index;
+      const y = +columns[i] / +columns[i + 1]; // total percentage
+      i += 2;
+
+      const metrics = [];
+      for (const _ in this.metadata.series.slice(1)) {
+        const numerator = +columns[i];
+        const denominator = +columns[i + 1];
+        const percent = numerator / denominator;
+
+        metrics.push([numerator, denominator, percent]); // params for the description string
+        i += 2;
+      }
+
+      seriesData.push({
+        x: x,
+        y: y,
+        commit: commit,
+        metrics: metrics
+      });
+    }
+
+    return seriesData;
   }
 
 }

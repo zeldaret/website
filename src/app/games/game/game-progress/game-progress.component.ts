@@ -1,6 +1,7 @@
 import { KeyValue } from '@angular/common';
 import { ThrowStmt } from '@angular/compiler';
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { forkJoin } from 'rxjs';
 import { GamesService } from 'src/app/games/games.service';
 import { IGame } from 'src/app/games/games.service.interface';
 
@@ -28,42 +29,63 @@ export class GameProgressComponent implements OnChanges {
   /**
    * The simple numbers showing the total progress on respective charts.
    */
-  totals: {[key: string]: number}[] = [];
+  totals: {[key: string]: number[]}[] = [];
   /**
    * Separate project metrics parsed from the CSV.
    */
-  metrics: {[key: string]: string | number}[] = [];
+  metrics: {[key: string]: number[]}[] = [];
   /**
-   * Raw CSV data for use with the chart.
+   * Raw matched CSV data for use with the chart.
    */
-  data: string;
+  matched: string;
+  /**
+   * Raw unmatched CSV data for use with the chart.
+   */
+  unmatched: string;
 
   ngOnChanges(): void {
-    this.gamesService.getGameCSV(this.game.progress).subscribe(
-      res => {
-        // reset on page reload
+    forkJoin({
+      matched: this.gamesService.getGameCSV(this.game.matched),
+      unmatched: this.gamesService.getGameCSV(this.game.unmatched)
+    }).subscribe(
+      ({matched, unmatched}) => {
+        // reset on page load
         this.totals = [];
         this.metrics = [];
+        this.lastUpdate = null;
 
-        this.data = res;
-        const points = res.split("\n").filter((line) => line != "");
-        const latestPoint = points[points.length - 1];
-        const column = latestPoint.split(",");
-        this.lastUpdate = new Date(+column[1] * 1000).toLocaleString();
+        this.matched = matched;
+        this.unmatched = unmatched;
 
-        let c = 0;
-        for (const chart of this.game.charts) {
-          let i = chart.index;
-          this.totals.push({ [chart.series[0].metric]: (+column[i] / +column[i+1])});
-          i += 2;
-
-          this.metrics.push({});
-          for (const serie of chart.series.slice(1)) {
-            this.metrics[c][serie.metric] = (+column[i] / +column[i+1]);
-            i += 2;
+        for (const data of [matched, unmatched]) {
+          const points = data.split("\n").filter((line) => line != "");
+          const latestPoint = points[points.length - 1];
+          const column = latestPoint.split(",");
+          if (this.lastUpdate === null) {
+            this.lastUpdate = new Date(+column[1] * 1000).toLocaleString();
           }
 
-          c += 1;
+          for (const chart of this.game.charts) {
+            this.totals.push({ [chart.series[0].metric]: [] });
+          }
+
+          let c = 0;
+          for (const chart of this.game.charts) {
+            let i = chart.index;
+            this.totals[c][chart.series[0].metric].push(+column[i] / +column[i+1]);
+            i += 2;
+
+            this.metrics.push({});
+            for (const serie of chart.series.slice(1)) {
+              if (!(serie.metric in this.metrics[c])) {
+                this.metrics[c][serie.metric] = [];
+              }
+              this.metrics[c][serie.metric].push(+column[i] / +column[i+1]);
+              i += 2;
+            }
+
+            c += 1;
+          }
         }
       },
       err => console.error(err)

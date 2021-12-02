@@ -33,7 +33,7 @@ export class GameSummaryComponent implements OnChanges {
   trello = faTrello;
 
   ngOnChanges(): void {
-    this.gamesService.getGameCSV(this.data.progress).subscribe(
+    this.gamesService.getGameCSV(this.data.matched).subscribe(
       res => {
         const points = res.split("\n").filter((line) => line != "");
         const latestPoint = points[points.length - 1];

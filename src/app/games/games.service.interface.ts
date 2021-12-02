@@ -17,9 +17,13 @@ export interface IGame {
    */
   links: {[type: string]: string};
   /**
-   * The name of the CSV to read.
+   * The name of the "matched" CSV to read.
    */
-  progress: string;
+  matched: string;
+  /**
+   * The name of the "unmatched" CSV to read.
+   */
+  unmatched: string;
   /**
    * The charts to display for this game.
    */

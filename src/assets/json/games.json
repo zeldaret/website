@@ -6,7 +6,8 @@
       "github": "https://www.github.com/zeldaret/oot",
       "trello": "https://trello.com/b/qUqnUkWY/ocarina-of-time-decompilation"
     },
-    "progress": "progress-oot",
+    "matched": "progress-oot",
+    "unmatched": "progress-oot-u",
     "charts": [
       {
         "title": "Ocarina of Time MQ Debug Rom",
@@ -40,7 +41,8 @@
       "github": "https://www.github.com/zeldaret/mm",
       "trello": "https://trello.com/b/ruxw9n6m/majoras-mask-decompilation"
     },
-    "progress": "progress-mm",
+    "matched": "progress-mm",
+    "unmatched": "progress-mm-u",
     "charts": [
       {
         "title": "Majora's Mask",
