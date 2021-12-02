@@ -97,27 +97,5 @@
         ]
       }
     ]
-  },
-  {
-    "slug": "tmc",
-    "title": "The Minish Cap",
-    "links": {
-      "github": "https://www.github.com/zeldaret/tmc"
-    },
-    "progress": "progress-tmc",
-    "columns": [
-      {
-        "type": "percent",
-        "index": 3,
-        "name": "Source code",
-        "display": "{0}% of source code decompiled"
-      },
-      {
-        "type": "percent",
-        "index": 5,
-        "name": "Data",
-        "display": "{0}% of data decompiled"
-      }
-    ]
   }
 ]
