@@ -14,6 +14,7 @@ import { GamesRoutingModule } from './games-routing.module';
 import { GameProgressComponent } from './game/game-progress/game-progress.component';
 import { GameChartComponent } from './game/game-progress/game-chart/game-chart.component';
 import { ChartModule } from 'angular-highcharts';
+import { GameFAQComponent } from './game/game-faq/game-faq.component';
 
 /**
  * Module for holding game related components and services.
@@ -24,7 +25,8 @@ import { ChartModule } from 'angular-highcharts';
     GameSummaryComponent,
     GameComponent,
     GameProgressComponent,
-    GameChartComponent
+    GameChartComponent,
+    GameFAQComponent
   ],
   imports: [
     CommonModule,
