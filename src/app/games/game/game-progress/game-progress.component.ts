@@ -57,6 +57,10 @@ export class GameProgressComponent implements OnChanges {
         this.matched = matched;
         this.unmatched = unmatched;
 
+        for (const _ of this.game.charts) {
+          this.metrics.push({});
+        }
+
         for (const data of [matched, unmatched]) {
           const points = data.split("\n").filter((line) => line != "");
           const latestPoint = points[points.length - 1];
@@ -75,7 +79,6 @@ export class GameProgressComponent implements OnChanges {
             this.totals[c][chart.series[0].metric].push(+column[i] / +column[i+1]);
             i += 2;
 
-            this.metrics.push({});
             for (const serie of chart.series.slice(1)) {
               if (!(serie.metric in this.metrics[c])) {
                 this.metrics[c][serie.metric] = [];
