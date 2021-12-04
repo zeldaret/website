@@ -43,6 +43,11 @@ export class GameChartComponent implements OnChanges {
     let matchedData = this.parseData(this.matched);
     let unmatchedData = this.parseData(this.unmatched);
 
+    let joined = Array.prototype.concat(matchedData, unmatchedData);
+    joined.sort((a, b) => a["y"] - b["y"]);
+    const interval = 1 / 5;
+    const max = Math.max(interval, Math.ceil(joined.slice(-1)[0].y / interval) * interval);
+
     const options: Options = {
       chart: { type: "line" },
       title: { text: this.metadata.title },
@@ -75,18 +80,20 @@ export class GameChartComponent implements OnChanges {
       yAxis: {
         title: { text: "Completion (%)" },
         labels: { formatter: function() { return `${(+this.value * 100).toFixed(2)}%`; } },
-        max: 1
+        max: max
       },
       series: [
         {
           type: "line",
-          name: "Matched",
-          data: matchedData,
+          name: "Non-matched",
+          data: unmatchedData,
+          color: "#ffc107"
         },
         {
           type: "line",
-          name: "Non-matched",
-          data: unmatchedData,
+          name: "Matched",
+          data: matchedData,
+          color: "#01ce47"
         }
       ],
     };
