@@ -1,4 +1,16 @@
-a {
+.spacer {
+  flex: 100%;
+  height: 100%;
+}
+
+#toolbar-contents {
+  align-items: center;
+  display: flex;
+  flex: 1 0.4 800px;
+  height: 100%;
+}
+
+#icon-link {
   height: 90%;
 
   img {
@@ -8,4 +20,8 @@ a {
 
 #app-title {
   margin: 0 1em;
+}
+
+a[mat-icon-button] {
+  margin-left: auto;
 }

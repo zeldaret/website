@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GamesService } from '../games.service';
-import { ISummary } from '../games.service.interface';
+import { IGame } from '../games.service.interface';
 
 /**
  * Container component for the tabs and relevant content.
@@ -18,18 +18,18 @@ export class GameComponent implements OnInit {
   /**
    * The summary to use to display basic game info.
    */
-  summary: ISummary;
+  game: IGame;
 
   ngOnInit(): void {
     this.route.params.subscribe(
       res => {
         const slug: string = res.slug;
-        this.gamesService.getSummaries().subscribe(
+        this.gamesService.getGames().subscribe(
           res => {
             // redirect if an unknown slug is provided
-            const index = res.findIndex((summary) => summary.slug === slug)
+            const index = res.findIndex((game) => game.slug === slug)
             if (index !== -1) {
-              this.summary = res[index];
+              this.game = res[index];
             }
             else {
               this.router.navigateByUrl("/404", { skipLocationChange: true });

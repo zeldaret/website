@@ -1,0 +1,35 @@
+$color-bd: #1c2a49;
+
+hr {
+  border-color: $color-bd;
+  border-width: 1px;
+}
+
+.key {
+  float: left;
+}
+
+.value {
+  float: right;
+}
+
+.value.separator {
+  margin: 0 0.5em;
+}
+
+.value.metric {
+  min-width: 4em;
+  text-align: right;
+}
+
+.value.matched {
+  color: #01ce47;
+}
+
+.value.unmatched {
+  color: #ffc107;
+}
+
+.value.date {
+  color: #00ffff;
+}

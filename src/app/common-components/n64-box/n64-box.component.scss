@@ -15,6 +15,9 @@ section {
     $color-bg 60%,
     $color-bg-hl 80%,
     $color-bg);
+
+  max-width: 800px;
+  margin: auto;
 }
 
 * {
@@ -99,4 +102,8 @@ article {
   padding: 14px;
   width: 100%;
   font-size: $font-size-content;
+}
+
+article:first-child {
+  border-top-style: solid !important;
 }

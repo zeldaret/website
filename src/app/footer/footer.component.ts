@@ -17,5 +17,6 @@ export class FooterComponent {
    * Icon definition.
    */
   discord = faDiscord;
+  year = new Date().getFullYear();
 
 }

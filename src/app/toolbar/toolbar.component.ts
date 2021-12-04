@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GamesService } from '../games/games.service';
-import { ISummary } from '../games/games.service.interface';
+import { IGame } from '../games/games.service.interface';
+import { faDiscord } from '@fortawesome/free-brands-svg-icons';
 
 /**
  * Application header.
@@ -15,13 +16,14 @@ export class ToolbarComponent implements OnInit {
   constructor(private gamesService: GamesService) { }
 
   /**
-   * The summaries for the supported games. Shows the entries under the "Games" menu.
+   * The information for the supported games. Shows the entries under the "Games" menu.
    */
-  summaries: ISummary[];
+  games: IGame[];
+  discord = faDiscord;
 
   ngOnInit(): void {
-    this.gamesService.getSummaries().subscribe(
-      res => this.summaries = res,
+    this.gamesService.getGames().subscribe(
+      res => this.games = res,
       err => console.error(err)
     )
   }

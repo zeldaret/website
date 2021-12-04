@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IGamesService, IResource, ISummary } from './games.service.interface';
+import { IGame, IGamesService, IResource } from './games.service.interface';
 
 /**
- * Obtains data for games.
+ * Obtains data relating to the games.
  */
 @Injectable({
   providedIn: 'root'
@@ -13,11 +13,15 @@ export class GamesService implements IGamesService {
 
   constructor(private http: HttpClient) { }
 
-  getSummaries(): Observable<ISummary[]> {
-    return this.http.get<ISummary[]>("/assets/json/summaries.json")
+  getGames(): Observable<IGame[]> {
+    return this.http.get<IGame[]>("/assets/json/games.json");
   }
 
   getResources(): Observable<IResource[]> {
-    return this.http.get<IResource[]>("/assets/json/resources.json")
+    return this.http.get<IResource[]>("/assets/json/resources.json");
+  }
+
+  getGameCSV(filename: string): Observable<string> {
+    return this.http.get(`/assets/csv/${filename}.csv`, { responseType: "text" });
   }
 }

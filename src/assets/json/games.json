@@ -1,0 +1,101 @@
+[
+  {
+    "slug": "oot",
+    "title": "Ocarina of Time",
+    "links": {
+      "github": "https://www.github.com/zeldaret/oot"
+    },
+    "matched": "progress-oot",
+    "unmatched": "progress-oot-u",
+    "charts": [
+      {
+        "title": "Ocarina of Time MQ Debug Rom",
+        "subtitle": "Code decompilation progress",
+        "index": 3,
+        "series": [
+          {
+            "metric": "Code",
+            "description": "{0} / {1} bytes of all code decompiled ({2}%)"
+          },
+          {
+            "metric": "Code",
+            "description": "{0} / {1} bytes of code decompiled ({2}%)"
+          },
+          {
+            "metric": "Boot",
+            "description": "{0} / {1} bytes of boot decompiled ({2}%)"
+          },
+          {
+            "metric": "Overlays",
+            "description": "{0} / {1} bytes of overlay decompiled ({2}%)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "mm",
+    "title": "Majora's Mask",
+    "links": {
+      "github": "https://www.github.com/zeldaret/mm"
+    },
+    "matched": "progress-mm",
+    "unmatched": "progress-mm-u",
+    "charts": [
+      {
+        "title": "Majora's Mask",
+        "subtitle": "Code decompilation progress",
+        "index": 3,
+        "series": [
+          {
+            "metric": "Code",
+            "description": "{0} / {1} bytes of all code decompiled ({2}%)"
+          },
+          {
+            "metric": "Code",
+            "description": "{0} / {1} bytes of code decompiled ({2}%)"
+          },
+          {
+            "metric": "Boot",
+            "description": "{0} / {1} bytes of boot decompiled ({2}%)"
+          },
+          {
+            "metric": "Overlays",
+            "description": "{0} / {1} bytes of overlay decompiled ({2}%)"
+          }
+        ]
+      },
+      {
+        "title": "Majora's Mask",
+        "subtitle": "Asset decompilation progress",
+        "index": 11,
+        "series": [
+          {
+            "metric": "Assets",
+            "description": "{0} / {1} bytes of all assets decompiled ({2}%)"
+          },
+          {
+            "metric": "Audio",
+            "description": "{0} / {1} bytes of audio assets decompiled ({2}%)"
+          },
+          {
+            "metric": "Miscellaneous",
+            "description": "{0} / {1} bytes of miscellaneous assets decompiled ({2}%)"
+          },
+          {
+            "metric": "Object",
+            "description": "{0} / {1} bytes of object assets decompiled ({2}%)"
+          },
+          {
+            "metric": "Scene",
+            "description": "{0} / {1} bytes of scene assets decompiled ({2}%)"
+          },
+          {
+            "metric": "Textures",
+            "description": "{0} / {1} bytes of textures decompiled ({2}%)"
+          }
+        ]
+      }
+    ]
+  }
+]

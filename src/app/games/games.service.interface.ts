@@ -1,9 +1,9 @@
 import { Observable } from "rxjs";
 
 /**
- * Basic game info to display on the front page.
+ * Game information to display and for project progress processing.
  */
-export interface ISummary {
+export interface IGame {
   /**
    * The string to use to identify the game.
    */
@@ -13,18 +13,21 @@ export interface ISummary {
    */
   title: string;
   /**
-   * An introduction string.
-   */
-  intro: string;
-  /**
-   * A percentage for general decompilation progress.
-   * TODO Calculate this on the fly, as opposed to a static number.
-   */
-  progress: number;
-  /**
    * Links to display as an icon. The key defines the icon, and the value is the link href.
    */
   links: {[type: string]: string};
+  /**
+   * The name of the "matched" CSV to read.
+   */
+  matched: string;
+  /**
+   * The name of the "unmatched" CSV to read.
+   */
+  unmatched: string;
+  /**
+   * The charts to display for this game.
+   */
+  charts: IChart[];
 }
 
 /**
@@ -58,18 +61,61 @@ export interface IResource {
 }
 
 /**
+ * Describes a chart to display based on game CSV data.
+ */
+export interface IChart {
+  /**
+   * The chart title.
+   */
+  title: string;
+  /**
+   * The chart subtitle.
+   */
+  subtitle: string;
+  /**
+   * The index to start counting pairs from. If none provided, will assume 5.
+   */
+  index?: number;
+  /**
+   * The series to have for each chart.
+   */
+  series: ISeries[];
+}
+
+/**
+ * Describes a singles series within a chart.
+ */
+export interface ISeries {
+  /**
+   * The name of the metric to display at the top.
+   */
+  metric: string;
+  /**
+   * The description to show in the tooltip.
+   * TODO do we want this?
+   */
+  description: string;
+}
+
+/**
  * Functions to implement within "GamesService".
  */
 export interface IGamesService {
 
   /**
-   * Get the summaries for all supported games.
+   * Get the information for all supported games.
    */
-  getSummaries(): Observable<ISummary[]>;
+  getGames(): Observable<IGame[]>;
 
   /**
    * Get all of the resources.
    */
   getResources(): Observable<IResource[]>;
 
+  /**
+   * Get the CSV data for a game.
+   *
+   * @param filename The filename of the desired CSV.
+   */
+  getGameCSV(filename: string): Observable<string>;
 }
