@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GamesService } from '../games/games.service';
 import { IGame } from '../games/games.service.interface';
+import { faDiscord } from '@fortawesome/free-brands-svg-icons';
 
 /**
  * Application header.
@@ -18,6 +19,7 @@ export class ToolbarComponent implements OnInit {
    * The information for the supported games. Shows the entries under the "Games" menu.
    */
   games: IGame[];
+  discord = faDiscord;
 
   ngOnInit(): void {
     this.gamesService.getGames().subscribe(
