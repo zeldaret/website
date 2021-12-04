@@ -3,8 +3,7 @@
     "slug": "oot",
     "title": "Ocarina of Time",
     "links": {
-      "github": "https://www.github.com/zeldaret/oot",
-      "trello": "https://trello.com/b/qUqnUkWY/ocarina-of-time-decompilation"
+      "github": "https://www.github.com/zeldaret/oot"
     },
     "matched": "progress-oot",
     "unmatched": "progress-oot-u",
@@ -38,8 +37,7 @@
     "slug": "mm",
     "title": "Majora's Mask",
     "links": {
-      "github": "https://www.github.com/zeldaret/mm",
-      "trello": "https://trello.com/b/ruxw9n6m/majoras-mask-decompilation"
+      "github": "https://www.github.com/zeldaret/mm"
     },
     "matched": "progress-mm",
     "unmatched": "progress-mm-u",
