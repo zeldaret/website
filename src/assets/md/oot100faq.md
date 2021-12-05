@@ -21,3 +21,9 @@ The goal of this project is **NOT** to make any kind of port, such as to PC. Som
 - Restructuring of headers
 - Documentation
 - Other versions: 17 of them!
+
+## Where can I find out more information?
+
+- You can consult the [main FAQ](faq.html).
+- You can join the [ZeldaRET Discord server](http://discord.zelda64.dev/).
+- If you want to write an article or make a video about decomp, please reach out to one of the project leads via Discord: they are happy to explain any aspects of the project you would like to know about.

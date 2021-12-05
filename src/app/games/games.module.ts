@@ -15,6 +15,7 @@ import { GameProgressComponent } from './game/game-progress/game-progress.compon
 import { GameChartComponent } from './game/game-progress/game-chart/game-chart.component';
 import { ChartModule } from 'angular-highcharts';
 import { GameFAQComponent } from './game/game-faq/game-faq.component';
+import { MarkdownModule } from 'ngx-markdown';
 
 /**
  * Module for holding game related components and services.
@@ -37,11 +38,13 @@ import { GameFAQComponent } from './game/game-faq/game-faq.component';
     MatCardModule,
     MatGridListModule,
     FontAwesomeModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MarkdownModule.forRoot(),
   ],
   exports: [
     GameSummariesComponent
   ],
   providers: [GamesService]
 })
-export class GamesModule { }
+export class GamesModule {
+ }

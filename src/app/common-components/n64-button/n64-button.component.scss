@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $border-width: 6px;
 $brightness-factor: 1.25;
 $color-bg: #2f487c;
@@ -31,5 +33,5 @@ button:hover, button:focus {
 
 button:active {
   border-color: $color-bd $color-bd-hl $color-bd-hl $color-bd;
-  filter: brightness(1.0 / $brightness-factor);
+  filter: brightness(math.div(1.0, $brightness-factor));
 }

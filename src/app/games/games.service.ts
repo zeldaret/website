@@ -24,4 +24,8 @@ export class GamesService implements IGamesService {
   getGameCSV(filename: string): Observable<string> {
     return this.http.get(`/assets/csv/${filename}.csv`, { responseType: "text" });
   }
+
+  getGameFAQ(filename: string): Observable<string> {
+    return this.http.get(`/assets/md/${filename}.md`, { responseType: "text" });
+  }
 }
