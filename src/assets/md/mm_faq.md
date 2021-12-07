@@ -1,9 +1,6 @@
 # Zelda64 Decompilation FAQ
 
-## General Questions
-
-
-### What is Decompilation? What is matching decompilation?
+## What is Decompilation? What is matching decompilation?
 
 Decompilation is a type of reverse engineering: analysing the compiled
 binary data that is on the cartridge to produce human-readable code that
@@ -11,7 +8,7 @@ has the same result. *Matching* decompilation is more specific: instead
 of merely functionally equivalent code, it aims to produce code that
 compiles to *exactly* the same data as the original.
 
-### What language was this game written in?
+## What language was this game written in?
 
 [The programming language
 C](https://en.wikipedia.org/wiki/C_(programming_language)), which is
@@ -20,7 +17,7 @@ language](https://en.wikipedia.org/wiki/MIPS_architecture), which
 transliterates precisely into the raw bytes of machine code/data that
 are on the cartridge.
 
-### What is this project's goal?
+## What is this project's goal?
 
 We aim to produce a complete documented codebase, written in C as far as
 possible, for every retail version of The Legend of Zelda Majora\'s 
@@ -32,18 +29,18 @@ code almost certainly looks very different from the original, since it
 is based only on analysing the compiled code.
 
 
-### Which versions will be decompiled?
+## Which versions will be decompiled?
 
 It is intended to eventually support every one of the 10 retail versions
 we have available: N64/GC, NTSC/PAL, etc.
 
-### Does decomp run on console?
+## Does decomp run on console?
 
 The romfile that one of our decompilation projects compiles is identical
 to the original ROM (that\'s what *matching* means). Therefore it runs
 wherever that romfile will.
 
-### PC port?
+## PC port?
 
 The goal of this project is **NOT** to make any kind of port, such as to
 PC. Someone else might take our work and make a port (although they
@@ -54,14 +51,14 @@ tomorrow anyway: decomp would only be the first step.
 Please do not ask about it in Discord, ZeldaRET is not involved and will
 not be involved in any such venture.
 
-### Can decomp be used to make mods?
+## Can decomp be used to make mods?
 
 It is possible to use it in its current state (indeed, a number of mods
 have already used it), but not recommended unless you are *very*
 familiar with the codebase. It will be much better in future, it is a
 high priority to improve the codebase's suitability for modding.
 
-### Who can contribute? What do I need to know?
+## Who can contribute? What do I need to know?
 
 Anyone with a decent knowledge of how the games work can contribute
 usefully in some way or other if they learn the basics of C.
@@ -89,17 +86,17 @@ usefully in some way or other if they learn the basics of C.
 
 There is one exception:
 
-#### Is any use being made of leaked materials?
+### Is any use being made of leaked materials?
 
 No. *No one is allowed to contribute to the project who has accessed
 material relating to relevant source code or documentation leaks.* For
 specifics, see [the Discord server](http://discord.zelda64.dev/).
 
-### How do I set up the decompilation on my computer?
+## How do I set up the decompilation on my computer?
 
 See the instructions in the [README.md]https://github.com/zeldaret/mm/#readme)
 
-### Why does the progress graph move so inconsistently?
+## Why does the progress graph move so inconsistently?
 
 Firstly, on any project like this, the beginning is slow as the methods
 and techniques are created and understanding of anything requires a lot
@@ -124,14 +121,14 @@ that has been completed, but required months to document properly.
 Lastly, people are doing this in their spare time, so when they don\'t
 have spare time, they aren\'t able to contribute.
 
-### When will the project be finished? What would \"Finished\" mean?
+## When will the project be finished? What would \"Finished\" mean?
 
 This is being done by people in their spare time, so we do not have a
 specific deadline in mind. As far as what counts as \"done\", we will
 consider the project complete when we have a completely documented
 codebase that covers all 9 retail versions of the game.
 
-### What decompiler is being used?
+## What decompiler is being used?
 
 We mostly use a custom-built decompiler called
 [mips\_to\_c](https://github.com/matt-kempster/mips_to_c). Occasionally
@@ -139,7 +136,7 @@ some people have found Ghidra helpful, but for matching decompilation of
 MIPS, custom tools for the job have proven much more capable.
 
 
-### Is Majora\'s Mask more optimized than Super Mario 64?
+## Is Majora\'s Mask more optimized than Super Mario 64?
 
 Yes, the retail ROM that we are using has the standard `-O2` optimization
 flags for most files (some of the low-level Nintendo 64 system files are
@@ -150,7 +147,7 @@ completed, namely the audio, although we have benefited greatly from the
 prior experience of Super Mario 64 decomp, as well as our custom
 decompiler `mips_to_c`.
 
-### How can I help?
+## How can I help?
 
 -   Ocarina of Time has no more code decompilation work to do, at least
     on the first version.
@@ -165,14 +162,14 @@ decompiler `mips_to_c`.
     happy to talk to anyone who would like to publish articles or videos
     about the project.
 
-### Where can I get more information?
+## Where can I get more information?
 
 For more information on any of the topics in the scope of this project
 that have been discussed here, please join [the
 Discord](http://discord.zelda64.dev/). We aim to be helpful and friendly
 to newcomers, provided they have read the basics in this FAQ.
 
-#### I would like to write an article or make a video about this project. Who should I contact for further information?
+### I would like to write an article or make a video about this project. Who should I contact for further information?
 
 Please reach out to one of the project leads via Discord. They will be 
 happy to either answer your questions themselves, or direct you to 
@@ -187,7 +184,7 @@ someone who is more knowledgeable in the relevant areas.
 
 
 
-### How similar is Majora\'s Mask to Ocarina of Time? Can code be copypasted between the two?
+## How similar is Majora\'s Mask to Ocarina of Time? Can code be copypasted between the two?
 
 Some things are very similar: both use the same coding styles, share
 some code, some of the asset files are identical (only about 10% of the
@@ -202,7 +199,7 @@ just transfer (Keese in MM are quite different from their Ocarina of
 Time versions, for example, and a lot of graphics functions are a bit
 different).
 
-### Why is Majora\'s Mask so far behind Ocarina of Time?
+## Why is Majora\'s Mask so far behind Ocarina of Time?
 
 It was decided by the Majora\'s Mask project leads to concentrate on
 Ocarina of Time first, with the expectation that a lot of Ocarina of
@@ -211,7 +208,7 @@ Mask decompilation, and this has proven to be the case so far! But
 recently, knowledge from Majora\'s Mask has also been helping with
 matching stubborn functions in Ocarina of Time.
 
-### Are Ocarina of Time and Majora\'s Mask using the same decompilation method?
+## Are Ocarina of Time and Majora\'s Mask using the same decompilation method?
 
 Broadly yes: both games are sufficiently similar that the same method
 can be used for compiling the files. However, Ocarina of Time keeps the
@@ -219,7 +216,7 @@ remaining undecompiled assembly code in the main repository, while
 Majora\'s Mask uses transient assembly, which makes the extraction and
 disassembly process more complicated.
 
-### Why is Majora\'s Mask harder to match than Ocarina of Time?
+## Why is Majora\'s Mask harder to match than Ocarina of Time?
 
 Majora\'s Mask is working on a retail version. Retail versions of both 
 games are compiled with `-O2 -g3`. `-g3` is a debugging flag that 
@@ -231,7 +228,7 @@ retail versions of Ocarina of Time are also compiled with `-O2 -g3`, so
 it too will have this problem when that project moves to supporting
 retail versions.
 
-### Why is there no assembly code in the Majora\'s Mask repo? What is transient ASM?
+## Why is there no assembly code in the Majora\'s Mask repo? What is transient ASM?
 
 It is the view of the Majora\'s Mask project leads that transient asm is
 safer than storing the disassembly in the repo. They feel that the C

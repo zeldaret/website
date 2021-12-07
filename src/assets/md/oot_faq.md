@@ -1,9 +1,6 @@
 # Zelda64 Decompilation FAQ
 
-## General Questions
-
-
-### What is Decompilation? What is matching decompilation?
+## What is Decompilation? What is matching decompilation?
 
 Decompilation is a type of reverse engineering: analysing the compiled
 binary data that is on the cartridge to produce human-readable code that
@@ -11,7 +8,7 @@ has the same result. *Matching* decompilation is more specific: instead
 of merely functionally equivalent code, it aims to produce code that
 compiles to *exactly* the same data as the original.
 
-### What language was this game written in?
+## What language was this game written in?
 
 [The programming language
 C](https://en.wikipedia.org/wiki/C_(programming_language)), which is
@@ -20,7 +17,7 @@ language](https://en.wikipedia.org/wiki/MIPS_architecture), which
 transliterates precisely into the raw bytes of machine code/data that
 are on the cartridge.
 
-### What is this project's goal?
+## What is this project's goal?
 
 We aim to produce a complete documented codebase, written in C as far as
 possible, for every version of The Legend of Zelda Ocarina of Time. This
@@ -32,7 +29,7 @@ code almost certainly looks very different from the original, since it
 is based only on analysing the compiled code.
 
 
-### What does 100% mean?
+## What does 100% mean?
 
 100% means that, in the first version of the game we have worked on, all
 of the code that can be written as compilable C code has been. It does
@@ -41,10 +38,10 @@ mods (including any ports). It also does not mean that the code is
 documented: there is still *a lot* of work to do on that.
 
 
-### What next?
+## What next?
 
 Having everything in C is by no means the end of the project: we are
-not even clode to \"done\". On our list at the moment:
+not even close to \"done\". On our list at the moment:
 
 -   Reorganisation of systems
 -   Restructuring of headers
@@ -52,12 +49,12 @@ not even clode to \"done\". On our list at the moment:
 -   Other versions: 17 of them!
 
 
-### Which versions will be decompiled?
+## Which versions will be decompiled?
 
 It is intended to eventually support every one of the 18 versions we 
 have available: N64/GC, NTSC/PAL, etc.
 
-### Why start with the PAL Master Quest Debug version?
+## Why start with the PAL Master Quest Debug version?
 
 Before the project began, this version of the game had the most
 information available: most romhacks have used it as a base, and it
@@ -66,7 +63,7 @@ of some of the purposes of functions and variables. It also appears to
 be slightly easier to match due to being compiled with slightly
 different flags from retail versions.
 
-### Which version will be next?
+## Which version will be next?
 
 We intend to work on the versions more similar to the ones we have
 completed, which means the order will roughly be PAL (non-MQ) debugs,
@@ -74,7 +71,7 @@ PAL GameCube, the other GameCube versions, then the N64 versions and
 probably iQue last of all.
 
 
-### Does decomp run on console?
+## Does decomp run on console?
 
 The romfile that one of our decompilation projects compiles is identical
 to the original ROM (that\'s what *matching* means). Therefore it runs
@@ -84,7 +81,7 @@ Pak to run on Nintendo 64, because the debug ROM itself needs the extra
 4 MB for debugging features; it also needs to be compressed to work well
 if injected into the Virtual Console emulator).
 
-### PC port?
+## PC port?
 
 The goal of this project is **NOT** to make any kind of port, such as to
 PC. Someone else might take our work and make a port (although they
@@ -95,14 +92,14 @@ tomorrow anyway: decomp would only be the first step.
 Please do not ask about it in Discord, ZeldaRET is not involved and will
 not be involved in any such venture.
 
-### Can decomp be used to make mods?
+## Can decomp be used to make mods?
 
 It is possible to use it in its current state (indeed, a number of mods
 have already used it), but not recommended unless you are *very*
 familiar with the codebase. It will be much better in future, it is a
 high priority to improve the codebase's suitability for modding.
 
-### Who can contribute? What do I need to know?
+## Who can contribute? What do I need to know?
 
 Anyone with a decent knowledge of how the games work can contribute
 usefully in some way or other if they learn the basics of C.
@@ -130,18 +127,18 @@ usefully in some way or other if they learn the basics of C.
 
 There is one exception:
 
-#### Is any use being made of leaked materials?
+### Is any use being made of leaked materials?
 
 No. *No one is allowed to contribute to the project who has accessed
 material relating to relevant source code or documentation leaks.* For
 specifics, see [the Discord server](http://discord.zelda64.dev/).
 
-### How do I set up the decompilation on my computer?
+## How do I set up the decompilation on my computer?
 
 See the instructions in the [README.md](https://github.com/zeldaret/oot/#readme).
 
 
-### Why does the progress graph move so inconsistently?
+## Why does the progress graph move so inconsistently?
 
 Firstly, on any project like this, the beginning is slow as the methods
 and techniques are created and understanding of anything requires a lot
@@ -166,14 +163,14 @@ that has been completed, but required months to document properly.
 Lastly, people are doing this in their spare time, so when they don\'t
 have spare time, they aren\'t able to contribute.
 
-### When will the project be finished? What would \"Finished\" mean?
+## When will the project be finished? What would \"Finished\" mean?
 
 This is being done by people in their spare time, so we do not have a
 specific deadline in mind. As far as what counts as \"done\", we will
 consider the project complete when we have a completely documented
 codebase that covers every extant version of the game.
 
-### What decompiler is being used?
+## What decompiler is being used?
 
 We mostly use a custom-built decompiler called
 [mips\_to\_c](https://github.com/matt-kempster/mips_to_c). Occasionally
@@ -181,7 +178,7 @@ some people have found Ghidra helpful, but for matching decompilation of
 MIPS, custom tools for the job have proven much more capable.
 
 
-### Is Ocarina of Time more optimized than Super Mario 64?
+## Is Ocarina of Time more optimized than Super Mario 64?
 
 Yes, the debug ROM that we are using has the standard `-O2` optimization
 flags for most files (some of the low-level Nintendo 64 system files are
@@ -191,7 +188,7 @@ approximately as difficult to decompile as the last part of Super Mario
 greatly from the prior experience of Super Mario 64 decomp, as well as
 our custom decompiler `mips_to_c`.
 
-### How can I help?
+## How can I help?
 
 -   Ocarina of Time has no more code decompilation work to do, at least
     on the first version.
@@ -206,14 +203,14 @@ our custom decompiler `mips_to_c`.
     happy to talk to anyone who would like to publish articles or videos
     about the project.
 
-### Where can I get more information?
+## Where can I get more information?
 
 For more information on any of the topics in the scope of this project
 that have been discussed here, please join [the
 Discord](http://discord.zelda64.dev/). We aim to be helpful and friendly
 to newcomers, provided they have read the basics in this FAQ.
 
-#### I would like to write an article or make a video about this project. Who should I contact for further information?
+### I would like to write an article or make a video about this project. Who should I contact for further information?
 
 Please reach out to one of the project leads via Discord. They will be 
 happy to either answer your questions themselves, or direct you to 

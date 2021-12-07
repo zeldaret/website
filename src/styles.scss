@@ -22,3 +22,13 @@ a {
 a:visited:not([mat-icon-button]) {
   color: darkgoldenrod;
 }
+
+markdown h1 {
+  display: none !important;
+}
+
+markdown h2 {
+  border-bottom: 1px solid white;
+}
+
+

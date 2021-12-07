@@ -14,30 +14,14 @@ import { IGame } from 'src/app/games/games.service.interface';
   templateUrl: './game-faq.component.html',
   styleUrls: ['./game-faq.component.scss']
 })
-export class GameFAQComponent implements OnInit {
+export class GameFAQComponent {
   
   constructor(private gamesService: GamesService) { }
 
   
   @Input() game: IGame = null;
 
-  faq: string;
-
   onLoad(arg) {}
   onError(arg) {}
 
-  ngOnInit(): void {
-    forkJoin({
-      faq: this.gamesService.getGameFAQ(this.game.faq)
-    }).subscribe(
-      ({faq}) => {
-        this.faq = faq;
-      }
-    )
-
-  }
-
-
-
-  
 }
