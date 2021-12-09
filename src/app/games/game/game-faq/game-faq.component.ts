@@ -6,9 +6,6 @@ import { GamesService } from 'src/app/games/games.service';
 import { IGame } from 'src/app/games/games.service.interface';
 
 
-/**
- * A single project displayed in a box, alongside one or more graphs.
- */
  @Component({
   selector: 'game-faq',
   templateUrl: './game-faq.component.html',

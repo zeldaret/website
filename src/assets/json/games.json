@@ -5,7 +5,7 @@
     "links": {
       "github": "https://www.github.com/zeldaret/oot"
     },
-    "faq": "oot-faq",
+    "faq": "oot_faq",
     "matching": "progress-oot-matching",
     "nonmatching": "progress-oot-nonmatching",
     "charts": [
@@ -40,8 +40,9 @@
     "links": {
       "github": "https://www.github.com/zeldaret/mm"
     },
-    "matching": "progress-mm",
-    "nonmatching": "progress-mm-u",
+    "faq": "mm_faq",
+    "matching": "progress-mm-matching",
+    "nonmatching": "progress-mm-nonmatching",
     "charts": [
       {
         "title": "Majora's Mask",
