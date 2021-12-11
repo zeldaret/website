@@ -1,46 +1,3 @@
--   [Zelda64 Decompilation FAQ](#zelda64-decompilation-faq)
-    -   [What language was this game written
-        in?](#what-language-was-this-game-written-in)
-    -   [What is this project's goal?](#what-is-this-projects-goal)
-    -   [Which versions will be
-        decompiled?](#which-versions-will-be-decompiled)
-    -   [Does decomp run on console?](#does-decomp-run-on-console)
-    -   [PC port?](#pc-port)
-    -   [Can decomp be used to make
-        mods?](#can-decomp-be-used-to-make-mods)
-    -   [Who can contribute? What do I need to
-        know?](#who-can-contribute-what-do-i-need-to-know)
-        -   [Is any use being made of leaked
-            materials?](#is-any-use-being-made-of-leaked-materials)
-    -   [How do I set up the decompilation on my
-        computer?](#how-do-i-set-up-the-decompilation-on-my-computer)
-    -   [Why does the progress graph move so
-        inconsistently?](#why-does-the-progress-graph-move-so-inconsistently)
-    -   [When will the project be finished? What would \"Finished\"
-        mean?](#when-will-the-project-be-finished-what-would-finished-mean)
-    -   [What decompiler is being used?](#what-decompiler-is-being-used)
-    -   [Is Majora\'s Mask more optimized than Super Mario
-        64?](#is-majoras-mask-more-optimized-than-super-mario-64)
-    -   [How can I help?](#how-can-i-help)
-    -   [Where can I get more
-        information?](#where-can-i-get-more-information)
-        -   [I would like to write an article or make a video about this
-            project. Who should I contact for further
-            information?](#i-would-like-to-write-an-article-or-make-a-video-about-this-project.-who-should-i-contact-for-further-information)
-    -   [How similar is Majora\'s Mask to Ocarina of Time? Can code be
-        copypasted between the
-        two?](#how-similar-is-majoras-mask-to-ocarina-of-time-can-code-be-copypasted-between-the-two)
-    -   [Why is Majora\'s Mask so far behind Ocarina of
-        Time?](#why-is-majoras-mask-so-far-behind-ocarina-of-time)
-    -   [Are Ocarina of Time and Majora\'s Mask using the same
-        decompilation
-        method?](#are-ocarina-of-time-and-majoras-mask-using-the-same-decompilation-method)
-    -   [Why is Majora\'s Mask harder to match than Ocarina of
-        Time?](#why-is-majoras-mask-harder-to-match-than-ocarina-of-time)
-    -   [Why is there no assembly code in the Majora\'s Mask repo? What
-        is transient
-        ASM?](#why-is-there-no-assembly-code-in-the-majoras-mask-repo-what-is-transient-asm)
-
 -   [What language was this game written
     in?](#what-language-was-this-game-written-in)
 -   [What is this project's goal?](#what-is-this-projects-goal)
@@ -48,7 +5,8 @@
     decompiled?](#which-versions-will-be-decompiled)
 -   [Does decomp run on console?](#does-decomp-run-on-console)
 -   [PC port?](#pc-port)
--   [Can decomp be used to make mods?](#can-decomp-be-used-to-make-mods)
+-   [Can decomp be used to make
+    mods?](#can-decomp-be-used-to-make-mods)
 -   [Who can contribute? What do I need to
     know?](#who-can-contribute-what-do-i-need-to-know)
     -   [Is any use being made of leaked
@@ -73,12 +31,13 @@
     two?](#how-similar-is-majoras-mask-to-ocarina-of-time-can-code-be-copypasted-between-the-two)
 -   [Why is Majora\'s Mask so far behind Ocarina of
     Time?](#why-is-majoras-mask-so-far-behind-ocarina-of-time)
--   [Are Ocarina of Time and Majora\'s Mask using the same decompilation
+-   [Are Ocarina of Time and Majora\'s Mask using the same
+    decompilation
     method?](#are-ocarina-of-time-and-majoras-mask-using-the-same-decompilation-method)
 -   [Why is Majora\'s Mask harder to match than Ocarina of
     Time?](#why-is-majoras-mask-harder-to-match-than-ocarina-of-time)
--   [Why is there no assembly code in the Majora\'s Mask repo? What is
-    transient
+-   [Why is there no assembly code in the Majora\'s Mask repo? What
+    is transient
     ASM?](#why-is-there-no-assembly-code-in-the-majoras-mask-repo-what-is-transient-asm)
 
 Zelda64 Decompilation FAQ
