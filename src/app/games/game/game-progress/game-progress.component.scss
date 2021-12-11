@@ -9,27 +9,45 @@ hr {
   float: left;
 }
 
-.value {
-  float: right;
-}
+// .value.metric {
+//   min-width: 4em;
+//   text-align: right;
+// }
 
-.value.separator {
-  margin: 0 0.5em;
-}
-
-.value.metric {
-  min-width: 4em;
-  text-align: right;
-}
-
-.value.matching {
+.matching {
   color: #01ce47;
 }
 
-.value.nonmatching {
+.nonmatching {
   color: #ffc107;
 }
 
 .value.date {
   color: #00ffff;
+  float: right;
+}
+
+
+
+table {
+  width: 100%;
+}
+
+thead th:not(:first-of-type) {
+  text-align: right;
+}
+
+thead th:first-of-type {
+  text-align: left;
+}
+
+tbody th {
+  text-align: left;
+  width: 70%;
+  font-weight: normal;
+}
+
+tbody td {
+  text-align: right;
+  white-space: nowrap;
 }

@@ -4,20 +4,46 @@
   <br/>
   <ng-container *ngFor="let chart of metrics; let i = index">
     <hr>
-    <strong class="key">Total {{ (totals[i] | keyvalue)[0].key }}</strong>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">  {{ (totals[i] | keyvalue)[0].key }}</th>
+          <th scope="col"> <div class="value matching">Matching</div></th>
+          <th scope="col"> <div class="value nonmatching">Nonmatching</div></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">
+            <strong class="key">Total {{ (totals[i] | keyvalue)[0].key }}</strong>
+          </th>
+          <td *ngFor="let total of (totals[i] | keyvalue)[0].value; let j = index">
+            <strong [ngClass]="{matching: j === 0, nonmatching: j === 1}">{{ (total * 100).toFixed(2) }}%</strong>
+          </td>
+        </tr>
+        <tr *ngFor="let metric of chart | keyvalue: originalOrder">
+            <th scope="row" class="key">{{ metric.key }}</th>
+            <td *ngFor="let val of metric.value; let j = index">
+              <div [ngClass]="{matching: j === 0, nonmatching: j === 1}">{{ (val * 100).toFixed(2) }}%</div>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- <strong class="key">Total {{ (totals[i] | keyvalue)[0].key }}</strong>
     <ng-container *ngFor="let total of (totals[i] | keyvalue)[0].value; let j = index">
       <strong class="value separator" *ngIf="j !== 0">|</strong>
       <strong class="value" [ngClass]="{matching: j === 0, nonmatching: j === 1}">{{ (total * 100).toFixed(2) }}%</strong>
     </ng-container>
     <br/>
     <ng-container *ngFor="let metric of chart | keyvalue: originalOrder">
-      <strong class="key">{{ metric.key }}</strong>
+      <div class="key">{{ metric.key }}</div>
       <ng-container *ngFor="let val of metric.value; let j = index">
         <strong class="value separator" *ngIf="j !== 0">|</strong>
         <strong class="value" [ngClass]="{matching: j === 0, nonmatching: j === 1}">{{ (val * 100).toFixed(2) }}%</strong>
       </ng-container>
       <br/>
-    </ng-container>
+    </ng-container> -->
   </ng-container>
 </n64-box>
 <n64-box [simple]="true" *ngFor="let chart of game.charts">
