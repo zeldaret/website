@@ -122,4 +122,11 @@ export interface IGamesService {
    * @param filename The filename of the desired CSV.
    */
   getGameCSV(filename: string): Observable<string>;
+
+  /**
+   * Get the FAQ data for a game.
+   *
+   * @param filename The filename of the markdown file to read.
+   */
+  getGameFAQ(filename: string): Observable<string>;
 }
