@@ -35,33 +35,33 @@ export class GameProgressComponent implements OnChanges {
    */
   metrics: {[key: string]: number[]}[] = [];
   /**
-   * Raw matched CSV data for use with the chart.
+   * Raw matching CSV data for use with the chart.
    */
-  matched: string;
+  matching: string;
   /**
-   * Raw unmatched CSV data for use with the chart.
+   * Raw nonmatching CSV data for use with the chart.
    */
-  unmatched: string;
+  nonmatching: string;
 
   ngOnChanges(): void {
     forkJoin({
-      matched: this.gamesService.getGameCSV(this.game.matched),
-      unmatched: this.gamesService.getGameCSV(this.game.unmatched)
+      matching: this.gamesService.getGameCSV(this.game.matching),
+      nonmatching: this.gamesService.getGameCSV(this.game.nonmatching)
     }).subscribe(
-      ({matched, unmatched}) => {
+      ({matching, nonmatching}) => {
         // reset on page load
         this.totals = [];
         this.metrics = [];
         this.lastUpdate = null;
 
-        this.matched = matched;
-        this.unmatched = unmatched;
+        this.matching = matching;
+        this.nonmatching = nonmatching;
 
         for (const _ of this.game.charts) {
           this.metrics.push({});
         }
 
-        for (const data of [matched, unmatched]) {
+        for (const data of [matching, nonmatching]) {
           const points = data.split("\n").filter((line) => line != "");
           const latestPoint = points[points.length - 1];
           const column = latestPoint.split(",");

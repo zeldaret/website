@@ -16,13 +16,13 @@ export class GameChartComponent implements OnChanges {
   constructor() { }
 
   /**
-   * The matched CSV data to use for this chart.
+   * The matching CSV data to use for this chart.
    */
-  @Input() matched: string = null;
+  @Input() matching: string = null;
   /**
-   * The unmatched CSV data to use for this chart.
+   * The nonmatching CSV data to use for this chart.
    */
-  @Input() unmatched: string = null;
+  @Input() nonmatching: string = null;
   /**
    * The chart metadata stored in the game settings.
    */
@@ -34,16 +34,16 @@ export class GameChartComponent implements OnChanges {
 
   ngOnChanges(): void {
     // don't do anything until all inputs are provided
-    if (typeof this.matched !== "string" || typeof this.unmatched !== "string" || typeof this.metadata !== "object") {
+    if (typeof this.matching !== "string" || typeof this.nonmatching !== "string" || typeof this.metadata !== "object") {
       return;
     }
 
     // set up chart data
     const metadata = this.metadata;
-    let matchedData = this.parseData(this.matched);
-    let unmatchedData = this.parseData(this.unmatched);
+    let matchingData = this.parseData(this.matching);
+    let nonmatchingData = this.parseData(this.nonmatching);
 
-    let joined = Array.prototype.concat(matchedData, unmatchedData);
+    let joined = Array.prototype.concat(matchingData, nonmatchingData);
     joined.sort((a, b) => a["y"] - b["y"]);
     const interval = 1 / 5;
     const max = Math.max(interval, Math.ceil(joined.slice(-1)[0].y / interval) * interval);
@@ -85,14 +85,14 @@ export class GameChartComponent implements OnChanges {
       series: [
         {
           type: "line",
-          name: "Non-matched",
-          data: unmatchedData,
+          name: "Nonmatching",
+          data: nonmatchingData,
           color: "#ffc107"
         },
         {
           type: "line",
-          name: "Matched",
-          data: matchedData,
+          name: "Matching",
+          data: matchingData,
           color: "#01ce47"
         }
       ],

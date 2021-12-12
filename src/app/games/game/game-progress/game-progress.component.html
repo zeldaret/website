@@ -1,4 +1,4 @@
-<n64-box [number]="2" heading="Project progress">
+<n64-box [number]="1" heading="Project progress">
   <strong class="key">Last updated</strong>
   <strong class="value date">{{ lastUpdate }}</strong>
   <br/>
@@ -7,19 +7,19 @@
     <strong class="key">Total {{ (totals[i] | keyvalue)[0].key }}</strong>
     <ng-container *ngFor="let total of (totals[i] | keyvalue)[0].value; let j = index">
       <strong class="value separator" *ngIf="j !== 0">|</strong>
-      <strong class="value" [ngClass]="{matched: j === 0, unmatched: j === 1}">{{ (total * 100).toFixed(2) }}%</strong>
+      <strong class="value" [ngClass]="{matching: j === 0, nonmatching: j === 1}">{{ (total * 100).toFixed(2) }}%</strong>
     </ng-container>
     <br/>
     <ng-container *ngFor="let metric of chart | keyvalue: originalOrder">
       <strong class="key">{{ metric.key }}</strong>
       <ng-container *ngFor="let val of metric.value; let j = index">
         <strong class="value separator" *ngIf="j !== 0">|</strong>
-        <strong class="value" [ngClass]="{matched: j === 0, unmatched: j === 1}">{{ (val * 100).toFixed(2) }}%</strong>
+        <strong class="value" [ngClass]="{matching: j === 0, nonmatching: j === 1}">{{ (val * 100).toFixed(2) }}%</strong>
       </ng-container>
       <br/>
     </ng-container>
   </ng-container>
 </n64-box>
 <n64-box [simple]="true" *ngFor="let chart of game.charts">
-  <game-chart [matched]="matched" [unmatched]="unmatched" [metadata]="chart"></game-chart>
+  <game-chart [matching]="matching" [nonmatching]="nonmatching" [metadata]="chart"></game-chart>
 </n64-box>

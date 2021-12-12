@@ -13,17 +13,21 @@ export interface IGame {
    */
   title: string;
   /**
+   * The name of the "FAQ" MD to read.
+   */
+  faq: string;
+  /**
    * Links to display as an icon. The key defines the icon, and the value is the link href.
    */
   links: {[type: string]: string};
   /**
-   * The name of the "matched" CSV to read.
+   * The name of the "matching" CSV to read.
    */
-  matched: string;
+  matching: string;
   /**
-   * The name of the "unmatched" CSV to read.
+   * The name of the "nonmatching" CSV to read.
    */
-  unmatched: string;
+  nonmatching: string;
   /**
    * The charts to display for this game.
    */
@@ -118,4 +122,11 @@ export interface IGamesService {
    * @param filename The filename of the desired CSV.
    */
   getGameCSV(filename: string): Observable<string>;
+
+  /**
+   * Get the FAQ data for a game.
+   *
+   * @param filename The filename of the markdown file to read.
+   */
+  getGameFAQ(filename: string): Observable<string>;
 }
