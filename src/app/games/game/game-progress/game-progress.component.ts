@@ -63,7 +63,7 @@ export class GameProgressComponent implements OnChanges {
           this.metrics.push({});
         }
 
-        for (const data of this.datasets) {
+        for (const data of res) {
           const points = data.split("\n").filter((line) => line != "");
           const latestPoint = points[points.length - 1];
           const column = latestPoint.split(",");
