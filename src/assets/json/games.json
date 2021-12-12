@@ -6,14 +6,22 @@
       "github": "https://www.github.com/zeldaret/oot"
     },
     "faq": "oot_faq",
-    "matching": "progress-oot-matching",
-    "nonmatching": "progress-oot-nonmatching",
+    "csv_info": [
+      {
+        "name": "nonmatching",
+        "data": "progress-oot-nonmatching"
+      },
+      {
+        "name": "matching",
+        "data": "progress-oot-matching"
+      }
+    ],
     "charts": [
       {
         "title": "Ocarina of Time MQ Debug Rom",
         "subtitle": "Code decompilation progress",
         "index": 3,
-        // "line_names": ["Nonmatching", "Matching"],
+        "line_names": ["Nonmatching", "Matching"],
         "series": [
           {
             "metric": "Code",
