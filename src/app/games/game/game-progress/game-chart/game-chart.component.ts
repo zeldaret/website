@@ -85,13 +85,13 @@ export class GameChartComponent implements OnChanges {
       series: [
         {
           type: "line",
-          name: "Nonmatching",
+          name: "Non-matching",
           data: nonmatchingData,
           color: "#ffc107"
         },
         {
           type: "line",
-          name: "Matching",
+          name: "matching",
           data: matchingData,
           color: "#01ce47"
         }
