@@ -43,8 +43,8 @@
 Zelda64 Decompilation FAQ
 =========================
 
-<a id="what-is-decompilation-what-is-matching-decompilation"></a> \#\#
 What is Decompilation? What is matching decompilation?
+------------------------------------------------------
 
 Decompilation is a type of reverse engineering: analysing the compiled
 binary data that is on the cartridge to produce human-readable code that
