@@ -20,14 +20,18 @@ export interface IGame {
    * Links to display as an icon. The key defines the icon, and the value is the link href.
    */
   links: {[type: string]: string};
+  // /**
+  //  * The name of the "matching" CSV to read.
+  //  */
+  // matching: string;
+  // /**
+  //  * The name of the "nonmatching" CSV to read.
+  //  */
+  // nonmatching: string;
   /**
-   * The name of the "matching" CSV to read.
+   * Information on which csvs to use and what to call them. 
    */
-  matching: string;
-  /**
-   * The name of the "nonmatching" CSV to read.
-   */
-  nonmatching: string;
+  csv_info: ICSVInfo[];
   /**
    * The charts to display for this game.
    */
@@ -84,6 +88,24 @@ export interface IChart {
    * The series to have for each chart.
    */
   series: ISeries[];
+  /**
+   * Names to use for the lines
+   */
+  line_names: string[];
+}
+
+/**
+ * Describes a csv of chart data and its name.
+ */
+export interface ICSVInfo {
+  /**
+   * The name of the csv type to display with the line.
+   */
+  name?: string;
+  /**
+   * CSV file to get the data from.
+   */
+  data: string;
 }
 
 /**

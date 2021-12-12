@@ -6,16 +6,15 @@
     <hr>
     <table>
       <thead>
-        <tr>
-          <th scope="col">  {{ (totals[i] | keyvalue)[0].key }}</th>
-          <th scope="col"> <div class="value matching">Matching</div></th>
-          <th scope="col"> <div class="value nonmatching">Nonmatching</div></th>
-        </tr>
+        <th scope="col">  {{ (totals[i] | keyvalue)[0].key }}</th>
+        <ng-container *ngFor="let name of this.game.charts[i].line_names; let j = index">
+          <th scope="col" [ngClass]="{matching: j === 0, nonmatching: j === 1}">{{ name }}</th>
+        </ng-container>
       </thead>
       <tbody>
         <tr>
           <th scope="row">
-            <strong class="key">Total {{ (totals[i] | keyvalue)[0].key }}</strong>
+            <strong class="key">Total</strong>
           </th>
           <td *ngFor="let total of (totals[i] | keyvalue)[0].value; let j = index">
             <strong [ngClass]="{matching: j === 0, nonmatching: j === 1}">{{ (total * 100).toFixed(2) }}%</strong>
@@ -47,5 +46,5 @@
   </ng-container>
 </n64-box>
 <n64-box [simple]="true" *ngFor="let chart of game.charts">
-  <game-chart [matching]="matching" [nonmatching]="nonmatching" [metadata]="chart"></game-chart>
+  <game-chart [datasets]="datasets" [metadata]="chart"></game-chart>
 </n64-box>
