@@ -34,7 +34,7 @@ export class GameChartComponent implements OnChanges {
 
   ngOnChanges(): void {
     // don't do anything until all inputs are provided
-    if (/* typeof this.line_names !== "object" || */ typeof this.datasets !== "object" || typeof this.metadata !== "object") {
+    if (typeof this.datasets !== "object" || typeof this.metadata !== "object") {
       return;
     }
 
