@@ -8,6 +8,7 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   color: white;
+  counter-reset: filecounter;
 }
 
 fa-icon {
@@ -30,5 +31,4 @@ markdown h1 {
 markdown h2 {
   border-bottom: 1px solid white;
 }
-
 

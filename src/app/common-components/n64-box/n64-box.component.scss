@@ -51,6 +51,20 @@ header div.slot {
   text-align: center;
   text-shadow: 2px 2px 2px $color-bd-hl;
   width: $slot-size;
+
+  .filenum {
+    color: black;
+    font-size: $font-size-heading;
+    text-align: center;
+    text-shadow: 2px 2px 2px $color-bd-hl;
+
+  }
+}
+
+
+.filenum:after {  
+  content: counter(filecounter);
+  counter-increment: filecounter;
 }
 
 header div.heading {
