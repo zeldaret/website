@@ -6,23 +6,21 @@
       "github": "https://www.github.com/zeldaret/oot"
     },
     "faq": "oot_faq",
-    "csv_info": [
+    "csvs": {
+      "matching": "progress-oot-matching",
+      "nonmatching": "progress-oot-nonmatching"
+    },
+    "progressMeta": [
       {
-        "name": "nonmatching",
-        "data": "progress-oot-nonmatching"
-      },
-      {
-        "name": "matching",
-        "data": "progress-oot-matching"
-      }
-    ],
-    "charts": [
-      {
+        "type": "code",
         "title": "Ocarina of Time MQ Debug Rom",
         "subtitle": "Code decompilation progress",
         "index": 3,
-        "line_names": ["Nonmatching", "Matching"],
         "series": [
+          "Nonmatching",
+          "Matching"
+        ],
+        "subdivisions": [
           {
             "metric": "Code",
             "description": "{0} / {1} bytes of all code decompiled ({2}%)"
@@ -50,34 +48,32 @@
       "github": "https://www.github.com/zeldaret/mm"
     },
     "faq": "mm_faq",
-    "csv_info": [
+    "csvs": {
+      "matching": "progress-mm-matching",
+      "nonmatching": "progress-mm-nonmatching"
+    },
+    "progressMeta": [
       {
-        "name": "nonmatching",
-        "data": "progress-mm-nonmatching"
-      },
-      {
-        "name": "matching",
-        "data": "progress-mm-matching"
-      }
-    ],
-    "charts": [
-      {
+        "type": "code",
         "title": "Majora's Mask",
         "subtitle": "Code decompilation progress",
-        "line_names": ["Nonmatching", "Matching"],
-        "index": 3,
         "series": [
+          "Nonmatching",
+          "Matching"
+        ],
+        "index": 3,
+        "subdivisions": [
           {
             "metric": "Code",
             "description": "{0} / {1} bytes of all code decompiled ({2}%)"
           },
           {
-            "metric": "boot",
-            "description": "{0} / {1} bytes of boot decompiled ({2}%)"
+            "metric": "Code",
+            "description": "{0} / {1} bytes of code decompiled ({2}%)"
           },
           {
-            "metric": "code",
-            "description": "{0} / {1} bytes of code decompiled ({2}%)"
+            "metric": "Boot",
+            "description": "{0} / {1} bytes of boot decompiled ({2}%)"
           },
           {
             "metric": "Overlays",
@@ -86,11 +82,15 @@
         ]
       },
       {
+        "type": "assets",
         "title": "Majora's Mask",
-        "subtitle": "Asset decompilation progress",
-        "line_names": ["Debinarised", "Identified"],
-        "index": 13,
+        "subtitle": "Asset analysis progress",
         "series": [
+          "Debinarised",
+          "Identified"
+        ],
+        "index": 13,
+        "subdivisions": [
           {
             "metric": "Assets",
             "description": "{0} / {1} bytes of all assets decompiled ({2}%)"

@@ -16,13 +16,9 @@ export class GameChartComponent implements OnChanges {
   constructor() { }
 
   /**
-   * The names of the lines to use in this chart.
-   */
-  // @Input() line_names: string[] = null;
-  /**
    * The CSV data to use for this chart.
    */
-  @Input() datasets: string[] = null;
+  @Input() csvData: string[] = null;
   /**
    * The chart metadata stored in the game settings.
    */
@@ -34,24 +30,28 @@ export class GameChartComponent implements OnChanges {
 
   ngOnChanges(): void {
     // don't do anything until all inputs are provided
-    if (typeof this.datasets !== "object" || typeof this.metadata !== "object") {
+    if (typeof this.csvData !== "object" || typeof this.metadata !== "object") {
       return;
     }
 
     // set up chart data
     const metadata = this.metadata;
-    let nonmatchingData = this.parseData(this.datasets[0]);
-    let matchingData = this.parseData(this.datasets[1]);
+    let nonmatchingData = this.parseData(this.csvData[0]);
+    let matchingData = this.parseData(this.csvData[1]);
 
     // Names for lines
-    let nonmatchingName = this.metadata.line_names[0];
-    let matchingName = this.metadata.line_names[1];
+    let nonmatchingName = this.metadata.series[0];
+    let matchingName = this.metadata.series[1];
 
 
     let joined = Array.prototype.concat(matchingData, nonmatchingData);
     joined.sort((a, b) => a["y"] - b["y"]);
     const interval = 1 / 5;
-    const max = Math.max(interval, Math.ceil(joined.slice(-1)[0].y / interval) * interval);
+    let max = Math.max(interval, Math.ceil(joined.slice(-1)[0].y / interval) * interval);
+    
+    if (max < 0.9) {
+      max = null;
+    }
 
     const options: Options = {
       chart: { type: "line" },
@@ -64,11 +64,11 @@ export class GameChartComponent implements OnChanges {
 
           tooltip += `Date: ${new Date(data.x).toLocaleString()}<br/>\n`;
           tooltip += `Commit: ${data["commit"]}<br/>\n`
-          tooltip += `Total ${metadata.series[0].metric}: ${(+data.y * 100).toFixed(2)}%<br/>\n`
+          tooltip += `Total ${metadata.subdivisions[0].metric}: ${(+data.y * 100).toFixed(2)}%<br/>\n`
           tooltip += `-------------------------------------------<br/>\n`;
 
-          for (let i = 0; i < metadata.series.length - 1; i += 1) {
-            const text = metadata.series[i + 1].description
+          for (let i = 0; i < metadata.subdivisions.length - 1; i += 1) {
+            const text = metadata.subdivisions[i + 1].description
               .replace("{0}", data["metrics"][i][0])
               .replace("{1}", data["metrics"][i][1])
               .replace("{2}", (+data["metrics"][i][2] * 100).toFixed(2));
@@ -92,7 +92,8 @@ export class GameChartComponent implements OnChanges {
           type: "line",
           name: nonmatchingName,
           data: nonmatchingData,
-          color: "#ffc107"
+          color: "#ffc107",
+          visible: false
         },
         {
           type: "line",

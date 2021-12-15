@@ -1,7 +1,10 @@
 <h1>{{ game.title }}</h1>
-<article>
-  <game-progress [game]="game"></game-progress>
-</article>
+
+<ng-container *ngFor="let meta of game.progressMeta">
+  <article>
+    <game-progress [csvData]="csvData" [meta]="meta"></game-progress>
+  </article>
+</ng-container>
 
 <article>
   <game-faq [game]="game"></game-faq>

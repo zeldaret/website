@@ -34,13 +34,13 @@ export class GameSummaryComponent implements OnChanges {
 
   ngOnChanges(): void {
     // Matching is second
-    this.gamesService.getGameCSV(this.data.csv_info[1].data).subscribe(
+    this.gamesService.getGameCSV(this.data.csvData[1]).subscribe(
       res => {
         const points = res.split("\n").filter((line) => line != "");
         const latestPoint = points[points.length - 1];
         const column = latestPoint.split(",");
 
-        let i = this.data.charts[0].index;
+        let i = this.data.progressMeta[0].index;
         this.total = +column[i] / +column[i + 1];
       },
       err => console.error(err)
