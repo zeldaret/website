@@ -16,13 +16,13 @@ export class GameChartComponent implements OnChanges {
   constructor() { }
 
   /**
-   * The matching CSV data to use for this chart.
+   * The names of the lines to use in this chart.
    */
-  @Input() matching: string = null;
+  // @Input() line_names: string[] = null;
   /**
-   * The nonmatching CSV data to use for this chart.
+   * The CSV data to use for this chart.
    */
-  @Input() nonmatching: string = null;
+  @Input() datasets: string[] = null;
   /**
    * The chart metadata stored in the game settings.
    */
@@ -34,14 +34,19 @@ export class GameChartComponent implements OnChanges {
 
   ngOnChanges(): void {
     // don't do anything until all inputs are provided
-    if (typeof this.matching !== "string" || typeof this.nonmatching !== "string" || typeof this.metadata !== "object") {
+    if (typeof this.datasets !== "object" || typeof this.metadata !== "object") {
       return;
     }
 
     // set up chart data
     const metadata = this.metadata;
-    let matchingData = this.parseData(this.matching);
-    let nonmatchingData = this.parseData(this.nonmatching);
+    let nonmatchingData = this.parseData(this.datasets[0]);
+    let matchingData = this.parseData(this.datasets[1]);
+
+    // Names for lines
+    let nonmatchingName = this.metadata.line_names[0];
+    let matchingName = this.metadata.line_names[1];
+
 
     let joined = Array.prototype.concat(matchingData, nonmatchingData);
     joined.sort((a, b) => a["y"] - b["y"]);
@@ -85,13 +90,13 @@ export class GameChartComponent implements OnChanges {
       series: [
         {
           type: "line",
-          name: "Nonmatching",
+          name: nonmatchingName,
           data: nonmatchingData,
           color: "#ffc107"
         },
         {
           type: "line",
-          name: "Matching",
+          name: matchingName,
           data: matchingData,
           color: "#01ce47"
         }
