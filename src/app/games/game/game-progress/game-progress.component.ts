@@ -38,10 +38,6 @@ export class GameProgressComponent implements OnChanges {
    * Separate project metrics parsed from the CSV.
    */
   metrics: { [key: string]: number[] } = {};
-  /**
-   * Names for lines for use with the chart.
-   */
-  series: string[];
 
 
   ngOnChanges(): void {
@@ -64,9 +60,6 @@ export class GameProgressComponent implements OnChanges {
         this.lastUpdate = new Date(+column[1] * 1000).toLocaleString();
       }
 
-      // this.totals.push({[this.meta.subdivisions[0].metric]: []});
-      // this.totals[this.meta.subdivisions[0].metric].push([this.meta.subdivisions[0].metric]);
-      
       let i = this.meta.index;
       this.totals.push(+column[i] / +column[i + 1]);
       i += 2;

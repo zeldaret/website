@@ -17,8 +17,8 @@
         "subtitle": "Code decompilation progress",
         "index": 3,
         "series": [
-          "Nonmatching",
-          "Matching"
+          {"name": "Nonmatching", "visibility": true},
+          {"name": "Matching", "visibility": true}
         ],
         "subdivisions": [
           {
@@ -58,8 +58,8 @@
         "title": "Majora's Mask",
         "subtitle": "Code decompilation progress",
         "series": [
-          "Nonmatching",
-          "Matching"
+          {"name": "Nonmatching", "visibility": true},
+          {"name": "Matching", "visibility": true}
         ],
         "index": 3,
         "subdivisions": [
@@ -86,8 +86,8 @@
         "title": "Majora's Mask",
         "subtitle": "Asset analysis progress",
         "series": [
-          "Debinarised",
-          "Identified"
+          {"name": "Debinarised", "visibility": false},
+          {"name": "Identified", "visibility": true}
         ],
         "index": 13,
         "subdivisions": [

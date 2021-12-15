@@ -6,8 +6,8 @@
   <table>
     <thead>
       <th scope="col"></th>
-      <ng-container *ngFor="let name of meta.series; let j = index">
-        <th scope="col" [ngClass]="{nonmatching: j === 0, matching: j === 1}">{{ name }}</th>
+      <ng-container *ngFor="let series of meta.series; let j = index">
+        <th scope="col" [ngClass]="{nonmatching: j === 0, matching: j === 1}">{{ series.name }}</th>
       </ng-container>
     </thead>
     <tbody>

@@ -83,7 +83,7 @@ export interface IChart {
   /**
    * Names to use for the lines
    */
-  series: string[];
+  series: ISeries[];
   /**
    * The series to have for each chart.
    */
@@ -102,6 +102,20 @@ export interface ICSVs {
    * CSV file to get the nonmatching data from.
    */
   nonmatching: string;
+}
+
+/**
+ * Describes the series to plot and visibility.
+ */
+export interface ISeries {
+  /**
+   * Name to show.
+   */
+  name: string;
+  /**
+   * Whether to display the series by default.
+   */
+  visibility: boolean;
 }
 
 /**

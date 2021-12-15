@@ -40,8 +40,10 @@ export class GameChartComponent implements OnChanges {
     let matchingData = this.parseData(this.csvData[1]);
 
     // Names for lines
-    let nonmatchingName = this.metadata.series[0];
-    let matchingName = this.metadata.series[1];
+    let nonmatchingName = this.metadata.series[0].name;
+    let matchingName = this.metadata.series[1].name;
+    let nonmatchingVisibility = this.metadata.series[0].visibility;
+    let matchingVisibility = this.metadata.series[1].visibility;
 
 
     let joined = Array.prototype.concat(matchingData, nonmatchingData);
@@ -93,13 +95,14 @@ export class GameChartComponent implements OnChanges {
           name: nonmatchingName,
           data: nonmatchingData,
           color: "#ffc107",
-          visible: false
+          visible: nonmatchingVisibility
         },
         {
           type: "line",
           name: matchingName,
           data: matchingData,
-          color: "#01ce47"
+          color: "#01ce47",
+          visible: matchingVisibility
         }
       ],
     };
