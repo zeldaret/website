@@ -1,9 +1,7 @@
 import { KeyValue } from '@angular/common';
-import { ThrowStmt } from '@angular/compiler';
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import { concat, forkJoin } from 'rxjs';
+import { Component, Input, OnChanges } from '@angular/core';
 import { GamesService } from 'src/app/games/games.service';
-import { IChart, IGame } from 'src/app/games/games.service.interface';
+import { IChart } from 'src/app/games/games.service.interface';
 
 /**
  * A single project displayed in a box, alongside one or more graphs.
@@ -42,7 +40,6 @@ export class GameProgressComponent implements OnChanges {
 
   ngOnChanges(): void {
     // don't do anything until all inputs are provided
-    console.log(this.meta);
     if (typeof this.csvData !== "object" || typeof this.meta !== "object") {
       return;
     }
@@ -52,6 +49,7 @@ export class GameProgressComponent implements OnChanges {
     this.metrics = {};
     this.lastUpdate = null;
 
+    // Collect the latest numbers from the CSV data
     for (const data of this.csvData) {
       const points = data.split("\n").filter((line) => line != "");
       const latestPoint = points[points.length - 1];
@@ -73,7 +71,6 @@ export class GameProgressComponent implements OnChanges {
       }
       
     }
-    console.log(this.metrics)
   }
 
 
