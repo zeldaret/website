@@ -105,7 +105,6 @@ export class GameChartComponent implements OnChanges {
           type: "line",
           name: nonmatchingName,
           data: nonmatchingData,
-          // color: "#ffc107",
           color: "#DDDF0D",
           visible: nonmatchingVisibility
         },
@@ -141,7 +140,7 @@ export class GameChartComponent implements OnChanges {
       i += 2;
 
       const metrics = [];
-      for (const _ in this.metadata.series.slice(1)) {
+      for (const _ in this.metadata.subdivisions.slice(1)) {
         const numerator = +columns[i];
         const denominator = +columns[i + 1];
         const percent = numerator / denominator;
