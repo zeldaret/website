@@ -26,6 +26,7 @@ export class StatementNotificationComponent {
   showStatement() {
     this.dialog.open(DialogComponent, {
       data: this.statement,
+      height: "600px",
       width: "600px"
     });
   }
