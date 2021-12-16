@@ -1,0 +1,11 @@
+$button-offset: -8px;
+
+[mat-dialog-title] {
+  position: relative;
+}
+
+[mat-dialog-close] {
+  position: absolute;
+  right: $button-offset;
+  top: $button-offset;
+}
