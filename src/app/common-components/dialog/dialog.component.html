@@ -1,2 +1,7 @@
-<h1 mat-dialog-title>{{ data.title }}</h1>
-<article mat-dialog-content [innerHTML]="data.content"></article>
+<h1 mat-dialog-title>
+  <button color="error" mat-icon-button mat-dialog-close>
+    <fa-icon [icon]="close"></fa-icon>
+  </button>
+  {{ data.title }}
+</h1>
+<mat-dialog-content [innerHTML]="data.content"></mat-dialog-content>

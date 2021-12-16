@@ -5,6 +5,9 @@ import { N64BoxComponent } from './n64-box/n64-box.component';
 import { N64ButtonComponent } from './n64-button/n64-button.component';
 import { RouterModule } from '@angular/router';
 import { DialogComponent } from './dialog/dialog.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 /**
  * Module that holds generic content box and button components of varying styles.
@@ -18,7 +21,10 @@ import { DialogComponent } from './dialog/dialog.component';
   imports: [
     CommonModule,
     BrowserAnimationsModule,
-    RouterModule
+    RouterModule,
+    MatButtonModule,
+    MatDialogModule,
+    FontAwesomeModule
   ],
   exports: [
     N64BoxComponent,
