@@ -64,14 +64,20 @@ markdown h2 {
   border-bottom: 1px solid white;
 }
 
-ul {
-  padding-left: 20px;
-}
-
-li {
-  margin-bottom: 1rem;
-}
-
 mat-card {
   background-color: rgb(29, 48, 95) !important;
+}
+
+mat-dialog-container {
+  background-color: rgb(29, 48, 95) !important;
+}
+
+mat-dialog-content {
+  ul {
+    padding-left: 20px;
+  }
+  
+  li {
+    margin-bottom: 1rem;
+  }
 }
