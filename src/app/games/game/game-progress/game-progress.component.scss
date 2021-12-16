@@ -9,12 +9,18 @@ hr {
   float: left;
 }
 
-.matching {
-  color: #01ce47;
+.nonmatching {
+  // color: #ffc107;
+  // color: #F3E796; // Avocado
+  // color: #f45b5b; // Sand Signika 
+  color: #DDDF0D; // 
 }
 
-.nonmatching {
-  color: #ffc107;
+.matching {
+  // color: #01ce47;
+  // color: #95C471; // Avocado
+  // color: #8085e9; // Sand Signika
+  color: #55BF3B; // 
 }
 
 .value.date {

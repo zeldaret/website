@@ -1,4 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@include mat.core();
+
+$primary-palette: (
+50: rgb(230, 233, 239),
+100: rgb(193, 200, 216),
+200: rgb(151, 164, 190),
+300: rgb(109, 127, 163),
+400: rgb(78, 99, 144),
+500: rgb(47, 72, 124),
+600: rgb(42, 65, 116),
+700: rgb(35, 56, 105),
+800: rgb(29, 48, 95),
+900: rgb(18, 33, 76),
+"A100": rgb(134, 162, 255),
+"A200": rgb(83, 123, 255),
+"A400": rgb(32, 84, 255),
+"A700": rgb(7, 64, 255),
+contrast: ()
+);
+
+$my-primary: mat.define-palette($primary-palette, 500);
+$my-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$my-theme: mat.define-dark-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+ )
+));
+
+@include mat.all-component-themes($my-theme);
 
 html, body {
   height: 100%;
@@ -32,3 +64,6 @@ markdown h2 {
   border-bottom: 1px solid white;
 }
 
+mat-card {
+  background-color: rgb(29, 48, 95) !important;
+}

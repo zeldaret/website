@@ -2,6 +2,12 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Chart } from 'angular-highcharts';
 import { Options, PointOptionsObject } from 'highcharts';
 import { IChart } from 'src/app/games/games.service.interface';
+import * as Highcharts from 'highcharts';
+
+import theme from 'highcharts/themes/avocado';
+// import theme from 'highcharts/themes/sand-signika';
+// import theme from 'highcharts/themes/dark-blue';
+theme(Highcharts);
 
 /**
  * The container for a HighCharts chart.
@@ -50,17 +56,22 @@ export class GameChartComponent implements OnChanges {
     joined.sort((a, b) => a["y"] - b["y"]);
     const interval = 1 / 5;
     let max = Math.max(interval, Math.ceil(joined.slice(-1)[0].y / interval) * interval);
-    
+
     if (max < 0.9) {
       max = null;
     }
 
     const options: Options = {
-      chart: { type: "line" },
+      chart: {
+        type: "line",
+        // backgroundColor: 'rgba(0, 0, 0, 0.5)'
+        // backgroundColor: 'rgba(0, 0, 0, 0.0)'
+        // backgroundColor: "#efefef"
+      },
       title: { text: this.metadata.title },
       subtitle: { text: this.metadata.subtitle },
       tooltip: {
-        formatter: function() {
+        formatter: function () {
           const data = this.point.options;
           let tooltip = "";
 
@@ -86,7 +97,7 @@ export class GameChartComponent implements OnChanges {
       },
       yAxis: {
         title: { text: "Completion (%)" },
-        labels: { formatter: function() { return `${(+this.value * 100).toFixed(2)}%`; } },
+        labels: { formatter: function () { return `${(+this.value * 100).toFixed(2)}%`; } },
         max: max
       },
       series: [
@@ -94,14 +105,15 @@ export class GameChartComponent implements OnChanges {
           type: "line",
           name: nonmatchingName,
           data: nonmatchingData,
-          color: "#ffc107",
+          // color: "#ffc107",
+          color: "#DDDF0D",
           visible: nonmatchingVisibility
         },
         {
           type: "line",
           name: matchingName,
           data: matchingData,
-          color: "#01ce47",
+          color: "#55BF3B",
           visible: matchingVisibility
         }
       ],
