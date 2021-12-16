@@ -5,8 +5,6 @@ import { IChart } from 'src/app/games/games.service.interface';
 import * as Highcharts from 'highcharts';
 
 import theme from 'highcharts/themes/avocado';
-// import theme from 'highcharts/themes/sand-signika';
-// import theme from 'highcharts/themes/dark-blue';
 theme(Highcharts);
 
 /**
@@ -63,10 +61,7 @@ export class GameChartComponent implements OnChanges {
 
     const options: Options = {
       chart: {
-        type: "line",
-        // backgroundColor: 'rgba(0, 0, 0, 0.5)'
-        // backgroundColor: 'rgba(0, 0, 0, 0.0)'
-        // backgroundColor: "#efefef"
+        type: "line"
       },
       title: { text: this.metadata.title },
       subtitle: { text: this.metadata.subtitle },
