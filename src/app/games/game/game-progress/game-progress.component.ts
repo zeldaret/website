@@ -1,9 +1,7 @@
 import { KeyValue } from '@angular/common';
-import { ThrowStmt } from '@angular/compiler';
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import { forkJoin } from 'rxjs';
+import { Component, Input, OnChanges } from '@angular/core';
 import { GamesService } from 'src/app/games/games.service';
-import { IGame } from 'src/app/games/games.service.interface';
+import { IChart } from 'src/app/games/games.service.interface';
 
 /**
  * A single project displayed in a box, alongside one or more graphs.
@@ -20,82 +18,61 @@ export class GameProgressComponent implements OnChanges {
   /**
    * Game object which holds info on how to parse the CSV data.
    */
-  @Input() game: IGame = null;
+  @Input() meta: IChart = null;
+  /**
+   * CSV data.
+   */
+  @Input() csvData: string[] = [];
 
   /**
    * The date time string for when this project was last updated
    */
-  lastUpdate: string =  "";
+  lastUpdate: string = "";
   /**
    * The simple numbers showing the total progress on respective charts.
    */
-  totals: {[key: string]: number[]}[] = [];
+  totals: number[] = [];
   /**
    * Separate project metrics parsed from the CSV.
    */
-  metrics: {[key: string]: number[]}[] = [];
-  /**
-   * CSV data for use with the chart.
-   */
-  datasets: string[];
-  /**
-   * Names for lines for use with the chart.
-   */
-  line_names: string[];
+  metrics: { [key: string]: number[] } = {};
 
 
   ngOnChanges(): void {
-    this.line_names = this.game.csv_info.map((info) => info.name);
+    // don't do anything until all inputs are provided
+    if (typeof this.csvData !== "object" || typeof this.meta !== "object") {
+      return;
+    }
 
-    forkJoin(
-      this.game.csv_info.map((info) => this.gamesService.getGameCSV(info.data), this)
-    ).subscribe(
-      res => {
-        this.datasets = res;
-  
-        // reset on page load
-        this.totals = [];
-        this.metrics = [];
-        this.lastUpdate = null;
+    // reset on page load
+    this.totals = [];
+    this.metrics = {};
+    this.lastUpdate = null;
 
+    // Collect the latest numbers from the CSV data
+    for (const data of this.csvData) {
+      const points = data.split("\n").filter((line) => line != "");
+      const latestPoint = points[points.length - 1];
+      const column = latestPoint.split(",");
+      if (this.lastUpdate === null) {
+        this.lastUpdate = new Date(+column[1] * 1000).toLocaleString();
+      }
 
-        for (const _ of this.game.charts) {
-          this.metrics.push({});
+      let i = this.meta.index;
+      this.totals.push(+column[i] / +column[i + 1]);
+      i += 2;
+      
+      for (const subdivision of this.meta.subdivisions.slice(1)) {
+        if (!(subdivision.metric in this.metrics)) {
+          this.metrics[subdivision.metric] = [];
         }
-
-        for (const data of res) {
-          const points = data.split("\n").filter((line) => line != "");
-          const latestPoint = points[points.length - 1];
-          const column = latestPoint.split(",");
-          if (this.lastUpdate === null) {
-            this.lastUpdate = new Date(+column[1] * 1000).toLocaleString();
-          }
-
-          for (const chart of this.game.charts) {
-            this.totals.push({ [chart.series[0].metric]: [] });
-          }
-
-          let c = 0;
-          for (const chart of this.game.charts) {
-            let i = chart.index;
-            this.totals[c][chart.series[0].metric].push(+column[i] / +column[i+1]);
-            i += 2;
-
-            for (const serie of chart.series.slice(1)) {
-              if (!(serie.metric in this.metrics[c])) {
-                this.metrics[c][serie.metric] = [];
-              }
-              this.metrics[c][serie.metric].push(+column[i] / +column[i+1]);
-              i += 2;
-            }
-
-            c += 1;
-          }
-        }
-      },
-      err => console.error(err)
-    );
+        this.metrics[subdivision.metric].push(+column[i] / +column[i + 1]);
+        i += 2;
+      }
+      
+    }
   }
+
 
   originalOrder(a: KeyValue<any, any>, b: KeyValue<any, any>): number {
     return 0;

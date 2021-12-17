@@ -20,22 +20,18 @@ export interface IGame {
    * Links to display as an icon. The key defines the icon, and the value is the link href.
    */
   links: {[type: string]: string};
-  // /**
-  //  * The name of the "matching" CSV to read.
-  //  */
-  // matching: string;
-  // /**
-  //  * The name of the "nonmatching" CSV to read.
-  //  */
-  // nonmatching: string;
   /**
-   * Information on which csvs to use and what to call them. 
+   * Struct with names of CSVs to use
    */
-  csv_info: ICSVInfo[];
+  csvs: ICSVs;
   /**
-   * The charts to display for this game.
+   * Data from CSVs
    */
-  charts: IChart[];
+  csvData: string[];
+  /**
+   * The charts and data for each game.
+   */
+  progressMeta: IChart[];
 }
 
 /**
@@ -83,35 +79,49 @@ export interface IChart {
   /**
    * The index to start counting pairs from. If none provided, will assume 5.
    */
-  index?: number;
-  /**
-   * The series to have for each chart.
-   */
-  series: ISeries[];
+  index: number;
   /**
    * Names to use for the lines
    */
-  line_names: string[];
+  series: ISeries[];
+  /**
+   * The series to have for each chart.
+   */
+  subdivisions: ISubdivision[];
 }
 
 /**
  * Describes a csv of chart data and its name.
  */
-export interface ICSVInfo {
+export interface ICSVs {
   /**
-   * The name of the csv type to display with the line.
+   * CSV file to get the matching data from.
    */
-  name?: string;
+  matching: string;
   /**
-   * CSV file to get the data from.
+   * CSV file to get the nonmatching data from.
    */
-  data: string;
+  nonmatching: string;
+}
+
+/**
+ * Describes the series to plot and visibility.
+ */
+export interface ISeries {
+  /**
+   * Name to show.
+   */
+  name: string;
+  /**
+   * Whether to display the series by default.
+   */
+  visibility: boolean;
 }
 
 /**
  * Describes a singles series within a chart.
  */
-export interface ISeries {
+export interface ISubdivision {
   /**
    * The name of the metric to display at the top.
    */

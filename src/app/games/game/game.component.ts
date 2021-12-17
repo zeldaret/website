@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { forkJoin } from 'rxjs';
 import { GamesService } from '../games.service';
-import { IGame } from '../games.service.interface';
+import { IChart, IGame } from '../games.service.interface';
 
 /**
- * Container component for the tabs and relevant content.
+ * Container component for relevant content on a game.
  */
 @Component({
   selector: 'game',
@@ -18,8 +19,13 @@ export class GameComponent implements OnInit {
   /**
    * The summary to use to display basic game info.
    */
-  game: IGame;
+   game: IGame;
+  /**
+   * Data obtained from the CSV files.
+   */
+  csvData: string[];
 
+  // Get the CSVs if the navigated slug is correct, otherwise navigate to 404
   ngOnInit(): void {
     this.route.params.subscribe(
       res => {
@@ -27,12 +33,19 @@ export class GameComponent implements OnInit {
         this.gamesService.getGames().subscribe(
           res => {
             // redirect if an unknown slug is provided
-            const index = res.findIndex((game) => game.slug === slug)
-            if (index !== -1) {
-              this.game = res[index];
+            const index = res.findIndex((game) => game.slug === slug);
+            if (index === -1) {
+              this.router.navigateByUrl("/404", { skipLocationChange: true });
             }
             else {
-              this.router.navigateByUrl("/404", { skipLocationChange: true });
+              this.game = res[index];
+              forkJoin([
+                this.gamesService.getGameCSV(this.game.csvs.nonmatching),
+                this.gamesService.getGameCSV(this.game.csvs.matching)
+              ]).subscribe(
+                res => this.csvData = res,
+                err => console.error(err)
+              );
             }
           },
           err => {
@@ -43,5 +56,4 @@ export class GameComponent implements OnInit {
       }
     );
   }
-
 }

@@ -1,37 +1,33 @@
-<ng-container *ngFor="let chart of metrics; let i = index">
-  <div class="box-wrapper">
-    <n64-box [number]="i" heading="{{ game.charts[i].subtitle }}">
-      <strong class="key">Last updated</strong>
-      <strong class="value date">{{ lastUpdate }}</strong>
-      <br/>
-      <hr>
-      <table>
-        <thead>
-          <th scope="col"> {{ (totals[i] | keyvalue)[0].key }}</th>
-          <ng-container *ngFor="let name of game.charts[i].line_names; let j = index">
-            <th scope="col" [ngClass]="{nonmatching: j === 0, matching: j === 1}">{{ name }}</th>
-          </ng-container>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">
-              <strong class="key">Total</strong>
-            </th>
-            <td *ngFor="let total of (totals[i] | keyvalue)[0].value; let j = index">
-              <strong [ngClass]="{nonmatching: j === 0, matching: j === 1}">{{ (total * 100).toFixed(2) }}%</strong>
-            </td>
-          </tr>
-          <tr *ngFor="let metric of chart | keyvalue: originalOrder">
-            <th scope="row" class="key">{{ metric.key }}</th>
-            <td *ngFor="let val of metric.value; let j = index">
-              <div [ngClass]="{nonmatching: j === 0, matching: j === 1}">{{ (val * 100).toFixed(2) }}%</div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </n64-box>
-    <n64-box [simple]="true">
-      <game-chart [datasets]="datasets" [metadata]="game.charts[i]"></game-chart>
-    </n64-box>
-  </div>
-</ng-container>
+<n64-box heading="{{ meta.subtitle }}">
+  <strong class="key">Last updated</strong>
+  <strong class="value date">{{ lastUpdate }}</strong>
+  <br>
+  <hr>
+  <table>
+    <thead>
+      <th scope="col"></th>
+      <ng-container *ngFor="let series of meta.series; let j = index">
+        <th scope="col" [ngClass]="{nonmatching: j === 0, matching: j === 1}">{{ series.name }}</th>
+      </ng-container>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">
+          <strong class="key">Total</strong>
+        </th>
+        <td *ngFor="let total of totals; let j = index">
+          <strong [ngClass]="{nonmatching: j === 0, matching: j === 1}">{{ (total * 100).toFixed(2) }}%</strong>
+        </td>
+      </tr>
+      <tr *ngFor="let metric of metrics | keyvalue: originalOrder">
+        <th scope="row" class="key">{{ metric.key }}</th>
+        <td *ngFor="let val of metric.value; let j = index">
+          <div [ngClass]="{nonmatching: j === 0, matching: j === 1}">{{ (val * 100).toFixed(2) }}%</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</n64-box>
+<n64-box [simple]="true">
+  <game-chart [csvData]="csvData" [metadata]="meta"></game-chart>
+</n64-box>
