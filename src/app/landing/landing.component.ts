@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from '../app.service';
+import { IStatement } from '../app.service.interface';
 
 /**
  * Component shown on the front page (when people go to "/").
@@ -8,8 +10,19 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss']
 })
-export class LandingComponent {
+export class LandingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private appService: AppService) { }
+
+  /**
+   * The potential statement that is meant to be shown.
+   */
+  statement: IStatement = null;
+
+  ngOnInit() {
+    this.appService.getStatement().subscribe(
+      res => this.statement = res
+    );
+  }
 
 }
