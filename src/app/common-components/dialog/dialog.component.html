@@ -1,7 +1,8 @@
-<h1 mat-dialog-title>
+<div mat-dialog-title>
   <button color="error" mat-icon-button mat-dialog-close>
     <fa-icon [icon]="close"></fa-icon>
   </button>
-  {{ data.title }}
-</h1>
+  <h1>{{ data.title }}</h1>
+  <h2 *ngIf="data.subtitle">{{ data.subtitle }}</h2>
+</div>
 <mat-dialog-content [innerHTML]="data.content"></mat-dialog-content>

@@ -9,6 +9,10 @@ export interface IStatement {
    */
   title: string;
   /**
+   * The statement subtitle.
+   */
+  subtitle?: string;
+  /**
    * The statement to display.
    */
   content: string;
