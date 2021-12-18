@@ -50,7 +50,9 @@ export class GameProgressComponent implements OnChanges {
     this.lastUpdate = null;
 
     // Collect the latest numbers from the CSV data
-    for (const data of this.csvData) {
+    for (let k = 0; k < this.meta.series.length; k++) {
+      const data = this.csvData[k];
+
       const points = data.split("\n").filter((line) => line != "");
       const latestPoint = points[points.length - 1];
       const column = latestPoint.split(",");
