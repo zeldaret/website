@@ -17,5 +17,6 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
-        source: "dist/*"
+        source: "dist/zelda64"
         target: "/var/www/zeldaret"
+        strip_components: 2
