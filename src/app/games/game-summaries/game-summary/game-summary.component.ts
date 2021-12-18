@@ -34,7 +34,7 @@ export class GameSummaryComponent implements OnChanges {
 
   ngOnChanges(): void {
     // Matching is second
-    this.gamesService.getGameCSV(this.data.csvData[1]).subscribe(
+    this.gamesService.getGameCSV(this.data.csvs.matching).subscribe(
       res => {
         const points = res.split("\n").filter((line) => line != "");
         const latestPoint = points[points.length - 1];

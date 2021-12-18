@@ -25,3 +25,7 @@
 a[mat-icon-button] {
   margin-left: auto;
 }
+
+::ng-deep .mat-menu-panel {
+  background-color: rgb(29, 48, 95);
+}

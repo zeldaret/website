@@ -1,5 +1,15 @@
 $button-offset: -8px;
 
+::ng-deep mat-dialog-content {
+  ul {
+    padding-left: 20px;
+  }
+  
+  li {
+    margin-bottom: 1rem;
+  }
+}
+
 [mat-dialog-title] {
   position: relative;
 }

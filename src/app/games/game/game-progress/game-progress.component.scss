@@ -9,12 +9,12 @@ hr {
   float: left;
 }
 
-.matching {
-  color: #01ce47;
+.nonmatching {
+  color: #DDDF0D; // Dark Blue Highcharts theme
 }
 
-.nonmatching {
-  color: #ffc107;
+.matching {
+  color: #55BF3B; // Dark Blue Highcharts theme
 }
 
 .value.date {
