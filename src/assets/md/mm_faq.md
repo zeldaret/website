@@ -40,7 +40,7 @@
     is transient
     ASM?](#why-is-there-no-assembly-code-in-the-majoras-mask-repo-what-is-transient-asm)
 
-ZeldaRET Decompilation FAQ
+MM Decompilation FAQ
 =========================
 
 What is Decompilation? What is matching decompilation?
