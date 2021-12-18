@@ -1,5 +1,5 @@
--   [What language is The Minish Cap
-    in?](#what-language-is-the-minish-cap-in)
+-   [What programming language is The Minish Cap
+    in?](#what-programming-language-is-the-minish-cap-in)
 -   [What compiler does it use?](#what-compiler-does-it-use)
 -   [Do you have a decompiler like mips2c? How hard is it to
     match?](#do-you-have-a-decompiler-like-mips2c-how-hard-is-it-to-match)
@@ -31,8 +31,8 @@
 The Minish Cap Decompilation Project FAQ
 ========================================
 
-What language is The Minish Cap in?
------------------------------------
+What programming language is The Minish Cap in?
+-----------------------------------------------
 
 It was originally written in C, which is compiled to ARMv4T, which is
 the language the Gameboy Advance uses.
