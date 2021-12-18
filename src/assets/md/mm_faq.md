@@ -146,7 +146,7 @@ How do I set up the decompilation on my computer?
 -------------------------------------------------
 
 See the instructions in the
-\[README.md\]https://github.com/zeldaret/mm/\#readme)
+[README.md](https://github.com/zeldaret/mm/\#readme)
 
 Why does the progress graph move so inconsistently?
 ---------------------------------------------------

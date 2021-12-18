@@ -26,7 +26,7 @@ export function markedOptionsFactory(): MarkedOptions {
     return `<h${level} id="${id}">${text}</h${level}>`;
   };
   renderer.link = (href: string, title: string, text: string) => {
-    const hrefString = (href.startsWith("#") ? `href="${window.location.pathname}${href.replace(/\./,'')}"` : href );
+    const hrefString = (href.startsWith("#") ? `href="${window.location.pathname}${href.replace(/\./,'')}"` : `href="${href}"`);
     const titleString = ((!title || title.length === 0) ? "" : `title="${title}"`);
 
     return `<a ${hrefString} ${titleString}>${text}</a>`;
