@@ -1,0 +1,22 @@
+name: CI
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - run: npm install
+    - run: npm install -g @angular/cli
+    - run: ng build --prod
+    - name: Deploy
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        source: "dist/zelda64"
+        target: "/var/www/zelda64.dev"
+        strip_components: 2
