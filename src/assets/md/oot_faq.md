@@ -33,8 +33,8 @@
         project. Who should I contact for further
         information?](#i-would-like-to-write-an-article-or-make-a-video-about-this-project.-who-should-i-contact-for-further-information)
 
-OOT Decompilation FAQ
-=========================
+OoT Decompilation FAQ
+=====================
 
 What is Decompilation? What is matching decompilation?
 ------------------------------------------------------
