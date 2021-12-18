@@ -139,8 +139,8 @@ Can decomp be used to make mods?
 
 It is possible to use it in its current state (indeed, a number of mods
 have already used it), but not recommended unless you are *very*
-familiar with the codebase. It will be much better in future, it is a
-high priority to improve the codebase's suitability for modding.
+familiar with the codebase. It is a high priority to improve the
+codebase's suitability for modding, so it will be better in the future.
 
 Who can contribute? What do I need to know?
 -------------------------------------------
