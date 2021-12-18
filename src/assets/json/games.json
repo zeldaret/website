@@ -68,12 +68,12 @@
             "description": "{0} / {1} bytes of all code decompiled ({2}%)"
           },
           {
-            "metric": "Code",
-            "description": "{0} / {1} bytes of code decompiled ({2}%)"
-          },
-          {
             "metric": "Boot",
             "description": "{0} / {1} bytes of boot decompiled ({2}%)"
+          },
+          {
+            "metric": "Code",
+            "description": "{0} / {1} bytes of code decompiled ({2}%)"
           },
           {
             "metric": "Overlays",
