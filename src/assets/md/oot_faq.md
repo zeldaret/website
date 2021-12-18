@@ -33,7 +33,7 @@
         project. Who should I contact for further
         information?](#i-would-like-to-write-an-article-or-make-a-video-about-this-project.-who-should-i-contact-for-further-information)
 
-Zelda64 Decompilation FAQ
+ZeldaRET Decompilation FAQ
 =========================
 
 What is Decompilation? What is matching decompilation?
@@ -182,32 +182,6 @@ How do I set up the decompilation on my computer?
 
 See the instructions in the
 [README.md](https://github.com/zeldaret/oot/#readme).
-
-Why does the progress graph move so inconsistently?
----------------------------------------------------
-
-Firstly, on any project like this, the beginning is slow as the methods
-and techniques are created and understanding of anything requires a lot
-of analysis of all factors involved. The middle period is fastest, as
-techniques are refined, more people join, and they can learn more
-quickly from established understanding. Ocarina of Time is now in the
-final stages of decompilation: a lot of the files left are taking a long
-time because they are hard to decompile.
-
-Secondly, the graph does not take into account
-
--   Code decompiled on people\'s GitHub forks that is currently being
-    documented or cleaned up.
--   Code in PRs that is under review.
--   Asset analysis, symbol replacement, and other documentation.
--   Any other version support work done so far.
-
-All of these represent significant decompilation progress that is not
-accounted for by the graph. Recent spikes in progress represent code
-that has been completed, but required months to document properly.
-
-Lastly, people are doing this in their spare time, so when they don\'t
-have spare time, they aren\'t able to contribute.
 
 When will the project be finished? What would \"Finished\" mean?
 ----------------------------------------------------------------
