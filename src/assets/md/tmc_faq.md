@@ -40,7 +40,7 @@ the language the Gameboy Advance uses.
 What compiler does it use?
 --------------------------
 
-abgcc, a standard C compiler for GameBoy Advance games (also used by
+agbcc, a standard C compiler for GameBoy Advance games (also used by
 Pokemon, for example)
 
 Do you have a decompiler like mips2c? How hard is it to match?
