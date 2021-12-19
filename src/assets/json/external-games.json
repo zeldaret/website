@@ -1,0 +1,12 @@
+[
+    {
+        "slug": "botw",
+        "title": "Breath of the Wild",
+        "routingURL": "https://www.github.com/zeldaret/botw",
+        "links": {
+            "github": "https://www.github.com/zeldaret/botw",
+            "progress": "https://botw.link/progress"
+        },
+        "shieldURL": "https://botw.link/badges/progress.json"
+    }
+]

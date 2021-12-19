@@ -1,0 +1,27 @@
+mat-card > a {
+    text-decoration: none;
+  }
+  
+img[mat-card-avatar] {
+  border-radius: 0;
+  object-fit: contain;
+}
+
+mat-card-actions {
+  text-align: center;
+}
+
+mat-icon-button {
+  width: max-content;
+}
+
+mat-card-title > fa-icon {
+  font-size: 20px;
+  vertical-align: center;
+}
+
+mat-card-actions {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:space-evenly
+}

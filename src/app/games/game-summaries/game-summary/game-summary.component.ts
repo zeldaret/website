@@ -22,7 +22,7 @@ export class GameSummaryComponent implements OnChanges {
   /**
    * The percentage to display for completion.
    */
-  total: number;
+  total: string;
   /**
    * Icon definition.
    */
@@ -33,16 +33,8 @@ export class GameSummaryComponent implements OnChanges {
   trello = faTrello;
 
   ngOnChanges(): void {
-    // Matching is second
-    this.gamesService.getGameCSV(this.data.csvs.matching).subscribe(
-      res => {
-        const points = res.split("\n").filter((line) => line != "");
-        const latestPoint = points[points.length - 1];
-        const column = latestPoint.split(",");
-
-        let i = this.data.progressMeta[0].index;
-        this.total = +column[i] / +column[i + 1];
-      },
+    this.gamesService.getGameShield(`${this.data.shieldURL}`).subscribe(
+      res => this.total = res.message,
       err => console.error(err)
     );
   }

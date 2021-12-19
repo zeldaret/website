@@ -5,6 +5,7 @@
     "links": {
       "github": "https://www.github.com/zeldaret/oot"
     },
+    "shieldURL": "assets/csv/progress-oot-shield.json",
     "faq": "oot_faq",
     "csvs": {
       "matching": "progress-oot-matching",
@@ -47,6 +48,7 @@
     "links": {
       "github": "https://www.github.com/zeldaret/mm"
     },
+    "shieldURL": "assets/csv/progress-mm-shield.json",
     "faq": "mm_faq",
     "csvs": {
       "matching": "progress-mm-matching",
@@ -133,6 +135,7 @@
     "links": {
       "github": "https://www.github.com/zeldaret/mm"
     },
+    "shieldURL": "assets/csv/progress-tmc-shield.json",
     "faq": "tmc_faq",
     "csvs": {
       "matching": "progress-tmc-matching",

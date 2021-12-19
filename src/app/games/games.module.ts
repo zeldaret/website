@@ -5,6 +5,7 @@ import { GamesService } from './games.service';
 import { GameSummariesComponent } from './game-summaries/game-summaries.component';
 import { GameSummaryComponent } from './game-summaries/game-summary/game-summary.component';
 import { GameComponent } from './game/game.component';
+import { ExternalGameComponent } from './game-summaries/external-game/external-game.component'
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -16,6 +17,8 @@ import { GameChartComponent } from './game/game-progress/game-chart/game-chart.c
 import { ChartModule } from 'angular-highcharts';
 import { GameFAQComponent } from './game/game-faq/game-faq.component';
 import { MarkdownModule, MarkedOptions, MarkedRenderer } from 'ngx-markdown';
+
+
 
 // function that returns `MarkedOptions` with renderer override
 export function markedOptionsFactory(): MarkedOptions {
@@ -48,7 +51,8 @@ export function markedOptionsFactory(): MarkedOptions {
     GameComponent,
     GameProgressComponent,
     GameChartComponent,
-    GameFAQComponent
+    GameFAQComponent,
+    ExternalGameComponent
   ],
   imports: [
     CommonModule,

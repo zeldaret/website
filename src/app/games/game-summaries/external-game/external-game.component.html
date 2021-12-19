@@ -1,8 +1,8 @@
 <mat-card>
-  <a [routerLink]="'/games/' + data.slug">
+  <a [href]="data.routingURL">
     <mat-card-header>
       <mat-card-title>
-        {{ data.title }}
+        <fa-icon [icon]="external"></fa-icon> {{ data.title }}
       </mat-card-title>
       <mat-card-subtitle>Code decompiled: <strong>{{ total }}</strong></mat-card-subtitle>
     </mat-card-header>
@@ -10,6 +10,9 @@
   <mat-card-actions>
     <a mat-icon-button *ngIf="data.links.hasOwnProperty('github')" [href]="data.links.github" title="Github">
       <fa-icon [icon]="github"></fa-icon>
+    </a>
+    <a mat-icon-button *ngIf="data.links.hasOwnProperty('progress')" [href]="data.links.progress" title="Progress">
+      <fa-icon [icon]="chart"></fa-icon>
     </a>
   </mat-card-actions>
 </mat-card>
