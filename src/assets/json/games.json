@@ -93,35 +93,80 @@
         "subdivisions": [
           {
             "metric": "Assets",
-            "description": "{0} / {1} bytes of all assets decompiled ({2}%)"
+            "description": "{0} / {1} bytes of all assets ({2}%)"
           },
           {
             "metric": "Archives",
-            "description": "{0} / {1} bytes of archived assets decompiled ({2}%)"
+            "description": "{0} / {1} bytes of archived assets ({2}%)"
           },
           {
             "metric": "Audio",
-            "description": "{0} / {1} bytes of audio assets decompiled ({2}%)"
+            "description": "{0} / {1} bytes of audio assets ({2}%)"
           },
           {
             "metric": "Interface",
-            "description": "{0} / {1} bytes of interface-related assets decompiled ({2}%)"
+            "description": "{0} / {1} bytes of interface-related assets ({2}%)"
           },
           {
             "metric": "Miscellaneous",
-            "description": "{0} / {1} bytes of miscellaneous assets decompiled ({2}%)"
+            "description": "{0} / {1} bytes of miscellaneous assets ({2}%)"
           },
           {
             "metric": "Objects",
-            "description": "{0} / {1} bytes of object assets decompiled ({2}%)"
+            "description": "{0} / {1} bytes of object assets ({2}%)"
           },
           {
             "metric": "Scenes",
-            "description": "{0} / {1} bytes of scene assets decompiled ({2}%)"
+            "description": "{0} / {1} bytes of scene assets ({2}%)"
           },
           {
             "metric": "Text",
-            "description": "{0} / {1} bytes of text assets decompiled ({2}%)"
+            "description": "{0} / {1} bytes of text assets ({2}%)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "tmc",
+    "title": "The Minish Cap",
+    "links": {
+      "github": "https://www.github.com/zeldaret/mm"
+    },
+    "faq": "tmc_faq",
+    "csvs": {
+      "matching": "progress-tmc-matching",
+      "nonmatching": "progress-tmc-nonmatching"
+    },
+    "progressMeta": [
+      {
+        "type": "code",
+        "title": "The Minish Cap",
+        "subtitle": "Code decompilation progress",
+        "series": [
+          {"name": "Nonmatching", "visibility": true},
+          {"name": "Matching", "visibility": true}
+        ],
+        "index": 3,
+        "subdivisions": [
+          {
+            "metric": "Code",
+            "description": "{0} / {1} bytes of all code decompiled ({2}%)"
+          }
+        ]
+      },
+      {
+        "type": "assets",
+        "title": "The Minish Cap",
+        "subtitle": "Data analysis progress",
+        "series": [
+          {"name": "Analyzed", "visibility": true}
+        ],
+        "index": 5,
+        "subdivisions": [
+          {
+            "metric": "Assets",
+            "description": "{0} / {1} bytes of all data ({2}%)"
           }
         ]
       }

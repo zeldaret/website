@@ -41,13 +41,17 @@ export class GameChartComponent implements OnChanges {
     // set up chart data
     const metadata = this.metadata;
     let nonmatchingData = this.parseData(this.csvData[0]);
-    let matchingData = this.parseData(this.csvData[1]);
-
-    // Names for lines
     let nonmatchingName = this.metadata.series[0].name;
-    let matchingName = this.metadata.series[1].name;
     let nonmatchingVisibility = this.metadata.series[0].visibility;
-    let matchingVisibility = this.metadata.series[1].visibility;
+    
+    let matchingData = [];
+    let matchingName = "";
+    let matchingVisibility = false;
+    if (this.metadata.series.length > 1) {
+      matchingData = this.parseData(this.csvData[1]);
+      matchingName = this.metadata.series[1].name;
+      matchingVisibility = this.metadata.series[1].visibility;
+    }
 
 
     let joined = Array.prototype.concat(matchingData, nonmatchingData);
@@ -59,7 +63,7 @@ export class GameChartComponent implements OnChanges {
       max = null;
     }
 
-    const options: Options = {
+    let options: Options = {
       chart: {
         type: "line"
       },
@@ -102,7 +106,13 @@ export class GameChartComponent implements OnChanges {
           data: nonmatchingData,
           color: "#DDDF0D",
           visible: nonmatchingVisibility
-        },
+        }
+      ],
+    };
+    
+    
+    if (this.metadata.series.length > 1) {
+      options.series.push(
         {
           type: "line",
           name: matchingName,
@@ -110,8 +120,8 @@ export class GameChartComponent implements OnChanges {
           color: "#55BF3B",
           visible: matchingVisibility
         }
-      ],
-    };
+      );
+    }
 
     if (this.chart === null) {
       this.chart = new Chart(options);
