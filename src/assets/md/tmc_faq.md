@@ -108,10 +108,10 @@ Yes!
 -   The engine has many similarities to Four Swords'
 -   There's some left over development information like unused strings
     corresponding to game flags, and some graphics config files.
--   internally, the developers used the flags `DRUG_1`, `DRUG_2`,
+-   Internally, the developers used flags named `DRUG_1`, `DRUG_2`,
     `DRUG_3`, `DRUG_ALL` to store the state of growing pico blooms found
     in Minish Village, used for producing picolyte. Additionally, the
-    flag TAIMA\_SAIBAI\_1ST ("cannabis farmer") is used to determine
+    flag `TAIMA_SAIBAI_1ST` ("cannabis farmer") is used to determine
     whether or not the player has talked to the pico bloom minish for
     the first time. Interpret this how you like!
 
