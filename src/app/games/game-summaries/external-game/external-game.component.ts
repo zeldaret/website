@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { IExternalGame, IGame } from '../../games.service.interface';
+import { IExternalGame } from '../../games.service.interface';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faExternalLinkAlt, faChartLine } from '@fortawesome/free-solid-svg-icons';
+import { faChartLine, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { GamesService } from '../../games.service';
 
 /**

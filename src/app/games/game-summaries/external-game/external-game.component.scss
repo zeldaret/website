@@ -11,17 +11,15 @@ mat-card-actions {
   text-align: center;
 }
 
-mat-icon-button {
-  width: max-content;
-}
-
 mat-card-title > fa-icon {
-  font-size: 20px;
+  font-size: 16px;
   vertical-align: center;
 }
 
-mat-card-actions {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content:space-evenly
+mat-card-actions fa-icon {
+  vertical-align: center;
+}
+
+mat-card-actions a {
+  color: white;
 }
