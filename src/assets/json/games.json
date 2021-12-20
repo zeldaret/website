@@ -133,7 +133,7 @@
     "slug": "tmc",
     "title": "The Minish Cap",
     "links": {
-      "github": "https://www.github.com/zeldaret/mm"
+      "github": "https://www.github.com/zeldaret/tmc"
     },
     "shieldURL": "assets/csv/progress-tmc-shield.json",
     "faq": "tmc_faq",
@@ -173,6 +173,18 @@
           }
         ]
       }
+    ]
+  },
+  {
+    "slug": "tp",
+    "title": "Twilight Princess",
+    "links": {
+      "github": "https://www.github.com/zeldaret/tp"
+    },
+    "faq": "tp_faq",
+    "csvs": {
+    },
+    "progressMeta": [
     ]
   }
 ]
