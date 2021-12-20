@@ -8,8 +8,9 @@
     </mat-card-header>
   </a>
   <mat-card-actions>
-    <a mat-icon-button *ngIf="data.links.hasOwnProperty('github')" [href]="data.links.github" title="Github">
+    <a mat-button *ngIf="data.links.hasOwnProperty('github')" [href]="data.links.github" title="Github">
       <fa-icon [icon]="github"></fa-icon>
+      <div class="caption">GitHub</div>
     </a>
   </mat-card-actions>
 </mat-card>
