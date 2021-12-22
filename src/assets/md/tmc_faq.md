@@ -40,7 +40,7 @@ the language the Gameboy Advance uses.
 What compiler does it use?
 --------------------------
 
-abgcc, a standard C compiler for GameBoy Advance games (also used by
+agbcc, a standard C compiler for GameBoy Advance games (also used by
 Pokemon, for example)
 
 Do you have a decompiler like mips2c? How hard is it to match?
@@ -61,8 +61,13 @@ workings for curiosity, and also for applications in speedrunning.
 How many versions are there? Are all of them going to be decompiled?
 --------------------------------------------------------------------
 
-There are 5 versions: - US retail - EU retail - JP retail - US demo - JP
-demo
+There are 5 versions:
+
+-   US retail
+-   EU retail
+-   JP retail
+-   US demo
+-   JP demo
 
 All will eventually be decompiled, and they are being worked on
 concurrently (see next question for why this is efficient).
@@ -89,18 +94,26 @@ not be making it.
 Can this be used for modding?
 -----------------------------
 
-In theory, yes. The rom is already shiftable, but not everything is
-decompiled yet and the repository is subject to major changes as more is
-worked on, so we do not recommend it unless you really know what you are
-doing.
+In theory, yes: several mods have already been made using parts of decomp.
+The rom is already shiftable, but not everything is decompiled yet and the
+repository is subject to major changes as more is worked on, so we do not
+recommend it unless you really know what you are doing.
 
 Have you found out anything interesting?
 ----------------------------------------
 
-Yes! - Unlike a lot of 2D games, some parts of TMC use 3D hit boxes -
-The engine has many similarities to Four Swords' - There's some left
-over development information like unused strings corresponding to game
-flags, and some graphics config files.
+Yes!
+
+-   Unlike a lot of 2D games, some parts of TMC use 3D hit boxes
+-   The engine has many similarities to Four Swords'
+-   There's some left over development information like unused strings
+    corresponding to game flags, and some graphics config files.
+-   Internally, the developers used flags named `DRUG_1`, `DRUG_2`,
+    `DRUG_3`, `DRUG_ALL` to store the state of growing pico blooms found
+    in Minish Village, used for producing picolyte. Additionally, the
+    flag `TAIMA_SAIBAI_1ST` ("cannabis farmer") is used to determine
+    whether or not the player has talked to the pico bloom minish for
+    the first time. Interpret this how you like!
 
 Is what you find out here useful for any other games?
 -----------------------------------------------------
