@@ -22,7 +22,7 @@ export class GameSummaryComponent implements OnChanges {
   /**
    * The percentage to display for completion.
    */
-  total: number;
+  total: number = null;
   /**
    * Icon definition.
    */

@@ -4,7 +4,7 @@
       <mat-card-title>
         {{ data.title }}
       </mat-card-title>
-      <mat-card-subtitle>Percent completion: <strong>{{ (total * 100).toFixed(2) }}%</strong></mat-card-subtitle>
+      <mat-card-subtitle *ngIf="total!=null">Percent completion: <strong>{{ (total * 100).toFixed(2) }}%</strong></mat-card-subtitle>
     </mat-card-header>
   </a>
   <mat-card-actions>
