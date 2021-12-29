@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faDiscord } from '@fortawesome/free-brands-svg-icons';
+import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 /**
  * Application footer.
@@ -17,6 +17,7 @@ export class FooterComponent {
    * Icon definition.
    */
   discord = faDiscord;
+  gh = faGithub;
   year = new Date().getFullYear();
 
 }

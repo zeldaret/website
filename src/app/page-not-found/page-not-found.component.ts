@@ -37,6 +37,7 @@ export class PageNotFoundComponent {
 @Component({
   selector: 'gameover-dialog',
   templateUrl: 'gameover.html',
+  styleUrls: ['./gameover.scss']
 })
 export class GameoverDialog {
   constructor(

@@ -1,23 +1,18 @@
 <footer>
-  <!-- <div class="footer">
-    <div>
-      <a href="https://discord.zelda64.dev/">
-        Contact Us <fa-icon [icon]="discord"></fa-icon>
-      </a>
-    </div>
-    <p class="copyright">ZeldaRET © 2020 - {{ year }}</p>
-  </div> -->
   <mat-toolbar color="primary">
     <mat-toolbar-row fxLayout="row" fxLayoutAlign="center center">
       <div>
-        <a href="https://discord.zelda64.dev/">
+        <a id="links" href="https://discord.zelda64.dev/">
           <fa-icon [icon]="discord"></fa-icon> Contact Us
+        </a>
+        <a id="links" href="https://github.com/zeldaret">
+          <fa-icon [icon]="gh"></fa-icon> Contribute
         </a>
       </div>
     </mat-toolbar-row>
     <mat-toolbar-row fxLayout="row" fxLayoutAlign="center center">
       <div>
-        <p class="copyright">ZeldaRET © 2020 - {{ year }}</p>
+        <p class="copyright"> © ZeldaRET 2020 - {{ year }}</p>
       </div>
     </mat-toolbar-row>
   </mat-toolbar>

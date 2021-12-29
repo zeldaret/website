@@ -13,10 +13,26 @@ mat-toolbar-row {
   text-align: center;
 }
 
+#links {
+  font-size: 15px;
+  height: 90%;
+  align-items: center;
+  display: inline-flex;
+  padding: 1em;
+  gap: 0.5em;
+  text-decoration: none;
+  color: white;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+}
+
 .copyright {
   margin-top:10px;
   text-align:center;
   font-size:15px;
-  color: gray;
+  color: white;
   margin-bottom:0;
 }
