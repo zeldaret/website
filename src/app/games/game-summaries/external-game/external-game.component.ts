@@ -29,12 +29,9 @@ export class ExternalGameComponent implements OnChanges {
    */
   total?: string;
   /**
-   * Icon definition.
+   * Icon definitions.
    */
   github = faGithub;
-  /**
-   * Icon definition.
-   */
   external = faExternalLinkAlt;
   chart = faChartLine;
 
