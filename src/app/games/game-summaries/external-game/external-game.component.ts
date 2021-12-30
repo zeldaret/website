@@ -21,7 +21,7 @@ export class ExternalGameComponent implements OnChanges {
    */
   @Input() data: IExternalGame;
   /**
-   * Shield data
+   * Shield data.
    */
   shield: string;
   /**
