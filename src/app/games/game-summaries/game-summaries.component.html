@@ -1,9 +1,4 @@
-
-<h2>Games covered here</h2>
 <div fxLayout="row wrap" fxLayoutAlign="center">
   <game-summary fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let game of games" [data]="game"></game-summary>
-</div>
-<h2>Games with their own website</h2>
-<div fxLayout="row wrap" fxLayoutAlign="center">
   <external-game fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let game of externalGames" [data]="game"></external-game>
 </div>
