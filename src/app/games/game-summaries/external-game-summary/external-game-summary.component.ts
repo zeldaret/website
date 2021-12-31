@@ -5,14 +5,14 @@ import { faChartLine, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icon
 import { GamesService } from '../../games.service';
 
 /**
- * Displays a game's name, decomp progress, and links.
+ * Displays an externally-linked game's name, decomp progress, and links.
  */
 @Component({
-  selector: 'external-game',
-  templateUrl: './external-game.component.html',
-  styleUrls: ['./external-game.component.scss']
+  selector: 'external-game-summary',
+  templateUrl: './external-game-summary.component.html',
+  styleUrls: ['./external-game-summary.component.scss']
 })
-export class ExternalGameComponent implements OnChanges {
+export class ExternalGameSummaryComponent implements OnChanges {
 
   constructor(private gamesService: GamesService) { }
 
@@ -36,10 +36,13 @@ export class ExternalGameComponent implements OnChanges {
   chart = faChartLine;
 
   ngOnChanges(): void {
-    this.gamesService.getGameShield(`${this.data.shieldURL}`).subscribe(
-      res => this.total = res.message,
-      err => console.error(err)
-    );
+    
+    if (this.data.shieldURL) {
+      this.gamesService.getGameShield(`${this.data.shieldURL}`).subscribe(
+        res => this.total = res.message,
+        err => console.error(err)
+      );
+    }
   }
 
 }

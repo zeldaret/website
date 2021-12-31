@@ -24,19 +24,18 @@ export class GameSummaryComponent implements OnChanges {
    */
   total?: string;
   /**
-   * Icon definition.
+   * Icon definitions.
    */
   github = faGithub;
-  /**
-   * Icon definition.
-   */
   trello = faTrello;
 
   ngOnChanges(): void {
-    this.gamesService.getGameShield(`${this.data.shieldURL}`).subscribe(
-      res => this.total = res.message,
-      err => console.error(err)
-    );
+    if (this.data.shieldURL) {
+      this.gamesService.getGameShield(`${this.data.shieldURL}`).subscribe(
+        res => this.total = res.message,
+        err => console.error(err)
+      );
+    }
   }
 
 }

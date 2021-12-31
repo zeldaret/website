@@ -19,7 +19,7 @@ export class GameSummariesComponent implements OnInit {
    */
   games: IGame[] = [];
   /**
-   * List of external games to use for "ExternalGame" components.
+   * List of external games to use for "ExternalGameSummary" components.
    */
   externalGames: IExternalGame[] = [];
 

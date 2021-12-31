@@ -168,10 +168,6 @@ export interface ISubdivision {
  */
 export interface IShield {
   /**
-   * Always 1.
-   */
-  schemaVersion: number;
-  /**
    * Static label in left half.
    */
   label: string;
