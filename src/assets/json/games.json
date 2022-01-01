@@ -2,6 +2,7 @@
   {
     "slug": "oot",
     "title": "Ocarina of Time",
+    "routingURL": "games/oot",
     "links": {
       "github": "https://www.github.com/zeldaret/oot"
     },
@@ -45,6 +46,7 @@
   {
     "slug": "mm",
     "title": "Majora's Mask",
+    "routingURL": "games/mm",
     "links": {
       "github": "https://www.github.com/zeldaret/mm"
     },
@@ -132,6 +134,7 @@
   {
     "slug": "tmc",
     "title": "The Minish Cap",
+    "routingURL": "games/tmc",
     "links": {
       "github": "https://www.github.com/zeldaret/tmc"
     },
@@ -178,6 +181,7 @@
   {
     "slug": "tp",
     "title": "Twilight Princess",
+    "routingURL": "games/tp",
     "links": {
       "github": "https://www.github.com/zeldaret/tp"
     },

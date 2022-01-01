@@ -13,6 +13,10 @@ export interface IGame {
    */
   title: string;
   /**
+   * The URL for the card title to link to.
+   */
+  routingURL: string;
+  /**
    * The URL of the shield json to read.
    */
   shieldURL: string;
