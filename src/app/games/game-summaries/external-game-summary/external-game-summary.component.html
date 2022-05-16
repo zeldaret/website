@@ -1,8 +1,9 @@
 <mat-card>
-  <a [routerLink]="data.routingURL">
+  <a [href]="data.routingURL">
     <mat-card-header>
       <mat-card-title>
         {{ data.title }}
+        <fa-icon [icon]="external"></fa-icon>
       </mat-card-title>
       <mat-card-subtitle>
         <ng-container *ngIf="total != undefined">Code decompiled: <strong>{{ total }}</strong></ng-container>
@@ -14,6 +15,11 @@
     <a mat-button *ngIf="data.links.hasOwnProperty('github')" [href]="data.links.github" title="Github">
       <fa-icon [icon]="github"></fa-icon>
       <div class="caption">GitHub</div>
+    </a>
+    <a mat-button *ngIf="data.links.hasOwnProperty('progress')" [href]="data.links.progress" title="Progress">
+      <fa-icon [icon]="chart"></fa-icon>
+      <div class="caption">Progress history</div>
+      <!-- <mat-icon [svgIcon]="chart"></mat-icon> -->
     </a>
   </mat-card-actions>
 </mat-card>

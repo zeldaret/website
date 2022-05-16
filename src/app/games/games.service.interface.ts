@@ -13,6 +13,14 @@ export interface IGame {
    */
   title: string;
   /**
+   * The URL for the card title to link to.
+   */
+  routingURL: string;
+  /**
+   * The URL of the shield json to read.
+   */
+  shieldURL: string;
+  /**
    * The name of the "FAQ" MD to read.
    */
   faq: string;
@@ -32,6 +40,32 @@ export interface IGame {
    * The charts and data for each game.
    */
   progressMeta: IChart[];
+}
+
+/**
+ * Game information to display and for project progress processing.
+ */
+export interface IExternalGame {
+  /**
+   * The string to use to identify the game.
+   */
+  slug: string;
+  /**
+   * The game's full title.
+   */
+  title: string;
+  /**
+   * The URL for the card title to link to.
+   */
+  routingURL: string;
+  /**
+   * Links to display as an icon. The key defines the icon, and the value is the link href.
+   */
+  links: {[type: string]: string};
+  /**
+   * The URL of the shield json to read.
+   */
+  shieldURL: string;
 }
 
 /**
@@ -134,6 +168,25 @@ export interface ISubdivision {
 }
 
 /**
+ * Describes a game's shield output.
+ */
+export interface IShield {
+  /**
+   * Static label in left half.
+   */
+  label: string;
+  /**
+   * Generally the progress number.
+   */
+  message: string;
+  /**
+   * Colour of the message background.
+   */
+  color: string;
+}
+
+
+/**
  * Functions to implement within "GamesService".
  */
 export interface IGamesService {
@@ -142,6 +195,11 @@ export interface IGamesService {
    * Get the information for all supported games.
    */
   getGames(): Observable<IGame[]>;
+
+  /**
+   * Get the information for all supported external games.
+   */
+  getExternalGames(): Observable<IExternalGame[]>;
 
   /**
    * Get all of the resources.
@@ -154,6 +212,13 @@ export interface IGamesService {
    * @param filename The filename of the desired CSV.
    */
   getGameCSV(filename: string): Observable<string>;
+
+  /**
+   * Get the Shield data for a game.
+   *
+   * @param filename The filename of the desired CSV.
+   */
+  getGameShield(filename: string): Observable<IShield>;
 
   /**
    * Get the FAQ data for a game.

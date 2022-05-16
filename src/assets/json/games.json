@@ -2,9 +2,11 @@
   {
     "slug": "oot",
     "title": "Ocarina of Time",
+    "routingURL": "games/oot",
     "links": {
       "github": "https://www.github.com/zeldaret/oot"
     },
+    "shieldURL": "assets/csv/progress-oot-shield.json",
     "faq": "oot_faq",
     "csvs": {
       "matching": "progress-oot-matching",
@@ -44,9 +46,11 @@
   {
     "slug": "mm",
     "title": "Majora's Mask",
+    "routingURL": "games/mm",
     "links": {
       "github": "https://www.github.com/zeldaret/mm"
     },
+    "shieldURL": "assets/csv/progress-mm-shield.json",
     "faq": "mm_faq",
     "csvs": {
       "matching": "progress-mm-matching",
@@ -130,9 +134,11 @@
   {
     "slug": "tmc",
     "title": "The Minish Cap",
+    "routingURL": "games/tmc",
     "links": {
       "github": "https://www.github.com/zeldaret/tmc"
     },
+    "shieldURL": "assets/csv/progress-tmc-shield.json",
     "faq": "tmc_faq",
     "csvs": {
       "matching": "progress-tmc-matching",
@@ -175,6 +181,7 @@
   {
     "slug": "tp",
     "title": "Twilight Princess",
+    "routingURL": "games/tp",
     "links": {
       "github": "https://www.github.com/zeldaret/tp"
     },

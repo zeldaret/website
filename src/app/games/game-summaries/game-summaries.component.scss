@@ -2,7 +2,12 @@ div {
   margin-right: -1em;
 }
 
-game-summary {
+h2 {
+  margin: auto;
+  width: max-content;
+}
+
+game-summary, external-game-summary {
   flex-grow: 0;
   margin-bottom: 12px;
   margin-right: 1em;

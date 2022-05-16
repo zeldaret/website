@@ -1,3 +1,4 @@
 <div fxLayout="row wrap" fxLayoutAlign="center">
   <game-summary fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let game of games" [data]="game"></game-summary>
+  <external-game-summary fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let game of externalGames" [data]="game"></external-game-summary>
 </div>

@@ -39,13 +39,15 @@ export class GameComponent implements OnInit {
             }
             else {
               this.game = res[index];
-              forkJoin([
-                this.gamesService.getGameCSV(this.game.csvs.nonmatching),
-                this.gamesService.getGameCSV(this.game.csvs.matching)
-              ]).subscribe(
-                res => this.csvData = res,
-                err => console.error(err)
-              );
+              if (this.game.progressMeta.length > 0) {
+                forkJoin([
+                  this.gamesService.getGameCSV(this.game.csvs.nonmatching),
+                  this.gamesService.getGameCSV(this.game.csvs.matching)
+                ]).subscribe(
+                  res => this.csvData = res,
+                  err => console.error(err)
+                );
+              }
             }
           },
           err => {
