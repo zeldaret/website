@@ -1,7 +1,7 @@
 mat-card > a {
-  text-decoration: none;
-}
-
+    text-decoration: none;
+  }
+  
 img[mat-card-avatar] {
   border-radius: 0;
   object-fit: contain;
@@ -9,6 +9,11 @@ img[mat-card-avatar] {
 
 mat-card-actions {
   text-align: center;
+}
+
+mat-card-title > fa-icon {
+  font-size: 16px;
+  vertical-align: center;
 }
 
 mat-card-actions fa-icon {
