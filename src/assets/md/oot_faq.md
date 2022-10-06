@@ -45,6 +45,8 @@ has the same result. *Matching* decompilation is more specific: instead
 of merely functionally equivalent code, it aims to produce code that
 compiles to *exactly* the same data as the original.
 
+![What is decomp](/assets/img/what_is_decomp.png)
+
 What language was this game written in?
 ---------------------------------------
 

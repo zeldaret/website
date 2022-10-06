@@ -10,7 +10,7 @@ const appRoutes: Routes = [
     component: LandingComponent
   },
   {
-    path: "404",
+    path: "**",
     component: PageNotFoundComponent
   }
 ]; // sets up routes constant where you define your routes

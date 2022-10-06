@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GamesService } from '../games/games.service';
 import { IGame } from '../games/games.service.interface';
 import { faDiscord } from '@fortawesome/free-brands-svg-icons';
+import { MatToolbar } from '@angular/material/toolbar';
 
 /**
  * Application header.

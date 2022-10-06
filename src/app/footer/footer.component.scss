@@ -2,3 +2,37 @@ mat-toolbar-row {
   height: 100%;
   text-align: center;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #2f487c;
+  color: white;
+  text-align: center;
+}
+
+#links {
+  font-size: 15px;
+  height: 90%;
+  align-items: center;
+  display: inline-flex;
+  padding: 1em;
+  gap: 0.5em;
+  text-decoration: none;
+  color: white;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+}
+
+.copyright {
+  margin-top:10px;
+  text-align:center;
+  font-size:15px;
+  color: white;
+  margin-bottom:0;
+}

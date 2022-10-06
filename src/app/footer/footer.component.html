@@ -1,8 +1,19 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row fxLayout="row" fxLayoutAlign="center center">
-    <div fxFlex="1 0 auto">
-      ©ZeldaRET 2020–{{ year }}<br>
-      To contact us, please <a href="https://discord.zelda64.dev/">join our Discord Server</a>
-    </div>
-  </mat-toolbar-row>
-</mat-toolbar>
+<footer>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row fxLayout="row" fxLayoutAlign="center center">
+      <div>
+        <a id="links" href="https://discord.zelda64.dev/">
+          <fa-icon [icon]="discord"></fa-icon> Contact Us
+        </a>
+        <a id="links" href="https://github.com/zeldaret">
+          <fa-icon [icon]="gh"></fa-icon> Contribute
+        </a>
+      </div>
+    </mat-toolbar-row>
+    <mat-toolbar-row fxLayout="row" fxLayoutAlign="center center">
+      <div>
+        <p class="copyright"> © ZeldaRET 2020 - {{ year }}</p>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</footer>

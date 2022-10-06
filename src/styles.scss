@@ -32,8 +32,9 @@ $my-theme: mat.define-dark-theme((
 
 @include mat.all-component-themes($my-theme);
 
-html, body {
-  height: 100%;
+html {
+  overflow: hidden;
+  text-rendering: optimizeQuality;
 }
 
 body {
@@ -41,6 +42,12 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   color: white;
   counter-reset: filecounter;
+  overflow: auto;
+}
+
+html,
+body {
+    height: 100%;
 }
 
 fa-icon {
@@ -71,3 +78,4 @@ mat-card {
 mat-dialog-container {
   background-color: rgb(29, 48, 95) !important;
 }
+
