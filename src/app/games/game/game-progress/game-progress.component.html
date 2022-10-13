@@ -5,10 +5,12 @@
   <hr>
   <table>
     <thead>
-      <th scope="col"></th>
-      <ng-container *ngFor="let series of meta.series; let j = index">
-        <th scope="col" [ngClass]="{nonmatching: j === 0, matching: j === 1}">{{ series.name }}</th>
-      </ng-container>
+      <tr>
+        <td></td>
+        <ng-container *ngFor="let series of meta.series; let j = index">
+          <th scope="col" [ngClass]="{nonmatching: j === 0, matching: j === 1}">{{ series.name }}</th>
+        </ng-container>
+      </tr>
     </thead>
     <tbody>
       <tr>
