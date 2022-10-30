@@ -119,7 +119,8 @@ export class GameChartComponent implements OnChanges {
           name: matchingName,
           data: matchingData,
           color: "#55BF3B",
-          visible: matchingVisibility
+          visible: matchingVisibility,
+          turboThreshold: 5000
         }
       );
     }
