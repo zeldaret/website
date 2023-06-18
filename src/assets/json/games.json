@@ -100,10 +100,6 @@
             "description": "{0} / {1} bytes of all assets ({2}%)"
           },
           {
-            "metric": "Archives",
-            "description": "{0} / {1} bytes of archived assets ({2}%)"
-          },
-          {
             "metric": "Audio",
             "description": "{0} / {1} bytes of audio assets ({2}%)"
           },
