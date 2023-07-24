@@ -173,18 +173,5 @@
         ]
       }
     ]
-  },
-  {
-    "slug": "tp",
-    "title": "Twilight Princess",
-    "routingURL": "games/tp",
-    "links": {
-      "github": "https://www.github.com/zeldaret/tp"
-    },
-    "faq": "tp_faq",
-    "csvs": {
-    },
-    "progressMeta": [
-    ]
   }
 ]
