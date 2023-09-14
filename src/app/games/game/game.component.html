@@ -6,6 +6,6 @@
   </article>
 </ng-container>
 
-<article>
+<article *ngIf="game.faq">
   <game-faq [game]="game"></game-faq>
 </article>
