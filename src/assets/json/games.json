@@ -4,7 +4,7 @@
     "title": "Ocarina of Time",
     "routingURL": "games/oot",
     "links": {
-      "github": "https://www.github.com/zeldaret/oot"
+      "github": "https://github.com/zeldaret/oot"
     },
     "shieldURL": "assets/csv/progress-oot-shield.json",
     "faq": "oot_faq",
@@ -48,7 +48,7 @@
     "title": "Majora's Mask",
     "routingURL": "games/mm",
     "links": {
-      "github": "https://www.github.com/zeldaret/mm"
+      "github": "https://github.com/zeldaret/mm"
     },
     "shieldURL": "assets/csv/progress-mm-shield.json",
     "faq": "mm_faq",
@@ -128,11 +128,19 @@
     ]
   },
   {
+    "slug": "tww",
+    "title": "The Wind Waker",
+    "links": {
+      "github": "https://github.com/zeldaret/tww"
+    },
+    "shieldURL": "https://progress.deco.mp/data/tww/GZLE01/all/?format=json&measure=code&mode=shield"
+  },
+  {
     "slug": "tmc",
     "title": "The Minish Cap",
     "routingURL": "games/tmc",
     "links": {
-      "github": "https://www.github.com/zeldaret/tmc"
+      "github": "https://github.com/zeldaret/tmc"
     },
     "shieldURL": "assets/csv/progress-tmc-shield.json",
     "faq": "tmc_faq",
