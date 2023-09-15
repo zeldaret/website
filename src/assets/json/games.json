@@ -128,6 +128,14 @@
     ]
   },
   {
+    "slug": "af",
+    "title": "Animal Forest",
+    "links": {
+      "github": "https://github.com/zeldaret/af"
+    },
+    "shieldURL": "https://progress.deco.mp/data/animalforest/jp/code/?format=json&measure=all&mode=shield"
+  },
+  {
     "slug": "tww",
     "title": "The Wind Waker",
     "links": {
