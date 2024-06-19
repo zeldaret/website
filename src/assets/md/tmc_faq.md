@@ -50,7 +50,7 @@ No specialist decompiler for ARM exists, so people read the assembly
 themselves or use Ghidra or the HexRays decompiler for a first
 approximation. There are also specialist data/hex analysis tools made
 for the project: [ask in Discord for
-details](https://discord.zelda64.dev/)
+details](https://discord.com/invite/DqwyCBYKqf/)
 
 What's the goal of this project?
 --------------------------------
@@ -135,7 +135,7 @@ I'd like to help. How should I get started?
 -------------------------------------------
 
 Great, we're always happy to get new contributors! Most importantly,
-[join the Discord](https://discord.zelda64.dev/), since this is where
+[join the Discord](https://discord.com/invite/DqwyCBYKqf/), since this is where
 all the discussion takes place. Start by reading the project
 [README.md](https://github.com/zeldaret/tmc/blob/master/README.md) for
 general information, follow the instructions in
