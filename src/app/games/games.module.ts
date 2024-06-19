@@ -5,7 +5,6 @@ import { GamesService } from './games.service';
 import { GameSummariesComponent } from './game-summaries/game-summaries.component';
 import { GameSummaryComponent } from './game-summaries/game-summary/game-summary.component';
 import { GameComponent } from './game/game.component';
-import { ExternalGameSummaryComponent } from './game-summaries/external-game-summary/external-game-summary.component'
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -52,7 +51,6 @@ export function markedOptionsFactory(): MarkedOptions {
     GameProgressComponent,
     GameChartComponent,
     GameFAQComponent,
-    ExternalGameSummaryComponent
   ],
   imports: [
     CommonModule,

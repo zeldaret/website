@@ -11,6 +11,11 @@ mat-card-actions {
   text-align: center;
 }
 
+mat-card-title > fa-icon {
+  font-size: 16px;
+  vertical-align: center;
+}
+
 mat-card-actions fa-icon {
   vertical-align: center;
 }

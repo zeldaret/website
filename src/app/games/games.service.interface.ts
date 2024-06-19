@@ -40,32 +40,10 @@ export interface IGame {
    * The charts and data for each game.
    */
   progressMeta: IChart[];
-}
-
-/**
- * Game information to display and for project progress processing.
- */
-export interface IExternalGame {
   /**
-   * The string to use to identify the game.
+   * Whether the game is external.
    */
-  slug: string;
-  /**
-   * The game's full title.
-   */
-  title: string;
-  /**
-   * The URL for the card title to link to.
-   */
-  routingURL: string;
-  /**
-   * Links to display as an icon. The key defines the icon, and the value is the link href.
-   */
-  links: {[type: string]: string};
-  /**
-   * The URL of the shield json to read.
-   */
-  shieldURL: string;
+  external: boolean;
 }
 
 /**
@@ -195,11 +173,6 @@ export interface IGamesService {
    * Get the information for all supported games.
    */
   getGames(): Observable<IGame[]>;
-
-  /**
-   * Get the information for all supported external games.
-   */
-  getExternalGames(): Observable<IExternalGame[]>;
 
   /**
    * Get all of the resources.
