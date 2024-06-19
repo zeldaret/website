@@ -177,7 +177,7 @@ There is one exception:
 
 No. *No one is allowed to contribute to the project who has accessed
 material relating to relevant source code or documentation leaks.* For
-specifics, see [the Discord server](http://discord.zelda64.dev/).
+specifics, see [the Discord server](https://discord.com/invite/DqwyCBYKqf/).
 
 How do I set up the decompilation on my computer?
 -------------------------------------------------
@@ -233,7 +233,7 @@ Where can I get more information?
 
 For more information on any of the topics in the scope of this project
 that have been discussed here, please join [the
-Discord](http://discord.zelda64.dev/). We aim to be helpful and friendly
+Discord](https://discord.com/invite/DqwyCBYKqf/). We aim to be helpful and friendly
 to newcomers, provided they have read the basics in this FAQ.
 
 ### I would like to write an article or make a video about this project. Who should I contact for further information?
