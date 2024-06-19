@@ -133,7 +133,7 @@
     "links": {
       "github": "https://github.com/zeldaret/af"
     },
-    "shieldURL": "https://progress.deco.mp/data/animalforest/jp/code/?format=json&measure=all&mode=shield"
+    "shieldURL": "https://progress.decomp.club/data/animalforest/jp/code/?format=json&measure=all&mode=shield"
   },
   {
     "slug": "tww",
@@ -141,7 +141,7 @@
     "links": {
       "github": "https://github.com/zeldaret/tww"
     },
-    "shieldURL": "https://progress.deco.mp/data/tww/GZLE01/all/?format=json&measure=code&mode=shield"
+    "shieldURL": "https://progress.decomp.club/data/tww/GZLE01/all/?format=json&measure=code&mode=shield"
   },
   {
     "slug": "tmc",
@@ -189,5 +189,35 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "tp",
+    "title": "Twilight Princess",
+    "routingURL": "https://zsrtp.link",
+    "external": true,
+    "links": {
+      "github": "https://github.com/zeldaret/tp",
+      "progress": "https://zsrtp.link/progress"
+    },
+    "shieldURL": "https://progress.decomp.club/data/twilightprincess/gcn_usa/default/?format=json&measure=code&mode=shield"
+  },
+  {
+    "slug": "ss",
+    "title": "Skyward Sword",
+    "links": {
+      "github": "https://github.com/zeldaret/ss"
+    },
+    "shieldURL": "https://progress.decomp.club/data/ss/SOUE01/all/?format=json&measure=code&mode=shield"
+  },
+  {
+    "slug": "botw",
+    "title": "Breath of the Wild",
+    "routingURL": "https://botw.link",
+    "external": true,
+    "links": {
+      "github": "https://github.com/zeldaret/botw",
+      "progress": "https://botw.link/progress"
+    },
+    "shieldURL": "https://botw.link/badges/progress.json"
   }
 ]

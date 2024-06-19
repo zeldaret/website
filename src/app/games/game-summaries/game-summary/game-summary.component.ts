@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { IGame } from '../../games.service.interface';
 import { faGithub, faTrello } from '@fortawesome/free-brands-svg-icons';
+import { faChartLine, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { GamesService } from '../../games.service';
 
 /**
@@ -26,6 +27,8 @@ export class GameSummaryComponent implements OnChanges {
   /**
    * Icon definitions.
    */
+  chart = faChartLine;
+  external = faExternalLinkAlt;
   github = faGithub;
   trello = faTrello;
 

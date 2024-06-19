@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IExternalGame, IGame, IGamesService, IResource, IShield } from './games.service.interface';
+import { IGame, IGamesService, IResource, IShield } from './games.service.interface';
 
 /**
  * Obtains data relating to the games.
@@ -15,10 +15,6 @@ export class GamesService implements IGamesService {
 
   getGames(): Observable<IGame[]> {
     return this.http.get<IGame[]>("/assets/json/games.json");
-  }
-
-  getExternalGames(): Observable<IExternalGame[]> {
-    return this.http.get<IExternalGame[]>("/assets/json/external-games.json");
   }
 
   getResources(): Observable<IResource[]> {

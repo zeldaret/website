@@ -1,20 +1,35 @@
-<mat-card>
-  <a [routerLink]="data.routingURL">
-    <mat-card-header>
-      <mat-card-title>
-        {{ data.title }}
-      </mat-card-title>
-      <mat-card-subtitle>
-        <ng-container *ngIf="total != undefined">Code decompiled: <strong>{{ total }}</strong></ng-container>
-        &nbsp;
-      </mat-card-subtitle>
-    </mat-card-header>
+<ng-template #headerContent>
+  <mat-card-header>
+    <mat-card-title>
+      {{ data.title }}
+      <fa-icon *ngIf="data.external" [icon]="external"></fa-icon>
+    </mat-card-title>
+    <mat-card-subtitle>
+      <ng-container *ngIf="total != undefined">Code decompiled: <strong>{{ total }}</strong></ng-container>
+      &nbsp;
+    </mat-card-subtitle>
+  </mat-card-header>
+</ng-template>
+<ng-template #headerExternal>
+  <a [href]="data.routingURL">
+    <ng-container *ngTemplateOutlet="headerContent"></ng-container>
   </a>
+</ng-template>
+<ng-template #headerInternal>
+  <a [routerLink]="data.routingURL">
+    <ng-container *ngTemplateOutlet="headerContent"></ng-container>
+  </a>
+</ng-template>
+<mat-card>
+  <ng-container *ngIf="data.external; then headerExternal else headerInternal"></ng-container>
   <mat-card-actions>
     <a mat-button *ngIf="data.links.hasOwnProperty('github')" [href]="data.links.github" title="Github">
       <fa-icon [icon]="github"></fa-icon>
       <div class="caption">GitHub</div>
     </a>
+    <a mat-button *ngIf="data.links.hasOwnProperty('progress')" [href]="data.links.progress" title="Progress">
+      <fa-icon [icon]="chart"></fa-icon>
+      <div class="caption">Progress history</div>
+    </a>
   </mat-card-actions>
 </mat-card>
-
