@@ -130,8 +130,11 @@
   {
     "slug": "af",
     "title": "Animal Forest",
+    "routingURL": "https://zeldaret.github.io/af/",
+    "external": true,
     "links": {
-      "github": "https://github.com/zeldaret/af"
+      "github": "https://github.com/zeldaret/af",
+      "progress": "https://zeldaret.github.io/af/"
     },
     "shieldURL": "https://progress.decomp.club/data/animalforest/jp/code/?format=json&measure=all&mode=shield"
   },
