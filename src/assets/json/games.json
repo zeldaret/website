@@ -141,8 +141,11 @@
   {
     "slug": "tww",
     "title": "The Wind Waker",
+    "routingURL": "https://zeldaret.github.io/tww/",
+    "external": true,
     "links": {
-      "github": "https://github.com/zeldaret/tww"
+      "github": "https://github.com/zeldaret/tww",
+      "progress": "https://zeldaret.github.io/tww/"
     },
     "shieldURL": "https://progress.decomp.club/data/tww/GZLE01/all/?format=json&measure=code&mode=shield"
   },
