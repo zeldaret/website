@@ -147,7 +147,7 @@
       "github": "https://github.com/zeldaret/tww",
       "progress": "https://zeldaret.github.io/tww/"
     },
-    "shieldURL": "https://progress.decomp.club/data/tww/GZLE01/all/?format=json&measure=code&mode=shield"
+    "shieldURL": "https://decomp.dev/zeldaret/tww.json?mode=shield"
   },
   {
     "slug": "tmc",
@@ -205,7 +205,7 @@
       "github": "https://github.com/zeldaret/tp",
       "progress": "https://zsrtp.link/progress"
     },
-    "shieldURL": "https://progress.decomp.club/data/twilightprincess/gcn_usa/default/?format=json&measure=code&mode=shield"
+    "shieldURL": "https://decomp.dev/zeldaret/tp.json?mode=shield"
   },
   {
     "slug": "ss",
@@ -213,7 +213,7 @@
     "links": {
       "github": "https://github.com/zeldaret/ss"
     },
-    "shieldURL": "https://progress.decomp.club/data/ss/SOUE01/all/?format=json&measure=code&mode=shield"
+    "shieldURL": "https://decomp.dev/zeldaret/ss.json?mode=shield"
   },
   {
     "slug": "botw",
